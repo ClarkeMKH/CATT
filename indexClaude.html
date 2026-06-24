@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Click and Treat Training — reward-based, positive dog training in and around Chatham. ABTC registered, fully insured, 6+ years experience. Puppy training, 1-2-1, reactive dog support, muzzle fittings." />
+  <meta name="theme-color" content="#FDF6EC" />
+  <title>Click and Treat Training | Positive Dog Training in Chatham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────────── */
+    :root {
+      /* Warm palette — honey, amber, peach, rose, sage */
+      --honey:        #F5DFA8;
+      --honey-deep:   #E8C76A;
+      --amber:        #E8A04A;
+      --amber-soft:   #F2C07A;
+      --peach:        #F5D5B8;
+      --peach-deep:   #EDBA8E;
+      --rose:         #F0CFCF;
+      --rose-deep:    #E0B0B0;
+      --sage:         #C6D9BE;
+      --sage-deep:    #A8C49A;
+      --cream:        #FDF6EC;
+      --cream-warm:   #F9EDD8;
+      --white:        #FFFFFF;
+      --cocoa:        #6B3F28;
+      --cocoa-mid:    #8B5535;
+      --cocoa-light:  #A86C44;
+      --text-dark:    #3A2318;
+      --text-mid:     #6B4530;
+      --text-soft:    #9E7055;
+      --taupe:        #D6C4B0;
+
+      /* Radii */
+      --r-sm: 0.75rem;
+      --r-md: 1.25rem;
+      --r-lg: 2rem;
+      --r-xl: 3rem;
+      --r-full: 100px;
+
+      /* Shadows — all warm-tinted */
+      --sh-sm:   0 2px 12px rgba(107,63,40,0.10);
+      --sh-md:   0 6px 28px rgba(107,63,40,0.13);
+      --sh-lg:   0 12px 48px rgba(107,63,40,0.18);
+      --sh-glow: 0 0 0 4px rgba(232,160,74,0.25);
+
+      /* Timing */
+      --ease: cubic-bezier(0.34,1.3,0.64,1);
+      --ease-out: cubic-bezier(0.22,1,0.36,1);
+      --t-fast: 0.18s;
+      --t-med: 0.32s;
+      --t-slow: 0.55s;
+
+      /* Type */
+      --f-display: 'Playfair Display', Georgia, serif;
+      --f-body:    'Nunito', system-ui, sans-serif;
+    }
+
+    /* ─── RESET ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--f-body);
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── FOCUS ───────────────────────────────────────────── */
+    :focus-visible {
+      outline: 3px solid var(--amber);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity var(--t-slow) var(--ease-out),
+                  transform var(--t-slow) var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ─── LAYOUT ──────────────────────────────────────────── */
+    .wrap {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
+    .pad { padding: clamp(4.5rem, 9vw, 8rem) 0; }
+
+    /* ─── TYPE SCALE ──────────────────────────────────────── */
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cocoa-light);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--amber);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .display {
+      font-family: var(--f-display);
+      font-size: clamp(2.1rem, 5.5vw + 0.5rem, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-dark);
+    }
+    .display em {
+      font-style: italic;
+      color: var(--cocoa);
+      position: relative;
+    }
+    .display em::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber), var(--honey));
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.8s var(--ease-out) 0.4s;
+    }
+    .display em.underline-in::after { transform: scaleX(1); }
+
+    h2.title {
+      font-family: var(--f-display);
+      font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+    h2.title em { font-style: italic; color: var(--cocoa); }
+
+    .lead {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .small {
+      font-size: 0.875rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* ─── BUTTONS ─────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.9rem 1.9rem;
+      border-radius: var(--r-full);
+      font-family: var(--f-body);
+      font-size: 0.92rem;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      min-height: 50px;
+      white-space: nowrap;
+      transition:
+        transform var(--t-fast) var(--ease),
+        box-shadow var(--t-med) var(--ease-out),
+        background var(--t-fast) ease,
+        color var(--t-fast) ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: rgba(255,255,255,0);
+      transition: background var(--t-fast) ease;
+    }
+    .btn:hover::after { background: rgba(255,255,255,0.08); }
+    .btn:hover { transform: translateY(-3px); }
+    .btn:active { transform: translateY(-1px); }
+
+    .btn-warm {
+      background: linear-gradient(135deg, var(--cocoa) 0%, var(--cocoa-mid) 100%);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(107,63,40,0.35);
+    }
+    .btn-warm:hover { box-shadow: 0 8px 28px rgba(107,63,40,0.42); }
+
+    .btn-amber {
+      background: linear-gradient(135deg, var(--amber) 0%, var(--honey-deep) 100%);
+      color: var(--text-dark);
+      box-shadow: 0 4px 18px rgba(232,160,74,0.4);
+    }
+    .btn-amber:hover { box-shadow: 0 8px 28px rgba(232,160,74,0.5); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cocoa);
+      border: 2.5px solid var(--cocoa);
+    }
+    .btn-outline:hover { background: var(--cocoa); color: var(--white); }
+
+    .btn-cream {
+      background: var(--white);
+      color: var(--cocoa);
+      box-shadow: var(--sh-md);
+    }
+    .btn-cream:hover { background: var(--cream-warm); }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.18);
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.28); }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      transition: background var(--t-med) ease, box-shadow var(--t-med) ease;
+    }
+    .site-header.at-top {
+      background: rgba(253,246,236,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .site-header.scrolled {
+      background: rgba(253,246,236,0.97);
+      box-shadow: 0 2px 20px rgba(107,63,40,0.10);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: none;
+      gap: clamp(1.25rem, 2.5vw, 2.25rem);
+      align-items: center;
+    }
+    @media (min-width: 800px) { .nav-links { display: flex; } }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      padding: 0.3rem 0;
+      position: relative;
+      transition: color var(--t-fast) ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 50%; right: 50%;
+      height: 2.5px;
+      background: var(--amber);
+      border-radius: 2px;
+      transition: left var(--t-med) var(--ease-out), right var(--t-med) var(--ease-out);
+    }
+    .nav-links a:hover { color: var(--cocoa); }
+    .nav-links a:hover::after, .nav-links a[aria-current="page"]::after { left: 0; right: 0; }
+    .nav-links a[aria-current="page"] { color: var(--cocoa); }
+    .nav-cta { display: none; }
+    @media (min-width: 800px) { .nav-cta { display: inline-flex; } }
+
+    /* Hamburger */
+    .burger {
+      display: grid;
+      place-items: center;
+      width: 46px; height: 46px;
+      border-radius: var(--r-sm);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: background var(--t-fast) ease;
+    }
+    .burger:hover { background: var(--peach); }
+    @media (min-width: 800px) { .burger { display: none; } }
+    .burger-box {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .burger span {
+      display: block;
+      width: 22px; height: 2.5px;
+      background: var(--cocoa);
+      border-radius: 2px;
+      transition: transform 0.35s var(--ease), opacity 0.2s ease, width 0.25s ease;
+      transform-origin: center;
+    }
+    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(107,63,40,0.1);
+      z-index: 199;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.45s var(--ease-out), box-shadow 0.3s ease;
+    }
+    .mobile-nav.open {
+      max-height: 480px;
+      box-shadow: 0 16px 48px rgba(107,63,40,0.14);
+    }
+    .mobile-nav-inner {
+      padding: 0.5rem clamp(1.25rem,5vw,3rem) 2rem;
+    }
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      border-bottom: 1px solid rgba(107,63,40,0.07);
+      transition: color var(--t-fast) ease, padding-left var(--t-fast) ease;
+    }
+    .mobile-nav a:hover { color: var(--cocoa); padding-left: 0.4rem; }
+    .mobile-nav .btn { margin-top: 1.5rem; width: 100%; }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      transform: scale(1.04);
+      transition: transform 6s ease-out;
+    }
+    .hero-bg.loaded { transform: scale(1); }
+    /* Warm amber-honey gradient overlay */
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          108deg,
+          rgba(253,246,236,0.92) 0%,
+          rgba(249,237,216,0.82) 38%,
+          rgba(245,223,168,0.35) 65%,
+          rgba(253,246,236,0.10) 100%
+        );
+    }
+    /* subtle warm tint at very bottom */
+    .hero-veil::after {
+      content: '';
+      position: absolute;
+      inset: 60% 0 0;
+      background: linear-gradient(to bottom, transparent, rgba(253,246,236,0.55));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 0 clamp(3rem,7vw,6rem);
+      width: 100%;
+    }
+    .hero-card {
+      max-width: 560px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      border-radius: var(--r-full);
+      padding: 0.4rem 1rem 0.4rem 0.5rem;
+      box-shadow: var(--sh-md);
+      margin-bottom: 1.75rem;
+      animation: badge-in 0.7s var(--ease) 0.2s both;
+    }
+    @keyframes badge-in {
+      from { opacity: 0; transform: translateY(12px) scale(0.95); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-badge .dot {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber), var(--honey-deep));
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .hero-badge .dot svg { width: 14px; height: 14px; }
+    .hero-badge span {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .hero-card .display {
+      animation: hero-text-in 0.9s var(--ease-out) 0.35s both;
+      margin-bottom: 1.25rem;
+    }
+    .hero-card .lead {
+      animation: hero-text-in 0.9s var(--ease-out) 0.5s both;
+      margin-bottom: 2rem;
+    }
+    @keyframes hero-text-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+      animation: hero-text-in 0.9s var(--ease-out) 0.65s both;
+    }
+
+    /* floating paw in corner — decorative */
+    .hero-paw {
+      position: absolute;
+      bottom: clamp(2rem,6vh,4rem);
+      right: clamp(2rem,8vw,6rem);
+      opacity: 0.07;
+      pointer-events: none;
+      animation: paw-float 4s ease-in-out infinite;
+    }
+    @keyframes paw-float {
+      0%,100% { transform: translateY(0) rotate(-8deg); }
+      50%      { transform: translateY(-12px) rotate(-8deg); }
+    }
+
+    /* ─── TRUST STRIP ─────────────────────────────────────── */
+    .trust {
+      background: linear-gradient(135deg, var(--honey) 0%, var(--peach) 100%);
+      padding: clamp(1.75rem, 4vw, 2.75rem) 0;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 1rem;
+    }
+    @media (min-width: 600px) { .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255,255,255,0.5);
+      border-radius: var(--r-md);
+      padding: 0.875rem 1rem;
+      transition: background var(--t-fast) ease, transform var(--t-fast) var(--ease);
+      cursor: default;
+    }
+    .trust-item:hover {
+      background: rgba(255,255,255,0.75);
+      transform: translateY(-2px);
+    }
+    .trust-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--white);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: var(--sh-sm);
+    }
+    .trust-icon svg { width: 20px; height: 20px; }
+    .trust-words strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+    .trust-words span {
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      line-height: 1.3;
+    }
+
+    /* ─── INTRO ───────────────────────────────────────────── */
+    .intro { background: var(--cream); }
+    .intro-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro-inner .title { margin-bottom: 1rem; }
+    .intro-inner .lead { margin-bottom: 1rem; }
+    .intro-inner .lead + .lead { margin-bottom: 2.25rem; }
+
+    /* warm divider */
+    .warm-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      color: var(--taupe);
+    }
+    .warm-rule::before, .warm-rule::after {
+      content: '';
+      flex: 1;
+      max-width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--taupe));
+    }
+    .warm-rule::after { background: linear-gradient(270deg, transparent, var(--taupe)); }
+
+    /* ─── SERVICES ────────────────────────────────────────── */
+    .services {
+      background: linear-gradient(160deg, var(--cream-warm) 0%, var(--cream) 55%);
+    }
+    .services-hd {
+      text-align: center;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .services-hd .eyebrow { justify-content: center; }
+    .services-hd .eyebrow::before { display: none; }
+    .services-hd .title { margin-bottom: 0.75rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 560px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 960px) { .services-grid { grid-template-columns: repeat(3,1fr); } }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--r-md);
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      box-shadow: var(--sh-md);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--t-med) var(--ease), box-shadow var(--t-med) ease;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      border-radius: var(--r-md) var(--r-md) 0 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t-med) var(--ease-out);
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); }
+    .card:hover::before { transform: scaleX(1); }
+
+    .card-amber::before  { background: linear-gradient(90deg, var(--amber), var(--honey)); }
+    .card-rose::before   { background: linear-gradient(90deg, var(--rose-deep), var(--peach)); }
+    .card-sage::before   { background: linear-gradient(90deg, var(--sage-deep), var(--sage)); }
+
+    .card-icon {
+      width: 52px; height: 52px;
+      border-radius: var(--r-sm);
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.1rem;
+      flex-shrink: 0;
+      transition: transform var(--t-med) var(--ease);
+    }
+    .card:hover .card-icon { transform: scale(1.1) rotate(-4deg); }
+    .card-icon svg { width: 26px; height: 26px; }
+    .ic-honey  { background: var(--honey); }
+    .ic-peach  { background: var(--peach); }
+    .ic-rose   { background: var(--rose); }
+    .ic-sage   { background: var(--sage); }
+    .ic-amber  { background: linear-gradient(135deg,var(--honey),var(--peach)); }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .card .small { flex-grow: 1; margin-bottom: 1.4rem; }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.83rem;
+      font-weight: 800;
+      color: var(--cocoa-mid);
+      transition: gap var(--t-fast) ease, color var(--t-fast) ease;
+    }
+    .card-link svg {
+      width: 14px; height: 14px;
+      transition: transform var(--t-fast) ease;
+    }
+    .card:hover .card-link { color: var(--cocoa); }
+    .card:hover .card-link svg { transform: translateX(3px); }
+
+    /* ─── MEET CHLOE ──────────────────────────────────────── */
+    .meet {
+      background: linear-gradient(145deg, var(--rose) 0%, var(--cream) 55%);
+    }
+    .meet-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+    @media (min-width: 800px) { .meet-inner { grid-template-columns: 5fr 6fr; } }
+
+    .chloe-frame-wrap {
+      position: relative;
+    }
+    /* warm blob */
+    .chloe-blob {
+      position: absolute;
+      inset: -8% -5% -5% -8%;
+      background: linear-gradient(135deg, var(--peach-deep) 0%, var(--honey) 100%);
+      border-radius: 58% 42% 60% 40% / 42% 58% 42% 58%;
+      opacity: 0.35;
+      z-index: 0;
+      animation: blob-morph 8s ease-in-out infinite;
+    }
+    @keyframes blob-morph {
+      0%,100% { border-radius: 58% 42% 60% 40% / 42% 58% 42% 58%; }
+      33%      { border-radius: 48% 52% 44% 56% / 56% 44% 56% 44%; }
+      66%      { border-radius: 62% 38% 55% 45% / 38% 62% 48% 52%; }
+    }
+    .chloe-frame {
+      position: relative;
+      z-index: 1;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--sh-lg);
+    }
+    .chloe-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .chloe-frame:hover img { transform: scale(1.03); }
+
+    /* floating credential chip */
+    .chloe-chip {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      z-index: 2;
+      background: var(--white);
+      border-radius: var(--r-md);
+      padding: 0.75rem 1rem;
+      box-shadow: var(--sh-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    @media (max-width: 400px) { .chloe-chip { right: 0; bottom: 0; } }
+    .chloe-chip-dot {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber), var(--honey-deep));
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .chloe-chip-dot svg { width: 18px; height: 18px; }
+    .chloe-chip strong { font-size: 0.78rem; font-weight: 800; color: var(--text-dark); display: block; }
+    .chloe-chip span { font-size: 0.68rem; color: var(--text-soft); }
+
+    .meet-text .title { margin-bottom: 1rem; }
+    .meet-text .lead { margin-bottom: 1.25rem; }
+    .meet-text .lead + .lead { margin-bottom: 2rem; }
+
+    .creds-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .cred {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      padding: 0.875rem 1rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: var(--r-sm);
+      border-left: 3px solid var(--amber);
+      transition: background var(--t-fast) ease, transform var(--t-fast) var(--ease);
+    }
+    .cred:hover { background: rgba(255,255,255,0.95); transform: translateX(4px); }
+    .cred-icon {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--honey);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .cred-icon svg { width: 15px; height: 15px; }
+    .cred strong { font-size: 0.875rem; font-weight: 800; color: var(--text-dark); display: block; line-height: 1.3; }
+    .cred span { font-size: 0.75rem; color: var(--text-soft); }
+
+    /* ─── WHY REWARD-BASED ────────────────────────────────── */
+    .why {
+      background: linear-gradient(160deg, var(--honey) 0%, var(--cream-warm) 60%);
+    }
+    .why-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    @media (min-width: 800px) { .why-inner { grid-template-columns: 1fr 1fr; } }
+
+    .why-text .title { margin-bottom: 1rem; }
+    .why-text .lead { margin-bottom: 2.25rem; }
+
+    .why-points { display: flex; flex-direction: column; gap: 1.5rem; }
+    .why-pt {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .why-pt-icon {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--white);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: var(--sh-sm);
+      transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease;
+    }
+    .why-pt:hover .why-pt-icon {
+      transform: scale(1.12);
+      box-shadow: var(--sh-md), var(--sh-glow);
+    }
+    .why-pt-icon svg { width: 21px; height: 21px; }
+    .why-pt-body h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+    .why-pt-body p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* stat tiles */
+    .why-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .stat-tile {
+      background: var(--white);
+      border-radius: var(--r-md);
+      padding: clamp(1.25rem,2.5vw,1.75rem);
+      text-align: center;
+      box-shadow: var(--sh-md);
+      transition: transform var(--t-fast) var(--ease), box-shadow var(--t-med) ease;
+    }
+    .stat-tile:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
+    .stat-num {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--cocoa);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      line-height: 1.3;
+    }
+    .stat-tile.warm { background: linear-gradient(135deg, var(--honey), var(--peach)); }
+    .stat-tile.warm .stat-num { color: var(--cocoa); }
+
+    /* ─── SERVICE AREA ────────────────────────────────────── */
+    .area {
+      background: linear-gradient(145deg, var(--sage) 0%, var(--cream) 65%);
+    }
+    .area-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    @media (min-width: 800px) { .area-inner { grid-template-columns: 1fr 1fr; } }
+
+    .area-text .title { margin-bottom: 1rem; }
+    .area-text .lead { margin-bottom: 1.75rem; }
+
+    .area-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.25rem;
+    }
+    .chip {
+      background: var(--white);
+      color: var(--text-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--r-full);
+      box-shadow: var(--sh-sm);
+      transition: background var(--t-fast) ease, transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease;
+      cursor: default;
+    }
+    .chip:hover {
+      background: var(--honey);
+      transform: translateY(-2px);
+      box-shadow: var(--sh-md);
+    }
+
+    /* map visual */
+    .map-vis {
+      display: flex;
+      justify-content: center;
+    }
+    .map-wrap {
+      position: relative;
+      width: min(340px, 100%);
+    }
+    .map-outer {
+      width: 100%;
+      padding-bottom: 100%;
+      position: relative;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage-deep) 0%, var(--sage) 100%);
+      box-shadow: var(--sh-lg);
+    }
+    .map-inner {
+      position: absolute;
+      inset: 18%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--honey) 0%, var(--peach) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
+    }
+    .map-pin-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .map-pin-wrap svg { width: 32px; height: 32px; filter: drop-shadow(0 2px 4px rgba(107,63,40,0.3)); }
+    .map-pin-label {
+      background: var(--white);
+      border-radius: var(--r-full);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--cocoa);
+      box-shadow: var(--sh-sm);
+    }
+    .map-radius {
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      transform: translateY(-50%);
+      background: var(--white);
+      border-radius: var(--r-sm);
+      padding: 0.4rem 0.65rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--cocoa-mid);
+      box-shadow: var(--sh-md);
+      text-align: center;
+      line-height: 1.35;
+    }
+    /* pulse ring */
+    .map-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.5);
+      animation: pulse-ring 2.5s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(0.92); opacity: 0.8; }
+      80%  { transform: scale(1.04); opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* ─── FINAL CTA ───────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(125deg, var(--cocoa) 0%, var(--cocoa-mid) 50%, var(--amber) 100%);
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle 200px at 10% 80%, rgba(245,223,168,0.12) 0%, transparent 70%),
+        radial-gradient(circle 160px at 85% 20%, rgba(255,255,255,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-inner .eyebrow { justify-content: center; color: var(--honey); }
+    .cta-inner .eyebrow::before { background: var(--honey); }
+    .cta-inner h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .cta-inner p {
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+    .cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    .site-footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.65);
+      padding: clamp(3.5rem, 6vw, 5rem) 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 960px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+
+    .footer-brand img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+      margin-bottom: 1.1rem;
+    }
+    .footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.5); max-width: 280px; line-height: 1.7; }
+
+    .footer-col h4 {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1.1rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      transition: color var(--t-fast) ease, padding-left var(--t-fast) ease;
+      display: inline-block;
+    }
+    .footer-col a:hover { color: var(--honey); padding-left: 0.3rem; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p, .footer-bottom span { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+
+    /* ─── REDUCED MOTION ──────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  HEADER
+     ╚══════════════════════════════════════════════ -->
+<header class="site-header at-top" id="hdr" role="banner">
+  <div class="wrap">
+    <nav class="nav-inner" aria-label="Primary navigation">
+
+      <a class="nav-logo" href="/" aria-label="Click and Treat Training — home">
+        <img src="logo.png" alt="Click and Treat Training logo" />
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">Training Packages</a></li>
+        <li><a href="#">Muzzle Fittings</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-warm nav-cta">Get in Touch</a>
+
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+        <div class="burger-box">
+          <span></span><span></span><span></span>
+        </div>
+      </button>
+
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <ul>
+      <li><a href="#">Home <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#">Training Packages <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#">Muzzle Fittings <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+    </ul>
+    <a href="#contact" class="btn btn-warm">Get in Touch</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ╔══════════════════════════════════════════════
+     ║  HERO
+     ╚══════════════════════════════════════════════ -->
+<section class="hero" aria-label="Welcome to Click and Treat Training">
+  <img id="hero-bg" class="hero-bg" src="home-hero.jpg" alt="A happy dog bounding through a sunny field during a training session" fetchpriority="high" />
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <!-- decorative floating paw -->
+  <div class="hero-paw" aria-hidden="true">
+    <svg width="180" height="180" viewBox="0 0 100 100" fill="var(--cocoa)">
+      <ellipse cx="50" cy="70" rx="22" ry="15"/>
+      <ellipse cx="26" cy="52" rx="11" ry="14"/>
+      <ellipse cx="74" cy="52" rx="11" ry="14"/>
+      <ellipse cx="20" cy="30" rx="9" ry="11"/>
+      <ellipse cx="80" cy="30" rx="9" ry="11"/>
+    </svg>
+  </div>
+
+  <div class="hero-content wrap">
+    <div class="hero-card">
+
+      <div class="hero-badge">
+        <div class="dot">
+          <svg viewBox="0 0 24 24" fill="white" width="14" height="14" aria-hidden="true">
+            <path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/>
+          </svg>
+        </div>
+        <span>ABTC Registered · Chatham &amp; surrounds</span>
+      </div>
+
+      <h1 class="display" id="hero-display">
+        Kind training your<br>dog will <em id="hero-em">love</em>
+      </h1>
+
+      <p class="lead" style="max-width:480px; margin-bottom:2rem;">
+        Reward-based, positive dog training built on trust and kindness — for new puppies, nervous dogs, and every dog in between.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#services" class="btn btn-warm">Explore Training</a>
+        <a href="#meet-chloe" class="btn btn-outline">Meet Chloe</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  TRUST STRIP
+     ╚══════════════════════════════════════════════ -->
+<section class="trust" aria-label="Credentials and trust signals">
+  <div class="wrap">
+    <div class="trust-grid">
+
+      <div class="trust-item reveal">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/>
+          </svg>
+        </div>
+        <div class="trust-words">
+          <strong>ABTC Registered</strong>
+          <span>Animal Behaviour &amp; Training Council</span>
+        </div>
+      </div>
+
+      <div class="trust-item reveal reveal-delay-1">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="trust-words">
+          <strong>6+ Years Experience</strong>
+          <span>Hands-on dog training &amp; behaviour</span>
+        </div>
+      </div>
+
+      <div class="trust-item reveal reveal-delay-2">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/>
+          </svg>
+        </div>
+        <div class="trust-words">
+          <strong>Fully Insured</strong>
+          <span>Brooks Braithwaite insurance</span>
+        </div>
+      </div>
+
+      <div class="trust-item reveal reveal-delay-3">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div class="trust-words">
+          <strong>Reward-Based Only</strong>
+          <span>Positive, force-free methods always</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  INTRO
+     ╚══════════════════════════════════════════════ -->
+<section class="intro pad" aria-labelledby="intro-h">
+  <div class="wrap">
+    <div class="intro-inner">
+      <div class="reveal">
+        <span class="eyebrow">Welcome</span>
+        <h2 class="title" id="intro-h">Training that puts <em>your dog first</em></h2>
+      </div>
+
+      <div class="warm-rule reveal reveal-delay-1" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 100 100" fill="var(--taupe)">
+          <ellipse cx="50" cy="70" rx="22" ry="15"/>
+          <ellipse cx="26" cy="52" rx="11" ry="14"/>
+          <ellipse cx="74" cy="52" rx="11" ry="14"/>
+          <ellipse cx="20" cy="30" rx="9" ry="11"/>
+          <ellipse cx="80" cy="30" rx="9" ry="11"/>
+        </svg>
+      </div>
+
+      <p class="lead reveal reveal-delay-2">
+        Whether you've just brought home a new puppy, or you're navigating the challenges of a reactive dog, Click and Treat Training is here to help. Based in Chatham, I offer friendly, patient, and fully qualified support using nothing but positive reinforcement.
+      </p>
+      <p class="lead reveal reveal-delay-3">
+        Training isn't just about teaching commands — it's about building a real, lasting relationship. Every session is kind, calm, and completely tailored to you and your dog.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  SERVICES
+     ╚══════════════════════════════════════════════ -->
+<section class="services pad" id="services" aria-labelledby="services-h">
+  <div class="wrap">
+
+    <div class="services-hd reveal">
+      <span class="eyebrow">Training Packages</span>
+      <h2 class="title" id="services-h">How I can help you <em>&amp; your dog</em></h2>
+      <p class="lead" style="max-width:520px;margin:0 auto;">Every session is tailored to your dog's individual needs — from their very first sit to their calmest walk yet.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="card card-amber reveal reveal-delay-1">
+        <div class="card-icon ic-honey" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>1-2-1 Training</h3>
+        <p class="small">Personalised one-to-one sessions focused entirely on you and your dog — in your home or a location that suits you both.</p>
+        <a href="#" class="card-link" aria-label="Find out more about 1-2-1 training">
+          Find out more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </article>
+
+      <article class="card card-rose reveal reveal-delay-2">
+        <div class="card-icon ic-rose" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>Puppy Training</h3>
+        <p class="small">Start your puppy off on the right paw. Covering socialisation, recall, loose-lead walking, and the foundations of a confident adult dog.</p>
+        <a href="#" class="card-link" aria-label="Find out more about puppy training">
+          Find out more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </article>
+
+      <article class="card card-amber reveal reveal-delay-3">
+        <div class="card-icon ic-peach" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 11 12 14 22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <h3>Basic Training</h3>
+        <p class="small">Sit, stay, recall, loose-lead walking — the essential skills that make every single day with your dog easier and more enjoyable.</p>
+        <a href="#" class="card-link" aria-label="Find out more about basic training">
+          Find out more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </article>
+
+      <article class="card card-sage reveal reveal-delay-1">
+        <div class="card-icon ic-sage" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>Reactive Dog Support</h3>
+        <p class="small">Gentle, compassionate support for dogs who struggle with other dogs, people, or busy environments — building calm confidence at their own pace.</p>
+        <a href="#" class="card-link" aria-label="Find out more about reactive dog support">
+          Find out more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </article>
+
+      <article class="card card-amber reveal reveal-delay-2">
+        <div class="card-icon ic-honey" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3>Muzzle Training</h3>
+        <p class="small">Teaching your dog to wear a muzzle comfortably and happily — so it becomes a signal of safety and calm, not stress or worry.</p>
+        <a href="#" class="card-link" aria-label="Find out more about muzzle training">
+          Find out more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </article>
+
+      <article class="card card-rose reveal reveal-delay-3">
+        <div class="card-icon ic-rose" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Muzzle Fittings</h3>
+        <p class="small">A hands-on appointment to find the right muzzle for your dog's breed, size, and needs — because fit and comfort make all the difference.</p>
+        <a href="#" class="card-link" aria-label="Find out more about muzzle fittings">
+          Find out more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  MEET CHLOE
+     ╚══════════════════════════════════════════════ -->
+<section class="meet pad" id="meet-chloe" aria-labelledby="chloe-h">
+  <div class="wrap">
+    <div class="meet-inner">
+
+      <div class="chloe-frame-wrap reveal">
+        <div class="chloe-blob" aria-hidden="true"></div>
+        <div class="chloe-frame">
+          <img src="chloe-zuri.jpg" alt="Chloe, founder of Click and Treat Training, with her dog Zuri" />
+        </div>
+        <!-- floating credential chip -->
+        <div class="chloe-chip" aria-label="ABTC Registered Trainer">
+          <div class="chloe-chip-dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="white" width="18" height="18" aria-hidden="true">
+              <path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/>
+            </svg>
+          </div>
+          <div>
+            <strong>ABTC Registered</strong>
+            <span>Fully qualified trainer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="meet-text">
+        <div class="reveal">
+          <span class="eyebrow">Your Trainer</span>
+          <h2 class="title" id="chloe-h">Hi, I'm Chloe —<br><em>and this is Zuri</em></h2>
+        </div>
+
+        <p class="lead reveal reveal-delay-1">
+          I started Click and Treat Training because I believe every dog owner deserves accessible, non-judgmental support. Whether your dog is bouncy, shy, reactive, or all three — I'm here to help you find a way forward together.
+        </p>
+        <p class="lead reveal reveal-delay-2">
+          Zuri has been by my side through it all, and her own journey has shaped how I train — with patience, empathy, and a whole lot of kindness.
+        </p>
+
+        <div class="creds-list reveal reveal-delay-3">
+
+          <div class="cred">
+            <div class="cred-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/>
+              </svg>
+            </div>
+            <div>
+              <strong>ABTC Registered Dog Trainer</strong>
+              <span>Animal Behaviour &amp; Training Council</span>
+            </div>
+          </div>
+
+          <div class="cred">
+            <div class="cred-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <strong>Over Six Years of Experience</strong>
+              <span>Hands-on with dogs of all breeds &amp; backgrounds</span>
+            </div>
+          </div>
+
+          <div class="cred">
+            <div class="cred-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/>
+              </svg>
+            </div>
+            <div>
+              <strong>Fully Insured</strong>
+              <span>Brooks Braithwaite professional insurance</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="reveal reveal-delay-4">
+          <a href="#" class="btn btn-warm">Read More About Chloe</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  WHY REWARD-BASED
+     ╚══════════════════════════════════════════════ -->
+<section class="why pad" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="why-inner">
+
+      <div class="why-text">
+        <div class="reveal">
+          <span class="eyebrow">Our Philosophy</span>
+          <h2 class="title" id="why-h">Why positive reinforcement <em>works</em></h2>
+        </div>
+        <p class="lead reveal reveal-delay-1">
+          Reward-based training isn't just kinder — it's more effective. When dogs associate learning with good things, they want to engage, try harder, and repeat the behaviours we're looking for. No fear. No force. Just trust.
+        </p>
+
+        <div class="why-points">
+
+          <div class="why-pt reveal reveal-delay-2">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>Builds confidence, not compliance</h3>
+              <p>Dogs learn to think, problem-solve, and engage — not just react to avoid consequences.</p>
+            </div>
+          </div>
+
+          <div class="why-pt reveal reveal-delay-3">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>Strengthens your bond</h3>
+              <p>Training becomes something you both look forward to — not something to dread or push through.</p>
+            </div>
+          </div>
+
+          <div class="why-pt reveal reveal-delay-4">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--cocoa)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>Safe for every dog</h3>
+              <p>Especially beneficial for nervous, anxious, or reactive dogs who need gentleness above all else.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="why-stats reveal reveal-delay-2">
+        <div class="stat-tile">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Years hands-on experience</div>
+        </div>
+        <div class="stat-tile warm">
+          <div class="stat-num">0</div>
+          <div class="stat-label">Punishment or force — ever</div>
+        </div>
+        <div class="stat-tile warm">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Training services offered</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-num">8mi</div>
+          <div class="stat-label">Radius around Chatham</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  SERVICE AREA
+     ╚══════════════════════════════════════════════ -->
+<section class="area pad" aria-labelledby="area-h">
+  <div class="wrap">
+    <div class="area-inner">
+
+      <div class="area-text">
+        <div class="reveal">
+          <span class="eyebrow">Where I Work</span>
+          <h2 class="title" id="area-h">Local to Chatham <em>&amp; the Medway area</em></h2>
+        </div>
+        <p class="lead reveal reveal-delay-1">
+          I cover an 8-mile radius around Chatham, reaching many towns and villages across the Medway area. If you're not sure whether I cover your location, just get in touch — I'm always happy to check.
+        </p>
+
+        <div class="area-chips reveal reveal-delay-2" role="list" aria-label="Areas covered">
+          <span class="chip" role="listitem">Chatham</span>
+          <span class="chip" role="listitem">Rochester</span>
+          <span class="chip" role="listitem">Gillingham</span>
+          <span class="chip" role="listitem">Rainham</span>
+          <span class="chip" role="listitem">Strood</span>
+          <span class="chip" role="listitem">Sittingbourne</span>
+          <span class="chip" role="listitem">Maidstone</span>
+          <span class="chip" role="listitem">&amp; surrounding areas</span>
+        </div>
+
+        <div class="reveal reveal-delay-3">
+          <a href="#contact" class="btn btn-warm">Check Your Area</a>
+        </div>
+      </div>
+
+      <div class="map-vis reveal reveal-delay-2">
+        <div class="map-wrap" aria-hidden="true">
+          <div class="map-outer">
+            <div class="map-pulse"></div>
+            <div class="map-inner">
+              <div class="map-pin-wrap">
+                <svg viewBox="0 0 24 24" fill="var(--cocoa)" width="32" height="32">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+                <span class="map-pin-label">Chatham</span>
+              </div>
+            </div>
+            <div class="map-radius">8 mile<br>radius</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  FINAL CTA
+     ╚══════════════════════════════════════════════ -->
+<section class="cta-section" id="contact" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="eyebrow reveal">Let's get started</span>
+      <h2 id="cta-h" class="reveal reveal-delay-1">Ready to start your<br>training journey?</h2>
+      <p class="reveal reveal-delay-2">Every dog is different — and every journey starts with a single step. Reach out today to find the right training option for you and your dog.</p>
+      <div class="cta-btns reveal reveal-delay-3">
+        <a href="#services" class="btn btn-amber">View Training Packages</a>
+        <a href="#" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ╔══════════════════════════════════════════════
+     ║  FOOTER
+     ╚══════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="logo.png" alt="Click and Treat Training" />
+        <p>Reward-based, positive dog training in Chatham and the Medway area. ABTC registered. Fully insured with Brooks Braithwaite.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul>
+          <li><a href="#">1-2-1 Training</a></li>
+          <li><a href="#">Puppy Training</a></li>
+          <li><a href="#">Basic Training</a></li>
+          <li><a href="#">Reactive Dog Support</a></li>
+          <li><a href="#">Muzzle Training</a></li>
+          <li><a href="#">Muzzle Fittings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Training Packages</a></li>
+          <li><a href="#">Muzzle Fittings</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="yr"></span> Click and Treat Training. All rights reserved.</p>
+      <span>ABTC Registered · Insured by Brooks Braithwaite</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Year ── */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ── Nav scroll behaviour ── */
+  const hdr = document.getElementById('hdr');
+  function onScroll() {
+    const scrolled = window.scrollY > 20;
+    hdr.classList.toggle('at-top', !scrolled);
+    hdr.classList.toggle('scrolled', scrolled);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ── Hero image subtle parallax zoom ── */
+  const heroBg = document.getElementById('hero-bg');
+  heroBg.addEventListener('load', () => heroBg.classList.add('loaded'));
+  if (heroBg.complete) heroBg.classList.add('loaded');
+
+  /* ── Hero em underline ── */
+  const heroEm = document.getElementById('hero-em');
+  setTimeout(() => heroEm.classList.add('underline-in'), 900);
+
+  /* ── Hamburger / mobile nav ── */
+  const burger    = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobileNav() {
+    burger.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    mobileNav.setAttribute('aria-hidden', String(open));
+    mobileNav.classList.toggle('open', !open);
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  document.addEventListener('click', e => {
+    if (!burger.contains(e.target) && !mobileNav.contains(e.target)) closeMobileNav();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      closeMobileNav();
+      burger.focus();
+    }
+  });
+
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+  /* ── Scroll reveal ── */
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => revealObserver.observe(el));
+
+  /* ── Service card tilt on mouse (desktop) ── */
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r  = card.getBoundingClientRect();
+      const x  = (e.clientX - r.left) / r.width  - 0.5;
+      const y  = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform = `translateY(-6px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  /* ── Stat tile count-up animation ── */
+  const statNums = document.querySelectorAll('.stat-num');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el  = entry.target;
+      const raw = el.textContent.trim();
+      const num = parseFloat(raw);
+      if (isNaN(num)) return;
+      const suffix = raw.replace(String(num), '');
+      let start = null;
+      const dur = 1200;
+      function step(ts) {
+        if (!start) start = ts;
+        const prog = Math.min((ts - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - prog, 3);
+        const val  = num === 0 ? 0 : Math.round(ease * num * 10) / 10;
+        el.textContent = (Number.isInteger(num) ? Math.round(val) : val) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      countObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  statNums.forEach(el => countObserver.observe(el));
+
+  /* ── Trust strip hover pulse ── */
+  document.querySelectorAll('.trust-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const icon = item.querySelector('.trust-icon');
+      icon.style.transform = 'scale(1.15)';
+      icon.style.transition = 'transform 0.2s cubic-bezier(0.34,1.3,0.64,1)';
+    });
+    item.addEventListener('mouseleave', () => {
+      const icon = item.querySelector('.trust-icon');
+      icon.style.transform = '';
+    });
+  });
+
+  /* ── Area chips stagger in ── */
+  const chips = document.querySelectorAll('.chip');
+  const chipObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      chips.forEach((chip, i) => {
+        chip.style.opacity = '0';
+        chip.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          chip.style.transition = 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.34,1.3,0.64,1)';
+          chip.style.opacity = '1';
+          chip.style.transform = '';
+        }, i * 60 + 200);
+      });
+      chipObserver.disconnect();
+    });
+  }, { threshold: 0.3 });
+  if (chips.length) chipObserver.observe(chips[0].closest('.area-chips'));
+</script>
+
+</body>
+</html>
