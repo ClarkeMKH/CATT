@@ -15,7 +15,7 @@
     Easy edits:
     1. To change colours, edit the CSS variables in :root below. The current palette is warm cream, light cyan, and soft yellow.
     2. To change page text, search for "EDITABLE CONTENT" in the body.
-    3. To change training packages, search for "PACKAGE CARD".
+    3. To change training sessions, search for "PACKAGE CARD".
     4. Keep logo.png, home-hero.jpg and chloe-zuri.jpg in the same folder as this HTML file.
 
     No external frameworks, fonts, scripts, or CDNs are used.
@@ -308,7 +308,7 @@
     .contact-line{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}.contact-line:last-child{border-bottom:0}.contact-line strong{display:block}.contact-line span,.contact-line a{color:var(--muted)}
     .form-card form{display:grid;gap:1rem}.field label{display:block;font-weight:850;margin-bottom:.35rem}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:17px;background:#fffdf7;padding:.95rem 1rem;color:var(--ink);outline:none}.field textarea{min-height:145px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--rose);box-shadow:0 0 0 4px rgba(95,180,192,.16)}
 
-    .footer{background:linear-gradient(90deg,var(--rose-deep),#3f7e8b 56%,#c6912b);color:#fff;padding:3.2rem 0;margin-top:4rem}.footer-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}.footer p{margin:.45rem 0 0;color:rgba(255,255,255,.8)}.footer .brand__logo{background:#fff}.footer a{text-decoration:underline;text-underline-offset:3px}.socials{display:flex;flex-wrap:wrap;gap:.75rem}.socials a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:.65rem .9rem;text-decoration:none}
+    .footer{background:linear-gradient(90deg,var(--rose-deep),#3f7e8b 56%,#c6912b);color:#fff;padding:3.2rem 0;margin-top:4rem}.footer-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}.footer p{margin:.45rem 0 0;color:rgba(255,255,255,.8)}.footer .brand__logo{background:#fff}.footer a{text-decoration:underline;text-underline-offset:3px}.socials{display:flex;flex-wrap:wrap;gap:.75rem}.socials a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:.65rem .9rem;text-decoration:none}.footer .brand__text span{color:#fff;font-weight:700;font-size:.9rem;opacity:1}
 
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.is-visible{opacity:1;transform:none}
 
@@ -388,9 +388,9 @@
 <!-- EDITABLE CONTENT: NAVIGATION LINKS -->
 <div class="nav__links" id="nav-links">
 <a href="#about">About</a>
-<a href="#why">Why choose us</a>
+<a href="#why">Why choose me</a>
 <a href="#consultation">Consultation</a>
-<a href="#packages">Packages</a>
+<a href="#packages">Training Sessions</a>
 <a class="nav__cta" href="#contact">Contact</a>
 </div>
 <div class="header-actions">
@@ -410,7 +410,7 @@
 <p class="hero__lead">Positive, practical and kind dog training for puppies, reactive dogs and everyday training goals. Helping you and your dog build a calmer, happier relationship through force-free, reward-based support.</p>
 <div class="btn-row">
 <a class="btn btn--primary" href="#contact">Contact me today</a>
-<a class="btn btn--secondary" href="#packages">View training packages</a>
+<a class="btn btn--secondary" href="#packages">View my sessions</a>
 </div>
 <div aria-label="Training qualities" class="hero__trust">
 <div class="trust-card"><strong>Force-free</strong><span>Reward-based methods built on trust.</span></div>
@@ -463,7 +463,7 @@
 <div class="reveal">
 <span class="eyebrow">Why choose Click and Treat Training?</span>
 <h2 class="section-title">Professional guidance with a gentle, personal touch.</h2>
-<p class="section-lede">Training should be positive, practical and fun. The aim is to help dogs thrive and families grow closer through trust, patience and consistency.</p>
+<p class="section-lede">Training should be positive, practical and fun. My aim is to help dogs thrive and families grow closer through trust, patience and consistency.</p>
 </div>
 <div class="why-grid">
 <article class="why-card reveal">
@@ -490,7 +490,7 @@
 <div class="reveal">
 <span class="eyebrow">Start here</span>
 <h2 class="section-title">Initial Consultation</h2>
-<p class="section-lede">Every training journey begins with a thorough initial consultation, helping Chloe understand your dog, your current situation and the support you need.</p>
+<p class="section-lede">Every training journey begins with a thorough initial consultation, helping me understand your dog, your current situation and the support you need.</p>
 </div>
 <div class="consult-card reveal">
 <div class="consult-price">
@@ -516,17 +516,17 @@
 </div>
 </div>
 </section>
-<!-- EDITABLE CONTENT: TRAINING PACKAGES -->
+<!-- EDITABLE CONTENT: TRAINING SESSIONS -->
 <section class="section" id="packages">
 <div class="container">
 <div class="packages-head reveal">
 <div>
-<span class="eyebrow">Training packages</span>
-<h2 class="section-title">Choose the support that fits your dog.</h2>
+<span class="eyebrow">Training Sessions</span>
+<h2 class="section-title">Choose the right session for your dog.</h2>
 </div>
 <p class="section-lede">Each session is personalised to help you see real progress, with guidance, practical support and clear training plans where appropriate.</p>
 </div>
-<div aria-label="Training packages" class="packages">
+<div aria-label="Training sessions" class="packages">
 <!-- PACKAGE CARD: edit title, price, description, list and link here -->
 <article class="package reveal">
 <span class="tag">Flexible support</span>
@@ -534,7 +534,7 @@
 <div class="package__price">£65 per session</div>
 <p>For jumping up, lead pulling, settling, engagement around distractions and much more.</p>
 <ul><li>✓ Weekly or fortnightly sessions</li><li>✓ Practical hands-on guidance</li><li>✓ Virtual coaching available</li><li>✓ Downloadable training plan</li><li>✓ Support in-between sessions</li></ul>
-<a class="btn btn--secondary" href="1-2-1-training-package.html">View package</a>
+<a class="btn btn--secondary" href="1-2-1-training-package.html">View session details</a>
 </article>
 <!-- PACKAGE CARD -->
 <article class="package reveal">
@@ -543,7 +543,7 @@
 <div class="package__price">£45 per session</div>
 <p>Start your puppy off on the right paw with confidence, good manners and relationship-building.</p>
 <ul><li>✓ 8–16 week puppies</li><li>✓ 4–6 month puppies</li><li>✓ Puppy essentials covered</li><li>✓ Additional sessions available</li></ul>
-<a class="btn btn--secondary" href="puppy-package.html">View package</a>
+<a class="btn btn--secondary" href="puppy-package.html">View session details</a>
 </article>
 <!-- PACKAGE CARD -->
 <article class="package reveal">
@@ -552,7 +552,7 @@
 <div class="package__price">£90 per session</div>
 <p>For dogs who bark, lunge or struggle to focus around triggers, with calm, supportive training.</p>
 <ul><li>✓ Guided sessions</li><li>✓ Emotional support</li><li>✓ Downloadable training plan</li><li>✓ Practical support until completed</li></ul>
-<a class="btn btn--secondary" href="reactive-dog-package.html">View package</a>
+<a class="btn btn--secondary" href="reactive-dog-package.html">View session details</a>
 </article>
 <!-- PACKAGE CARD -->
 <article class="package reveal">
@@ -560,7 +560,7 @@
 <h3>One-off Session</h3>
 <div class="package__price">£75 per session</div>
 <p>Perfect for quick advice, a progress check-in, a new challenge or reassurance on your training approach.</p>
-<ul><li>✓ One hour session</li><li>✓ Home or suitable local area</li><li>✓ Book as a one-off</li><li>✓ Add onto an existing package</li></ul>
+<ul><li>✓ One hour session</li><li>✓ Home or suitable local area</li><li>✓ Book as a one-off</li><li>✓ Add on alongside other sessions</li></ul>
 <a class="btn btn--secondary" href="#contact">Ask about this</a>
 </article>
 <!-- PACKAGE CARD -->
@@ -570,7 +570,7 @@
 <div class="package__price">£50 per session</div>
 <p>Positive muzzle training to help your dog feel comfortable and confident wearing a muzzle.</p>
 <ul><li>✓ Reward-based training steps</li><li>✓ Printable/downloadable guide</li><li>✓ One-off or ongoing support</li><li>✓ Muzzle fitting advice</li></ul>
-<a class="btn btn--secondary" href="muzzle-training.html">View package</a>
+<a class="btn btn--secondary" href="muzzle-training.html">View session details</a>
 </article>
 </div>
 </div>
@@ -579,9 +579,9 @@
 <section class="section section--soft" id="contact">
 <div class="container contact-grid">
 <div class="contact-card reveal">
-<span class="eyebrow">Contact us</span>
+<span class="eyebrow">Get in touch</span>
 <h2 class="section-title">Ready to begin?</h2>
-<p class="section-lede">For general enquiries, package questions, or to check whether you are within the service area, send a message and Chloe will be happy to help.</p>
+<p class="section-lede">For general enquiries, questions about my training sessions, or to check whether you are within the service area, send me a message and I'll be happy to help.</p>
 <div class="contact-line"><strong>Email</strong><a href="mailto:contact@clickandtreattraining.co.uk">contact@clickandtreattraining.co.uk</a></div>
 <div class="contact-line"><strong>Telephone</strong><a href="tel:07702045810">07702045810</a></div>
 <div class="contact-line"><strong>Where do we cover?</strong><span>Our service area covers an 8-mile radius around Chatham. Not sure if you’re within our area? Contact us and we’ll be happy to check for you!</span></div>
