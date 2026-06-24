@@ -668,6 +668,151 @@
       const subject = encodeURIComponent('Dog training enquiry');
       window.location.href = `mailto:contact@clickandtreattraining.co.uk?subject=${subject}&body=${body}`;
     });
+
+    // ============================================================
+    // EDIT MODE
+    // To enable editing, open the browser console (F12) and type:
+    //   enableEditing()
+    // Then click any text on the page to edit it directly.
+    // When finished, click the "Save & Export" button to download
+    // the updated HTML file.
+    // ============================================================
+    function enableEditing() {
+      // Make all meaningful text elements editable
+      const editableSelectors = [
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'p', 'li', 'span', 'a', 'label',
+        '.eyebrow', '.hero__lead', '.section-lede',
+        '.package__price', '.price', '.duration',
+        '.trust-card strong', '.trust-card span',
+        '.brand__text strong', '.brand__text span',
+        '.hero-photo-tag', '.quote-card p', '.quote-card span',
+        '.tag', '.topbar span', '.footer p'
+      ];
+
+      // Skip elements that are structural/decorative or inside the edit UI itself
+      const skipSelectors = ['#edit-save-btn', '#edit-banner'];
+
+      document.querySelectorAll(editableSelectors.join(', ')).forEach(el => {
+        if (skipSelectors.some(s => el.closest(s))) return;
+        if (el.closest('#edit-save-btn') || el.closest('#edit-banner')) return;
+
+        el.contentEditable = 'true';
+        el.style.outline = 'none';
+        el.style.cursor = 'text';
+
+        // Highlight on hover so she knows what's clickable
+        el.addEventListener('mouseenter', () => {
+          if (el.contentEditable === 'true') {
+            el.style.boxShadow = '0 0 0 2px #5fb4c0, 0 0 0 4px rgba(95,180,192,0.18)';
+            el.style.borderRadius = '4px';
+          }
+        });
+        el.addEventListener('mouseleave', () => {
+          if (!el.matches(':focus')) {
+            el.style.boxShadow = '';
+          }
+        });
+        el.addEventListener('focus', () => {
+          el.style.boxShadow = '0 0 0 2px #2f6470, 0 0 0 5px rgba(47,100,112,0.22)';
+          el.style.borderRadius = '4px';
+        });
+        el.addEventListener('blur', () => {
+          el.style.boxShadow = '';
+        });
+      });
+
+      // Show a small info banner at the top
+      if (!document.getElementById('edit-banner')) {
+        const banner = document.createElement('div');
+        banner.id = 'edit-banner';
+        banner.style.cssText = `
+          position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+          background: linear-gradient(90deg, #2f6470, #5fb4c0);
+          color: #fff; text-align: center;
+          padding: 10px 16px; font-size: 14px; font-weight: 700;
+          font-family: ui-sans-serif, system-ui, sans-serif;
+          letter-spacing: 0.01em; box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        `;
+        banner.textContent = '✏️  Edit mode is on — click any text on the page to edit it. Use the Save & Export button when done.';
+        document.body.prepend(banner);
+        // Push page content down so banner doesn't overlap the sticky header
+        document.querySelector('.topbar').style.marginTop = '42px';
+      }
+
+      // Create the Save & Export button if it doesn't exist
+      if (!document.getElementById('edit-save-btn')) {
+        const btn = document.createElement('button');
+        btn.id = 'edit-save-btn';
+        btn.textContent = '💾  Save & Export';
+        btn.style.cssText = `
+          position: fixed; bottom: 28px; right: 28px; z-index: 99999;
+          background: linear-gradient(135deg, #2f6470, #5fb4c0);
+          color: #fff; border: none; border-radius: 999px;
+          padding: 16px 28px; font-size: 16px; font-weight: 800;
+          font-family: ui-sans-serif, system-ui, sans-serif;
+          cursor: pointer; box-shadow: 0 8px 32px rgba(47,100,112,0.38);
+          transition: transform 0.15s ease, box-shadow 0.15s ease;
+          letter-spacing: 0.01em;
+        `;
+        btn.addEventListener('mouseenter', () => {
+          btn.style.transform = 'translateY(-2px)';
+          btn.style.boxShadow = '0 14px 40px rgba(47,100,112,0.48)';
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = '';
+          btn.style.boxShadow = '0 8px 32px rgba(47,100,112,0.38)';
+        });
+        btn.addEventListener('click', saveAndExport);
+        document.body.appendChild(btn);
+      }
+
+      console.log('%c✅ Edit mode enabled!', 'color:#2f6470;font-weight:bold;font-size:14px');
+      console.log('Click any text on the page to edit it. Hit "Save & Export" when you\'re done.');
+    }
+
+    function saveAndExport() {
+      // Turn off contentEditable on everything before saving
+      document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+        el.removeAttribute('contenteditable');
+        el.style.outline = '';
+        el.style.cursor = '';
+        el.style.boxShadow = '';
+        el.style.borderRadius = '';
+      });
+
+      // Remove the edit UI elements from the exported file
+      const banner = document.getElementById('edit-banner');
+      const saveBtn = document.getElementById('edit-save-btn');
+      const topbar = document.querySelector('.topbar');
+      if (banner) banner.remove();
+      if (topbar) topbar.style.marginTop = '';
+      if (saveBtn) saveBtn.remove();
+
+      // Grab the full page HTML
+      const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+      // Trigger download
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'index.html';
+      a.click();
+      URL.revokeObjectURL(url);
+
+      console.log('%c💾 File downloaded!', 'color:#2f6470;font-weight:bold;font-size:14px');
+    }
+
+    // Expose globally so it can be called from the console
+    window.enableEditing = enableEditing;
+
+    // Press # to enable edit mode (only if not already active)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '#' && !document.getElementById('edit-banner')) {
+        enableEditing();
+      }
+    });
   </script>
 </body>
 </html>
