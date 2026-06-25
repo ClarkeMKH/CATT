@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html lang="en-GB" style=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Click and Treat Training | Positive Dog Training in Chatham</title>
-<meta name="description" content="Personalised, force-free and reward-based dog training in and around Chatham. Building trust, one click at a time."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta name="description" content="Personalised, force-free and reward-based dog training in and around Chatham. Building trust, one click at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&amp;family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -206,13 +205,10 @@ button, input, textarea { font: inherit; }
 .brand__logo {
   width: 52px; height: 52px; flex: 0 0 52px;
   object-fit: contain;
-  border-radius: 18px;
-  background: rgba(255,255,255,.88);
-  padding: .28rem;
-  border: 1px solid rgba(219,239,241,.9);
-  box-shadow: var(--shadow-soft);
+  border-radius: 100px;
+  margin: 10px 20px;
 }
-.brand__text strong { display: block; font-size: 1.06rem; line-height: 1.15; letter-spacing: .01em; }
+.brand__text strong { display: block; font-size: 1.06rem; line-height: 1.15; letter-spacing: .01em; text-align:center; }
 .brand__text span { display: block; margin-top: .12rem; color: var(--muted); font-size: .84rem; white-space: nowrap; }
 .nav__links { display: flex; align-items: center; justify-content: center; gap: .22rem; min-width: 0; white-space: nowrap; }
 .nav__links a {
@@ -474,6 +470,8 @@ button, input, textarea { font: inherit; }
 .field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 17px; background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
 .field textarea { min-height: 145px; resize: vertical; }
 .field input:focus, .field textarea:focus { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(95,180,192,.16); }
+.field select { width: 100%; border: 1px solid var(--line); border-radius: 17px; background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none; transition: border-color .2s ease, box-shadow .2s ease; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2368625c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
+.field select:focus { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(95,180,192,.16); }
 
 .area-section { background: linear-gradient(145deg, #d4ede5 0%, var(--cream) 65%); padding: clamp(4.5rem,9vw,8rem) 0; }
 .area-inner { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem,5vw,5rem); align-items: center; }
@@ -699,6 +697,79 @@ body.editor-active .editor-overlay {
 .add-el-option strong { display: block; font-size: 13px; margin-bottom: 3px; color: #fff; }
 .add-el-cancel { margin-top: 14px; width: 100%; padding: 10px; border-radius: 8px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.5); cursor: pointer; font-family: inherit; font-size: 13px; }
 
+/* ── Virtual Sessions Sticker ─────────────────────────────────── */
+.virtual-sticker {
+  position: fixed;
+  top: 80px;
+  right: 5px;
+  z-index: 50;
+  width: clamp(180px, 25vw, 240px);
+  transform: rotate(8deg);
+  transform-origin: top right;
+  transition: transform 0.3s var(--ease), filter 0.3s ease;
+  filter: drop-shadow(0 6px 18px rgba(47,100,112,.28));
+  pointer-events: auto;
+}
+.virtual-sticker img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.virtual-sticker:hover {
+  transform: rotate(4deg) scale(1.06) translateY(80px);
+  filter: drop-shadow(0 10px 24px rgba(47,100,112,.38));
+}
+
+/* ── Certificate thumbnails inside trust strip ────────────────── */
+.certs-divider {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--rose-deep);
+  font-weight: 900;
+  letter-spacing: .1em;
+  font-size: .76rem;
+  text-transform: uppercase;
+}
+.certs-divider::before, .certs-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(95,180,192,.35), transparent);
+}
+.certs-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  justify-content: center;
+}
+.cert-thumb {
+  width: clamp(80px, 10vw, 110px);
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(219,239,241,.9);
+  border-radius: 10px;
+  padding: .4rem;
+  box-shadow: 0 4px 14px rgba(47,100,112,.08);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-thumb:hover {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 10px 22px rgba(47,100,112,.14);
+}
+.cert-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* ── Editor banner (unchanged) ────────────────────────────────── */
 #editor-banner {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999997;
   background: linear-gradient(90deg, #2f6470, #5fb4c0);
@@ -718,20 +789,25 @@ body.editor-active .editor-overlay {
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
+<!-- Virtual Sessions sticker -->
+<a href="#packages" class="virtual-sticker" aria-label="View virtual sessions" title="Virtual Sessions available!">
+  <img src="VirtualSessions.png" alt="Virtual Sessions available" loading="lazy">
+</a>
 
 
-<header aria-label="Site header" class="site-header">
-  <nav aria-label="Main navigation" class="nav">
-    <a aria-label="Click and Treat Training home" class="brand" href="index.html">
-      <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png"/>
-      <span class="brand__text"><strong>Click and Treat Training</strong><span>Building trust, one click at a time</span></span>
+
+<header aria-label="Site header" class="site-header" style="">
+  <nav aria-label="Main navigation" class="nav" style="">
+    <a aria-label="Click and Treat Training home" class="brand" href="index.html" style="">
+      <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png" style="width: 120px; height: 120px;">
+      <span class="brand__text"><strong style="">Click and Treat Training</strong><span style="">Building trust, one click at a time</span></span>
     </a>
-    <div class="nav__links" id="nav-links">
-      <a href="#about">About</a>
+    <div class="nav__links" id="nav-links" style="">
+      <a href="#about" style="">About</a>
       <a href="#why">Our Philosophy</a>
-      <a href="#consultation">Consultation</a>
-      <a href="#packages">Sessions</a>
-      <a href="#area">Where I Work</a>
+      <a href="#consultation" style="">Consultation</a>
+      <a href="#packages" style="">Sessions</a>
+      <a href="#area" style="">Where I Work</a>
       <a class="nav__cta" href="#contact">Contact</a>
     </div>
     <div class="header-actions">
@@ -745,12 +821,12 @@ body.editor-active .editor-overlay {
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
   <div class="mobile-nav-inner">
     <ul>
-      <li><a href="#about">About Chloe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#why">Our Philosophy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#consultation">Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#packages">Training Sessions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#area">Where I Work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#contact">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#about">About Chloe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#why">Our Philosophy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#consultation">Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#packages">Training Sessions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#area">Where I Work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#contact">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
     </ul>
     <a href="#contact" class="btn btn--primary" style="margin-top:1.5rem;width:100%;display:flex;justify-content:center;">Get in Touch</a>
   </div>
@@ -759,26 +835,21 @@ body.editor-active .editor-overlay {
 <main id="main">
 
 <section class="hero" aria-label="Welcome to Click and Treat Training" id="home">
-  <img id="hero-bg" class="hero-bg" src="home-hero.jpg" alt="A happy dog during a training session" fetchpriority="high"/>
-  <div class="hero-veil" aria-hidden="true"></div>
+  <img id="hero-bg" class="hero-bg loaded" src="home-hero.jpg" alt="A happy dog during a training session" fetchpriority="high">
+  <div class="hero-veil" aria-hidden="true" style=""></div>
   <div class="hero-paw" aria-hidden="true">
     <svg width="200" height="200" viewBox="0 0 100 100" fill="#2f6470">
-      <ellipse cx="50" cy="70" rx="22" ry="15"/>
-      <ellipse cx="26" cy="52" rx="11" ry="14"/>
-      <ellipse cx="74" cy="52" rx="11" ry="14"/>
-      <ellipse cx="20" cy="30" rx="9" ry="11"/>
-      <ellipse cx="80" cy="30" rx="9" ry="11"/>
+      <ellipse cx="50" cy="70" rx="22" ry="15"></ellipse>
+      <ellipse cx="26" cy="52" rx="11" ry="14"></ellipse>
+      <ellipse cx="74" cy="52" rx="11" ry="14"></ellipse>
+      <ellipse cx="20" cy="30" rx="9" ry="11"></ellipse>
+      <ellipse cx="80" cy="30" rx="9" ry="11"></ellipse>
     </svg>
   </div>
-  <div class="hero-content">
-    <div class="hero-card-text">
-      <div class="hero-badge">
-        <div class="dot">
-          <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/></svg>
-        </div>
-        <span>ABTC Registered · Chatham &amp; surrounds</span>
-      </div>
-      <h1 class="display">Building trust,<br>one click at a <em id="hero-em">time.</em></h1>
+  <div class="hero-content" style="">
+    <div class="hero-card-text" style="">
+      
+      <h1 class="display" style="">Building trust,<br>one click at a <em id="hero-em" class="underline-in">time.</em></h1>
       <p class="hero__lead">Positive, practical and kind dog training for puppies, reactive dogs and everyday training goals — helping you and your dog build a calmer, happier relationship.</p>
       <div class="btn-row">
         <a class="btn btn--primary" href="#contact">Contact me today</a>
@@ -796,55 +867,64 @@ body.editor-active .editor-overlay {
 <section class="trust-strip" aria-label="Credentials and trust signals">
   <div class="container">
     <div class="trust-grid">
-      <div class="trust-item reveal">
+      <div class="trust-item reveal is-visible">
         <div class="trust-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"></path></svg>
         </div>
         <div class="trust-words"><strong>ABTC Registered</strong><span>Animal Behaviour &amp; Training Council</span></div>
       </div>
-      <div class="trust-item reveal">
+      <div class="trust-item reveal is-visible">
         <div class="trust-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
         </div>
         <div class="trust-words"><strong>6+ Years Experience</strong><span>Hands-on dog training &amp; behaviour</span></div>
       </div>
-      <div class="trust-item reveal">
+      <div class="trust-item reveal is-visible">
         <div class="trust-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M9 12l2 2 4-4"/><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M9 12l2 2 4-4"></path><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"></path></svg>
         </div>
         <div class="trust-words"><strong>Fully Insured</strong><span>Brooks Braithwaite insurance</span></div>
       </div>
-      <div class="trust-item reveal">
+      <div class="trust-item reveal is-visible">
         <div class="trust-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         </div>
         <div class="trust-words"><strong>Reward-Based Only</strong><span>Positive, force-free methods always</span></div>
       </div>
+    </div>
+    <div class="certs-divider">Certifications</div>
+    <div class="certs-thumbs">
+      <div class="cert-thumb"><img src="Cert1.png" alt="Certificate 1" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert2.jpg" alt="Certificate 2" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert3.png" alt="Certificate 3" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert4.jpg" alt="Certificate 4" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert5.png" alt="Certificate 5" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert6.png" alt="Certificate 6" loading="lazy"></div>
     </div>
   </div>
 </section>
 
 <section class="section section--soft" id="about">
   <div class="container intro-grid">
-    <aside class="portrait-card reveal">
+    <aside class="portrait-card reveal is-visible">
       <div class="photo-slot">
-        <img alt="Chloe and Zuri" src="chloe-zuri.jpg"/>
+        <img alt="Chloe and Zuri" src="chloe-zuri.jpg">
       </div>
       <div class="quote-card">
         <p>"Let's train with love and kindness."</p>
         <span>Because good relationships start with trust.</span>
       </div>
     </aside>
-    <div class="story reveal">
+    <div class="story reveal is-visible">
       <span class="eyebrow">Meet the trainer behind the treats</span>
-      <h2 class="section-title">Kind, qualified support for real dogs and real life.</h2>
+      <h2 class="section-title" style="">Kind, qualified support for real dogs and real life.</h2>
       <p>Hi, I'm Chloe, and I believe in positive reinforcement training. I am passionate about helping dogs and their owners build lasting, trust-based relationships.</p>
-      <p>My training methods are force-free, reward-based, and adapted to suit your dog's personality. Whether you're working on puppy foundations, lead skills, recall, reactivity, confidence building, or muzzle training, I am here to guide you every step of the way.</p>
+      <p style="">My training methods are force-free, reward-based, and adapted to suit your dog's personality. Whether you're working on puppy foundations, lead skills, recall, reactivity, confidence building, or muzzle training, I am here to guide you every step of the way.</p>
       <p>My dog, Zuri, is the reason behind everything I do. She is reactive through fear to certain things, and this inspired me to start training. Through our journey, we built a deeper connection, and I found my passion for helping other dogs and owners do the same.</p>
       <p>I offer 1-2-1 dog training and hope to one day expand my business to include a secure dog field and an indoor training space, providing a safe and enriching experience for every dog.</p>
       <p>I am a registered dog trainer with the <strong>Animal Behaviour &amp; Training Council (ABTC)</strong>, with over six years of hands-on experience working with and training dogs through two of the UK's largest animal welfare charities.</p>
       <div class="paw-divider">Qualifications</div>
-      <ul class="credential-list" aria-label="Qualifications and memberships">
+      <ul class="credential-list" aria-label="Qualifications and memberships" style="">
         <li><span class="tick">✓</span><span><strong>Canine Behaviour Professional</strong> – Accredited Diploma</span></li>
         <li><span class="tick">✓</span><span><strong>Canine Reactive Behaviour</strong> – Accredited Advanced Certificate</span></li>
         <li><span class="tick">✓</span><span><strong>CPD Certified</strong> – Canine Fear Course</span></li>
@@ -856,46 +936,46 @@ body.editor-active .editor-overlay {
   </div>
 </section>
 
-<section class="why-section" id="why" aria-labelledby="why-h">
+<section class="why-section" id="why" aria-labelledby="why-h" style="">
   <div class="container">
-    <div class="why-inner">
+    <div class="why-inner" style="">
       <div class="why-text">
-        <div class="reveal">
+        <div class="reveal is-visible">
           <span class="eyebrow">Our Philosophy</span>
           <h2 class="section-title" id="why-h">Why positive reinforcement <em>works</em></h2>
         </div>
-        <p class="why-lead reveal">Reward-based training isn't just kinder — it's more effective. When dogs associate learning with good things, they want to engage, try harder, and repeat the behaviours we're looking for. No fear. No force. Just trust.</p>
+        <p class="why-lead reveal is-visible">Reward-based training isn't just kinder — it's more effective. When dogs associate learning with good things, they want to engage, try harder, and repeat the behaviours we're looking for. No fear. No force. Just trust.</p>
         <div class="why-points">
-          <div class="why-pt reveal">
+          <div class="why-pt reveal is-visible">
             <div class="why-pt-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
             </div>
             <div class="why-pt-body">
               <h3>Builds confidence, not compliance</h3>
               <p>Dogs learn to think, problem-solve, and engage — not just react to avoid consequences.</p>
             </div>
           </div>
-          <div class="why-pt reveal">
+          <div class="why-pt reveal is-visible">
             <div class="why-pt-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             </div>
             <div class="why-pt-body">
               <h3>Strengthens your bond</h3>
               <p>Training becomes something you both look forward to — not something to dread or push through.</p>
             </div>
           </div>
-          <div class="why-pt reveal">
+          <div class="why-pt reveal is-visible">
             <div class="why-pt-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
             </div>
             <div class="why-pt-body">
               <h3>Safe for every dog</h3>
               <p>Especially beneficial for nervous, anxious, or reactive dogs who need gentleness above all else.</p>
             </div>
           </div>
-          <div class="why-pt reveal">
+          <div class="why-pt reveal is-visible">
             <div class="why-pt-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
             </div>
             <div class="why-pt-body">
               <h3>I love what I do</h3>
@@ -904,17 +984,17 @@ body.editor-active .editor-overlay {
           </div>
         </div>
       </div>
-      <div class="why-stats reveal">
-        <div class="stat-tile">
-          <div class="stat-num">6+</div>
+      <div class="why-stats reveal is-visible" style="">
+        <div class="stat-tile" style="">
+          <div class="stat-num" style="">6+</div>
           <div class="stat-label">Years hands-on experience</div>
         </div>
         <div class="stat-tile warm">
           <div class="stat-num">0</div>
           <div class="stat-label">Punishment or force — ever</div>
         </div>
-        <div class="stat-tile warm">
-          <div class="stat-num">6</div>
+        <div class="stat-tile warm" style="">
+          <div class="stat-num" style="">6</div>
           <div class="stat-label">Training services offered</div>
         </div>
         <div class="stat-tile">
@@ -926,14 +1006,14 @@ body.editor-active .editor-overlay {
   </div>
 </section>
 
-<section class="section section--soft" id="consultation">
-  <div class="container">
-    <div class="reveal">
+<section class="section section--soft" id="consultation" style="">
+  <div class="container" style="">
+    <div class="reveal is-visible" style="">
       <span class="eyebrow">Start here</span>
-      <h2 class="section-title">Initial Consultation</h2>
-      <p class="section-lede">Every training journey begins with a thorough initial consultation, helping me understand your dog, your current situation and the support you need.</p>
+      
+      
     </div>
-    <div class="consult-card reveal">
+    <div class="consult-card reveal is-visible">
       <div class="consult-price">
         <div>
           <h3>Initial Consultation</h3>
@@ -944,13 +1024,13 @@ body.editor-active .editor-overlay {
           <div class="duration">A clear plan from the very beginning</div>
         </div>
       </div>
-      <div class="consult-body">
-        <p>This allows me to gain as much information about your dog and current situation as possible. I'll understand your dog's history, personality, routine, and any behavioural concerns — and create practical next steps that suit you as an individual.</p>
-        <ul class="check-grid">
+      <div class="consult-body" style="">
+        <p style="">This allows me to gain as much information about your dog and current situation as possible. I'll understand your dog's history, personality, routine, and any behavioural concerns — and create practical next steps that suit you as an individual.</p>
+        <ul class="check-grid" style="">
           <li><span class="mini-check">✓</span><span>Discuss your dog's history, personality and routine</span></li>
           <li><span class="mini-check">✓</span><span>Identify your training goals and priorities</span></li>
           <li><span class="mini-check">✓</span><span>Assess your dog's behaviour in the home environment</span></li>
-          <li><span class="mini-check">✓</span><span>Explain the reasons behind unwanted behaviours</span></li>
+          <li style=""><span class="mini-check">✓</span><span>Explain the reasons behind unwanted behaviours</span></li>
           <li><span class="mini-check">✓</span><span>Provide practical exercises and management techniques</span></li>
           <li><span class="mini-check">✓</span><span>Develop clear, step-by-step training plans</span></li>
           <li><span class="mini-check">✓</span><span>Answer any questions you may have</span></li>
@@ -963,16 +1043,16 @@ body.editor-active .editor-overlay {
 </section>
 
 <section class="section" id="packages">
-  <div class="container">
-    <div class="packages-head reveal">
+  <div class="container" style="">
+    <div class="packages-head reveal is-visible" style="">
       <div>
         <span class="eyebrow">Training Sessions</span>
         <h2 class="section-title">Choose the right session for your dog.</h2>
       </div>
-      <p class="section-lede">Each session is personalised to help you see real progress, with guidance, practical support and clear training plans where appropriate.</p>
+      <p class="section-lede" style="">Each session is personalised to help you see real progress, with guidance, practical support and clear training plans where appropriate.</p>
     </div>
-    <div class="packages" aria-label="Training sessions">
-      <article class="package reveal">
+    <div class="packages" aria-label="Training sessions" style="">
+      <article class="package reveal is-visible">
         <span class="tag">Flexible support</span>
         <h3>1-2-1 In-Person / Virtual Training</h3>
         <div class="package__price">£65 per session</div>
@@ -984,35 +1064,35 @@ body.editor-active .editor-overlay {
           <li>✓ Downloadable training plan</li>
           <li>✓ Support in-between sessions</li>
         </ul>
-        <a class="btn btn--secondary" href="#">View session details</a>
+        <a class="btn btn--secondary" href="#contact" onclick="bookSession('1-2-1')">Book</a>
       </article>
-      <article class="package reveal">
+      <article class="package reveal is-visible" style="">
         <span class="tag">Puppy foundations</span>
         <h3>Puppy Training</h3>
-        <div class="package__price">£45 per session</div>
-        <p>Start your puppy off on the right paw with confidence, good manners and relationship-building.</p>
+        <div class="package__price" style="">£45 per session</div>
+        <p style="">Start your puppy off on the right paw with confidence, good manners and relationship-building.</p>
         <ul>
           <li>✓ 8–16 week puppies</li>
           <li>✓ 4–6 month puppies</li>
           <li>✓ Puppy essentials covered</li>
           <li>✓ Additional sessions available</li>
         </ul>
-        <a class="btn btn--secondary" href="#">View session details</a>
+        <a class="btn btn--secondary" href="#contact" onclick="bookSession('puppy')">Book</a>
       </article>
-      <article class="package reveal">
-        <span class="tag">Confidence building</span>
-        <h3>Reactive Dog Training</h3>
-        <div class="package__price">£90 per session</div>
-        <p>For dogs who bark, lunge or struggle to focus around triggers, with calm, supportive training.</p>
+      <article class="package reveal is-visible" style="">
+        <span class="tag" style="">Confidence building</span>
+        <h3 style="">Reactive Dog Training</h3>
+        <div class="package__price" style="">£90 per session</div>
+        <p style="">For dogs who bark, lunge or struggle to focus around triggers, with calm, supportive training.</p>
         <ul>
-          <li>✓ Guided sessions</li>
+          <li style="">✓ Guided sessions</li>
           <li>✓ Emotional support</li>
           <li>✓ Downloadable training plan</li>
           <li>✓ Practical support throughout</li>
         </ul>
-        <a class="btn btn--secondary" href="#">View session details</a>
+        <a class="btn btn--secondary" href="#contact" onclick="bookSession('reactive')">Book</a>
       </article>
-      <article class="package reveal">
+      <article class="package reveal is-visible">
         <span class="tag">Extra guidance</span>
         <h3>One-off Session</h3>
         <div class="package__price">£75 per session</div>
@@ -1023,7 +1103,7 @@ body.editor-active .editor-overlay {
           <li>✓ Book as a one-off</li>
           <li>✓ Add on alongside other sessions</li>
         </ul>
-        <a class="btn btn--secondary" href="#contact">Ask about this</a>
+        <a class="btn btn--secondary" href="#contact" onclick="bookSession('one-off')">Book</a>
       </article>
       <article class="package reveal">
         <span class="tag">Kind muzzle support</span>
@@ -1036,7 +1116,7 @@ body.editor-active .editor-overlay {
           <li>✓ One-off or ongoing support</li>
           <li>✓ Muzzle fitting advice included</li>
         </ul>
-        <a class="btn btn--secondary" href="#">View session details</a>
+        <a class="btn btn--secondary" href="#contact" onclick="bookSession('muzzle-training')">Book</a>
       </article>
       <article class="package reveal">
         <span class="tag">Perfect fit</span>
@@ -1049,29 +1129,8 @@ body.editor-active .editor-overlay {
           <li>✓ Comfort and safety checked</li>
           <li>✓ Ongoing advice provided</li>
         </ul>
-        <a class="btn btn--secondary" href="#contact">Book a fitting</a>
+        <a class="btn btn--secondary" href="muzzle-fitting.html">Learn more</a>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--soft" id="contact">
-  <div class="container contact-grid">
-    <div class="contact-card reveal">
-      <span class="eyebrow">Get in touch</span>
-      <h2 class="section-title">Ready to begin?</h2>
-      <p class="section-lede">For general enquiries, questions about my training sessions, or to check whether you are within the service area, send me a message and I'll be happy to help.</p>
-      <div class="contact-line"><strong>Email</strong><a href="mailto:contact@clickandtreattraining.co.uk">contact@clickandtreattraining.co.uk</a></div>
-      <div class="contact-line"><strong>Telephone</strong><a href="tel:07702045810">07702 045810</a></div>
-      <div class="contact-line"><strong>Service area</strong><span>8-mile radius around Chatham. Not sure if you're covered? Just get in touch!</span></div>
-    </div>
-    <div class="form-card reveal">
-      <form id="enquiry-form">
-        <div class="field"><label for="email">Your email</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required type="email"/></div>
-        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your dog and what you'd like help with." required></textarea></div>
-        <button class="btn btn--primary" type="submit">Send enquiry</button>
-        <p style="margin:.2rem 0 0;color:var(--muted);font-size:.92rem">This opens your email app with the message ready to send.</p>
-      </form>
     </div>
   </div>
 </section>
@@ -1105,7 +1164,7 @@ body.editor-active .editor-overlay {
             <div class="map-pulse"></div>
             <div class="map-inner">
               <div class="map-pin-wrap">
-                <svg viewBox="0 0 24 24" fill="#2f6470" width="32" height="32"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#2f6470" width="32" height="32"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
                 <span class="map-pin-label">Chatham</span>
               </div>
             </div>
@@ -1117,6 +1176,39 @@ body.editor-active .editor-overlay {
   </div>
 </section>
 
+<section class="section section--soft" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-card reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="section-title">Ready to begin?</h2>
+      <p class="section-lede">For general enquiries, questions about my training sessions, or to check whether you are within the service area, send me a message and I'll be happy to help.</p>
+      <div class="contact-line"><strong>Email</strong><a href="mailto:contact@clickandtreattraining.co.uk">contact@clickandtreattraining.co.uk</a></div>
+      <div class="contact-line"><strong>Telephone</strong><a href="tel:07702045810">07702 045810</a></div>
+      <div class="contact-line"><strong>Service area</strong><span>8-mile radius around Chatham. Not sure if you're covered? Just get in touch!</span></div>
+    </div>
+    <div class="form-card reveal">
+      <form id="enquiry-form">
+        <div class="field"><label for="email">Your email</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"></div>
+        <div class="field">
+          <label for="session">I'm interested in…</label>
+          <select id="session" name="session">
+            <option value="">— Select a session (optional) —</option>
+            <option value="1-2-1">1-2-1 In-Person / Virtual Training</option>
+            <option value="puppy">Puppy Training</option>
+            <option value="reactive">Reactive Dog Training</option>
+            <option value="one-off">One-off Session</option>
+            <option value="muzzle-training">Muzzle Training</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your dog and what you'd like help with." required=""></textarea></div>
+        <button class="btn btn--primary" type="submit">Send enquiry</button>
+        <p style="margin:.2rem 0 0;color:var(--muted);font-size:.92rem">This opens your email app with the message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
@@ -1124,46 +1216,52 @@ body.editor-active .editor-overlay {
     <div class="footer-grid">
       <div>
         <a class="brand" href="index.html">
-          <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png"/>
-          <span class="brand__text"><strong>Click and Treat Training</strong><span>Fully insured with Brooks Braithwaite</span></span>
+          <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png">
+          <span class="brand__text"><strong>Click and Treat Training</strong><span>Building trust, one click at a time</span></span>
         </a>
-        <p>Force-free, reward-based dog training around Chatham.</p>
       </div>
       <div class="socials" aria-label="Social links">
-        <a href="mailto:contact@clickandtreattraining.co.uk">Email us</a>
+        <a href="mailto:contact@clickandtreattraining.co.uk">Email</a>
         <a href="https://www.facebook.com/" rel="noopener">Facebook</a>
         <a href="https://www.instagram.com/" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="yr"></span> Click and Treat Training. All rights reserved.</p>
-      <span>ABTC Registered · Insured by Brooks Braithwaite</span>
+      <p>© <span id="yr">2026</span> Click and Treat Training · ABTC Registered · Insured by Brooks Braithwaite</p>
     </div>
   </div>
 </footer>
 
-<div class="editor-panel" id="editor-panel" role="dialog" aria-label="Visual page editor" aria-modal="true">
+<!-- ═══════════════════════════════════════════════════════════
+     EDITOR PANEL  — referenced by the IIFE script below
+     ═══════════════════════════════════════════════════════════ -->
+<div id="editor-panel" class="editor-panel" aria-label="Page editor" role="complementary">
   <div class="editor-topbar">
-    <strong>🐾 Page Editor</strong>
-    <span class="editor-badge" id="editor-status">SELECT MODE</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <strong>✏️ Page Editor</strong>
+      <span class="editor-badge" id="editor-status">SELECT MODE</span>
+    </div>
     <button class="editor-close" id="editor-close" aria-label="Close editor" title="Close (Esc)">✕</button>
   </div>
+
   <div class="editor-tabs">
-    <div class="editor-tab active" data-tab="props" id="tab-props">Edit</div>
-    <div class="editor-tab" data-tab="layout" id="tab-layout">Layout</div>
+    <div class="editor-tab active" data-tab="props" id="tab-props" role="tab" aria-selected="true" tabindex="0">Properties</div>
+    <div class="editor-tab" data-tab="layout" id="tab-layout" role="tab" aria-selected="false" tabindex="0">Layout</div>
   </div>
+
   <div class="editor-body" id="editor-body">
-    <div class="editor-hint" id="editor-hint">Click any element on the page to select it, then use the Edit tab to change its content or style.</div>
+    <div class="editor-hint">Click any element on the page to select it and edit its properties here.</div>
   </div>
+
   <div class="editor-actions">
+    <button class="editor-action-btn btn-save-dl" id="btn-save-dl">💾 Save &amp; Download</button>
     <div class="editor-move-row">
-      <button class="editor-action-btn btn-move-up" id="btn-move-up" title="Move selected element up">▲ Up</button>
-      <button class="editor-action-btn btn-move-dn" id="btn-move-dn" title="Move selected element down">▼ Down</button>
-      <button class="editor-action-btn btn-dup-el" id="btn-dup-el" title="Duplicate selected element">⧉ Dupe</button>
+      <button class="editor-action-btn btn-move-up" id="btn-move-up" title="Move element up">↑ Up</button>
+      <button class="editor-action-btn btn-move-dn" id="btn-move-dn" title="Move element down">↓ Down</button>
+      <button class="editor-action-btn btn-dup-el"  id="btn-dup-el"  title="Duplicate element">⎘ Dup</button>
     </div>
-    <button class="editor-action-btn btn-del-el" id="btn-del-el">🗑 Delete Selected</button>
     <button class="editor-action-btn btn-undo" id="btn-undo">↩ Undo (Ctrl+Z)</button>
-    <button class="editor-action-btn btn-save-dl" id="btn-save-dl">💾 Save &amp; Download HTML</button>
+    <button class="editor-action-btn btn-del-el" id="btn-del-el">🗑 Delete element</button>
   </div>
 </div>
 
@@ -1249,11 +1347,36 @@ document.querySelectorAll('.trust-item').forEach(item => {
 document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
   e.preventDefault();
   const email   = document.querySelector('#email').value.trim();
+  const session = document.querySelector('#session').value;
   const message = document.querySelector('#message').value.trim();
-  const body    = encodeURIComponent(`Hello Chloe,\n\n${message}\n\nMy email: ${email}`);
+  const sessionLabels = {
+    '1-2-1': '1-2-1 In-Person / Virtual Training',
+    'puppy': 'Puppy Training',
+    'reactive': 'Reactive Dog Training',
+    'one-off': 'One-off Session',
+    'muzzle-training': 'Muzzle Training',
+    'other': 'Other'
+  };
+  const sessionLine = session && sessionLabels[session] ? `Interested in: ${sessionLabels[session]}\n\n` : '';
+  const body    = encodeURIComponent(`Hello Chloe,\n\n${sessionLine}${message}\n\nMy email: ${email}`);
   const subject = encodeURIComponent('Dog training enquiry');
   window.location.href = `mailto:contact@clickandtreattraining.co.uk?subject=${subject}&body=${body}`;
 });
+
+function bookSession(sessionValue) {
+  // Small timeout to allow scroll to happen first
+  setTimeout(() => {
+    const select = document.getElementById('session');
+    if (select) {
+      select.value = sessionValue;
+      // Briefly highlight the dropdown so the user notices it
+      select.style.transition = 'box-shadow .3s ease, border-color .3s ease';
+      select.style.borderColor = 'var(--rose)';
+      select.style.boxShadow = '0 0 0 4px rgba(95,180,192,.28)';
+      setTimeout(() => { select.style.borderColor = ''; select.style.boxShadow = ''; }, 1800);
+    }
+  }, 600);
+}
 
 (function () {
   'use strict';
@@ -1330,7 +1453,10 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
   let hoverEl = null;
   function onDocHover(e) {
     if (!editorOpen || isEditorEl(e.target)) return;
-    if (hoverEl && hoverEl !== selectedEl) hoverEl.style.outline = '';
+    if (hoverEl && hoverEl !== selectedEl) {
+      hoverEl.style.removeProperty('outline');
+      hoverEl.style.removeProperty('outline-offset');
+    }
     hoverEl = e.target;
     if (hoverEl !== selectedEl && !isEditorEl(hoverEl)) {
       hoverEl.style.outline = '1px dashed rgba(95,180,192,.55)';
@@ -1338,7 +1464,10 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
     }
   }
   function onDocOut(e) {
-    if (hoverEl && hoverEl !== selectedEl) { hoverEl.style.outline = ''; hoverEl.style.outlineOffset = ''; }
+    if (hoverEl && hoverEl !== selectedEl) {
+      hoverEl.style.removeProperty('outline');
+      hoverEl.style.removeProperty('outline-offset');
+    }
   }
   function selectEl(el) {
     if (!el || isEditorEl(el)) return;
@@ -1350,7 +1479,10 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
   }
   function deselectAll() {
     document.querySelectorAll('.editor-selected').forEach(el => el.classList.remove('editor-selected'));
-    if (selectedEl) { selectedEl.style.outline = ''; selectedEl.style.outlineOffset = ''; }
+    if (selectedEl) {
+      selectedEl.style.removeProperty('outline');
+      selectedEl.style.removeProperty('outline-offset');
+    }
     selectedEl = null;
     status.textContent = 'SELECT MODE';
   }
@@ -1416,17 +1548,6 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
 
     addProp(props, 'Font size (e.g. 1.2rem)', 'text', el.style.fontSize || '', val => { pushUndo(el); el.style.fontSize = val; });
     addProp(props, 'Font weight (400–900)', 'text', el.style.fontWeight || '', val => { pushUndo(el); el.style.fontWeight = val; });
-    addProp(props, 'Text align', 'text', el.style.textAlign || '', val => { pushUndo(el); el.style.textAlign = val; });
-    addProp(props, 'Padding (e.g. 1rem 2rem)', 'text', el.style.padding || '', val => { pushUndo(el); el.style.padding = val; });
-    addProp(props, 'Margin (e.g. 0 auto)', 'text', el.style.margin || '', val => { pushUndo(el); el.style.margin = val; });
-    addProp(props, 'Border radius (e.g. 12px)', 'text', el.style.borderRadius || '', val => { pushUndo(el); el.style.borderRadius = val; });
-    addProp(props, 'Width (e.g. 100%)', 'text', el.style.width || '', val => { pushUndo(el); el.style.width = val; });
-    addProp(props, 'Display (flex/block/none)', 'text', el.style.display || '', val => { pushUndo(el); el.style.display = val; });
-    addProp(props, 'CSS Classes', 'text', el.className.replace('editor-selected','').trim(), val => {
-      const wasSelected = el.classList.contains('editor-selected');
-      el.className = val + (wasSelected ? ' editor-selected' : '');
-    });
-    addProp(props, 'Inline style (raw CSS)', 'textarea', el.getAttribute('style') || '', val => { pushUndo(el); el.setAttribute('style', val); });
 
     body.appendChild(props);
 
@@ -1526,7 +1647,11 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
   function saveAndDownload() {
     document.querySelectorAll('.editor-selected').forEach(el => el.classList.remove('editor-selected'));
     document.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
-    document.querySelectorAll('[style*="outline"]').forEach(el => { el.style.outline = ''; el.style.outlineOffset = ''; });
+    // Only remove the outline style property — do NOT wipe the whole style attribute
+    document.querySelectorAll('*').forEach(el => {
+      if (el.style.outline) el.style.removeProperty('outline');
+      if (el.style.outlineOffset) el.style.removeProperty('outline-offset');
+    });
     const panelClone   = panel.cloneNode(true);
     const bannerClone  = banner ? banner.cloneNode(true) : null;
     panel.remove();
@@ -1544,6 +1669,9 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
     URL.revokeObjectURL(url);
   }
 
+  window.addEventListener('resize', positionSticker);
+  window.addEventListener('scroll', positionSticker, { passive: true });
+
   document.addEventListener('keydown', e => {
     if (e.key === '#' && !e.ctrlKey && !e.metaKey && !e.target.matches('input,textarea,[contenteditable]')) {
       editorOpen ? closeEditor() : openEditor();
@@ -1555,5 +1683,6 @@ document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
 
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
