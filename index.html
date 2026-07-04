@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Click and Treat Training | Positive Dog Training in Chatham</title>
+<meta name="description" content="Personalised, force-free and reward-based dog training in and around Chatham. Building trust, one click at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&amp;family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --cream:       #fffdf5;
+  --cream-2:     #fff7dc;
+  --paper:       #ffffff;
+  --blush:       #dff8fb;
+  --blush-2:     #f0fdff;
+  --rose:        #5fb4c0;
+  --rose-deep:   #2f6470;
+  --sage:        #d89f2f;
+  --sage-soft:   #fff4c8;
+  --butter:      #ffe9a8;
+  --peach:       #ffe1ce;
+  --ink:         #2f2d2b;
+  --muted:       #68625c;
+  --line:        #dbeff1;
+  --line-warm:   #f4e9c9;
+  --shadow:      0 24px 70px rgba(47,100,112,.14);
+  --shadow-soft: 0 14px 36px rgba(47,100,112,.10);
+
+  --amber:       #E8A04A;
+  --honey:       #F5DFA8;
+  --cocoa:       #2f6470;
+
+  --r-sm:   0.75rem;
+  --r-md:   1.25rem;
+  --r-lg:   2rem;
+  --r-xl:   2.25rem;
+  --r-full: 999px;
+
+  --max: 1180px;
+  --ease: cubic-bezier(0.34,1.3,0.64,1);
+  --ease-out: cubic-bezier(0.22,1,0.36,1);
+  --t-fast: 0.18s;
+  --t-med:  0.32s;
+  --t-slow: 0.55s;
+
+  --f-display: 'Playfair Display', Georgia, serif;
+  --f-body:    'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(223,248,251,.92), transparent 31rem),
+    radial-gradient(circle at 88% 8%, rgba(255,233,168,.58), transparent 28rem),
+    radial-gradient(circle at 78% 64%, rgba(255,244,200,.82), transparent 34rem),
+    linear-gradient(180deg, var(--cream), #fffefd 44%, #fffaf0);
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .34;
+  background-image:
+    radial-gradient(circle at 18px 18px, rgba(95,180,192,.14) 1.2px, transparent 1.5px),
+    radial-gradient(circle at 58px 54px, rgba(216,159,47,.12) 1.35px, transparent 1.7px),
+    radial-gradient(circle at 92px 26px, rgba(255,225,206,.18) 1px, transparent 1.4px);
+  background-size: 116px 116px;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button, input, textarea { font: inherit; }
+::selection { background: var(--blush); color: var(--rose-deep); }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
+
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; z-index: 9999; background: var(--rose-deep); color: #fff; padding: .7rem 1rem; border-radius: 999px; }
+
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.section { padding: 5.5rem 0; }
+.section--soft {
+  background: linear-gradient(180deg, rgba(240,253,255,.72), rgba(255,250,235,.86));
+  border-block: 1px solid rgba(219,239,241,.78);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  color: var(--rose-deep);
+  background: linear-gradient(180deg, #fff, var(--blush-2));
+  border: 1px solid rgba(95,180,192,.22);
+  padding: .36rem .72rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: "🐾"; font-size: .72rem; }
+
+.section-title {
+  margin: .85rem 0 1rem;
+  font-family: var(--f-display);
+  font-size: clamp(2.1rem, 4.5vw, 4.3rem);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+  color: #322829;
+}
+.section-title em { font-style: italic; color: var(--rose-deep); }
+.section-lede { max-width: 760px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+.display {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 7vw, 6.35rem);
+  line-height: .93;
+  letter-spacing: -.064em;
+  color: #302525;
+  margin: .95rem 0 1.2rem;
+}
+.display em {
+  font-style: italic;
+  color: var(--rose-deep);
+  position: relative;
+}
+.display em::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rose), var(--sage));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out) 0.4s;
+}
+.display em.underline-in::after { transform: scaleX(1); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 48px;
+  padding: .86rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 800;
+  font-size: .92rem;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary   { background: linear-gradient(135deg, var(--rose-deep), var(--rose)); color: #fff; box-shadow: 0 18px 38px rgba(47,100,112,.24); }
+.btn--secondary { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: var(--shadow-soft); }
+.btn--sage      { background: linear-gradient(135deg, var(--sage), #b77f20); color: #fff; box-shadow: 0 16px 34px rgba(216,159,47,.24); }
+.btn-row { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.75rem; }
+
+.topbar {
+  background: linear-gradient(90deg, var(--rose-deep), #407f8b 55%, #d89f2f);
+  color: #fff;
+  font-size: .92rem;
+}
+.topbar__inner {
+  max-width: var(--max);
+  margin: auto;
+  padding: .55rem clamp(1rem,5vw,2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.topbar a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.topbar__note { opacity: .9; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(255,253,245,.92);
+  border-bottom: 1px solid rgba(219,239,241,.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.nav {
+  max-width: 1280px;
+  margin: auto;
+  min-height: 64px;
+  padding: 0 clamp(1rem,5vw,2rem);
+  display: grid;
+  grid-template-columns: minmax(210px,auto) minmax(0,1fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+.brand { display: flex; align-items: center; gap: .82rem; min-width: 0; }
+.brand__logo {
+  width: 52px; height: 52px; flex: 0 0 52px;
+  object-fit: contain;
+  border-radius: 100px;
+  margin: 10px 20px;
+}
+.brand__text strong { display: block; font-size: 1.06rem; line-height: 1.15; letter-spacing: .01em; text-align:center; }
+.brand__text span { display: block; margin-top: .12rem; color: var(--muted); font-size: .84rem; white-space: nowrap; }
+.nav__links { display: flex; align-items: center; justify-content: center; gap: .22rem; min-width: 0; white-space: nowrap; }
+.nav__links a {
+  padding: .66rem .74rem;
+  border-radius: 999px;
+  font-size: .92rem;
+  font-weight: 700;
+  color: #4a4141;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.nav__links a:hover { background: var(--blush-2); color: var(--rose-deep); transform: translateY(-1px); }
+.nav__cta { background: var(--rose-deep) !important; color: #fff !important; padding: .72rem 1rem !important; box-shadow: 0 12px 26px rgba(47,100,112,.22); }
+.header-actions { display: flex; align-items: center; justify-content: flex-end; gap: .72rem; }
+.menu-toggle { display: none; border: 0; background: #fff; border-radius: 15px; padding: .68rem .78rem; box-shadow: var(--shadow-soft); cursor: pointer; color: var(--ink); }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; border-radius: 10px; transition: .24s ease; }
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0; right: 0;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(47,100,112,0.1);
+  z-index: 59;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.42s var(--ease-out), box-shadow 0.3s ease;
+  padding-top: 64px;
+}
+.mobile-nav.open {
+  max-height: 90dvh;
+  box-shadow: 0 16px 48px rgba(47,100,112,.14);
+}
+.mobile-nav-inner { padding: 0.5rem clamp(1rem,5vw,2rem) 2.5rem; overflow-y: auto; }
+.mobile-nav ul { list-style: none; }
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(47,100,112,0.07);
+  transition: color var(--t-fast) ease, padding-left var(--t-fast) ease;
+}
+.mobile-nav a:hover { color: var(--rose-deep); padding-left: 0.5rem; }
+.mobile-nav .btn { margin-top: 1.5rem; width: 100%; }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transform: scale(1.04);
+  transition: transform 6s ease-out;
+}
+.hero-bg.loaded { transform: scale(1); }
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, rgba(255,253,245,.92) 0%, rgba(255,247,220,.82) 38%, rgba(255,244,200,.35) 65%, rgba(255,253,245,.10) 100%);
+}
+.hero-veil::after {
+  content: '';
+  position: absolute;
+  inset: 60% 0 0;
+  background: linear-gradient(to bottom, transparent, rgba(255,253,245,.55));
+}
+.hero-paw {
+  position: absolute;
+  bottom: clamp(2rem,6vh,4rem);
+  right: clamp(2rem,8vw,6rem);
+  opacity: .07;
+  pointer-events: none;
+  animation: paw-float 4s ease-in-out infinite;
+}
+@keyframes paw-float { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-12px) rotate(-8deg); } }
+.hero-content { position: relative; z-index: 2; padding: 110px clamp(1rem,5vw,2rem) clamp(3rem,7vw,6rem); width: 100%; max-width: 1280px; margin: 0 auto; }
+.hero-card-text { max-width: 580px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,.88);
+  border-radius: 999px;
+  padding: .4rem 1rem .4rem .5rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(219,239,241,.9);
+  animation: badge-in 0.7s var(--ease) 0.2s both;
+}
+@keyframes badge-in { from { opacity: 0; transform: translateY(12px) scale(0.95); } to { opacity: 1; transform: none; } }
+.hero-badge .dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose), var(--sage));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.hero-badge .dot svg { width: 14px; height: 14px; }
+.hero-badge span { font-size: .78rem; font-weight: 800; color: var(--ink); }
+
+.hero-card-text .display { animation: hero-text-in .9s var(--ease-out) .35s both; }
+.hero-card-text .hero__lead {
+  max-width: 520px;
+  color: #55494a;
+  font-size: clamp(1.1rem,2vw,1.3rem);
+  animation: hero-text-in .9s var(--ease-out) .5s both;
+}
+@keyframes hero-text-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.hero-card-text .btn-row { animation: hero-text-in .9s var(--ease-out) .65s both; }
+
+.hero__trust { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .95rem; margin-top: 2rem; max-width: 760px; animation: hero-text-in .9s var(--ease-out) .8s both; }
+.trust-card {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 12px 26px rgba(47,100,112,.07);
+  position: relative;
+  overflow: hidden;
+}
+.trust-card::after { content: "🐾"; position: absolute; right: .6rem; bottom: .35rem; opacity: .13; font-size: 1.8rem; transform: rotate(-14deg); }
+.trust-card strong { display: block; font-size: 1.05rem; line-height: 1.2; }
+.trust-card span { display: block; margin-top: .28rem; color: var(--muted); font-size: .88rem; }
+
+.paw-divider { display: flex; align-items: center; gap: .55rem; margin: 2rem 0; color: var(--rose-deep); font-weight: 900; letter-spacing: .12em; font-size: .8rem; text-transform: uppercase; }
+.paw-divider::before, .paw-divider::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+
+.trust-strip { background: linear-gradient(135deg, var(--blush-2) 0%, var(--butter) 100%); padding: clamp(1.75rem,4vw,2.75rem) 0; }
+.trust-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem 1rem; }
+@media (min-width:600px) { .trust-grid { grid-template-columns: repeat(4,1fr); } }
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  background: rgba(255,255,255,.5);
+  border-radius: var(--r-md);
+  padding: .875rem 1rem;
+  transition: background var(--t-fast) ease, transform var(--t-fast) var(--ease);
+  cursor: default;
+}
+.trust-item:hover { background: rgba(255,255,255,.82); transform: translateY(-2px); }
+.trust-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--paper); display: grid; place-items: center; flex-shrink: 0; }
+.trust-words strong { display: block; font-size: .9rem; font-weight: 800; color: var(--ink); }
+.trust-words span { display: block; font-size: .78rem; color: var(--muted); }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+.intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: start; }
+.portrait-card {
+  position: sticky;
+  top: 112px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+.photo-slot {
+  min-height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--blush-2), var(--cream-2) 48%, var(--sage-soft));
+}
+.photo-slot img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; }
+.quote-card {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--rose-deep), #4d8d98 62%, #d89f2f);
+  color: #fff;
+  border-radius: 24px;
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow-soft);
+}
+.quote-card p { margin: 0; font-family: var(--f-display); font-size: 1.3rem; line-height: 1.25; }
+.quote-card span { display: block; margin-top: .5rem; color: rgba(255,255,255,.82); font-size: .9rem; }
+.story { background: rgba(255,255,255,.86); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 2.05rem; box-shadow: var(--shadow-soft); }
+.story p { margin: 0 0 1rem; color: #504647; }
+.story p:last-child { margin-bottom: 0; }
+.credential-list { display: grid; gap: .75rem; margin: 1.5rem 0 0; padding: 0; }
+.credential-list li { display: flex; gap: .75rem; align-items: flex-start; padding: .88rem .95rem; border-radius: 18px; background: linear-gradient(180deg,#fff,var(--blush-2)); border: 1px solid rgba(219,239,241,.86); }
+.tick { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; background: var(--sage); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: .9rem; }
+
+.why-section { background: linear-gradient(160deg, var(--butter) 0%, var(--cream-2) 60%); padding: clamp(4.5rem,9vw,8rem) 0; }
+.why-inner { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem,5vw,5rem); align-items: center; }
+@media (min-width:800px) { .why-inner { grid-template-columns: 1fr 1fr; } }
+.why-text .section-title { margin-bottom: 1rem; }
+.why-lead { font-size: clamp(1rem,1.8vw,1.12rem); color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+.why-points { display: flex; flex-direction: column; gap: 1.5rem; }
+.why-pt { display: flex; gap: 1rem; align-items: flex-start; }
+.why-pt-icon { width: 46px; height: 46px; border-radius: 50%; background: var(--paper); display: grid; place-items: center; flex-shrink: 0; box-shadow: var(--shadow-soft); transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease; }
+.why-pt:hover .why-pt-icon { transform: scale(1.12); box-shadow: 0 0 0 4px rgba(95,180,192,.25); }
+.why-pt-icon svg { width: 21px; height: 21px; }
+.why-pt-body h3 { font-size: .95rem; font-weight: 800; color: var(--ink); margin-bottom: .2rem; }
+.why-pt-body p { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+.why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.stat-tile { background: var(--paper); border-radius: var(--r-md); padding: clamp(1.25rem,2.5vw,1.75rem); text-align: center; box-shadow: var(--shadow-soft); border: 1px solid var(--line); transition: transform var(--t-fast) var(--ease), box-shadow var(--t-med) ease; }
+.stat-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.stat-tile.warm { background: linear-gradient(135deg, var(--butter), var(--peach)); border: 1px solid var(--line-warm); }
+.stat-num { font-family: var(--f-display); font-size: clamp(2rem,4.5vw,2.8rem); font-weight: 700; color: var(--rose-deep); line-height: 1; margin-bottom: .4rem; }
+.stat-label { font-size: .75rem; font-weight: 700; color: var(--muted); line-height: 1.3; }
+
+.consult-card { display: grid; grid-template-columns: .78fr 1.22fr; gap: 0; align-items: stretch; margin-top: 2.25rem; background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow); overflow: hidden; }
+.consult-price { background: linear-gradient(155deg, var(--rose-deep), var(--rose) 52%, #d89f2f); color: #fff; padding: 2.45rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
+.consult-price h3 { font-family: var(--f-display); font-size: 2.1rem; margin: 0; line-height: 1.05; }
+.price { font-size: 3.5rem; font-weight: 900; line-height: .95; letter-spacing: -.05em; }
+.duration { color: rgba(255,255,255,.82); font-weight: 700; margin-top: .4rem; }
+.consult-body { padding: 2.35rem; }
+.consult-body p { color: var(--muted); margin-top: 0; margin-bottom: 1.25rem; }
+.check-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; margin: 0; padding: 0; }
+.check-grid li { display: flex; gap: .65rem; align-items: flex-start; background: var(--cream); border: 1px solid var(--line-warm); border-radius: 16px; padding: .82rem .9rem; color: #504647; }
+.mini-check { color: var(--sage); font-weight: 900; }
+
+.packages-head { display: grid; grid-template-columns: minmax(0,1fr) minmax(260px,650px); gap: 2rem; align-items: end; margin-bottom: 2rem; }
+.packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,255px),1fr)); gap: 1.15rem; }
+.package {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 1.35rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.package:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.package::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(90deg, var(--blush), var(--butter), var(--sage-soft)); }
+.package h3 { font-family: var(--f-display); font-size: 1.45rem; margin: .4rem 0 .55rem; line-height: 1.15; }
+.package__price { font-weight: 900; font-size: 1.55rem; color: var(--rose-deep); }
+.package p { color: var(--muted); font-size: .96rem; margin: .9rem 0 1rem; }
+.package ul { margin: .2rem 0 1.2rem; padding: 0; list-style: none; display: grid; gap: .54rem; color: #504647; font-size: .94rem; }
+.package li { display: flex; gap: .52rem; }
+.package .btn { margin-top: auto; width: 100%; }
+.tag { display: inline-flex; width: max-content; max-width: 100%; padding: .3rem .62rem; border-radius: 999px; background: var(--blush-2); color: var(--rose-deep); font-size: .73rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; border: 1px solid rgba(95,180,192,.22); margin-bottom: .35rem; }
+
+.contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 2rem; align-items: start; }
+.contact-card, .form-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-soft); padding: 2.05rem; }
+.contact-line { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.contact-line:last-child { border-bottom: 0; }
+.contact-line strong { display: block; }
+.contact-line span, .contact-line a { color: var(--muted); }
+.contact-line a:hover { color: var(--rose-deep); }
+.form-card form { display: grid; gap: 1rem; }
+.field label { display: block; font-weight: 800; margin-bottom: .35rem; }
+.field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 17px; background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.field textarea { min-height: 145px; resize: vertical; }
+.field input:focus, .field textarea:focus { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(95,180,192,.16); }
+.field select { width: 100%; border: 1px solid var(--line); border-radius: 17px; background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none; transition: border-color .2s ease, box-shadow .2s ease; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2368625c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
+.field select:focus { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(95,180,192,.16); }
+
+.area-section { background: linear-gradient(145deg, #d4ede5 0%, var(--cream) 65%); padding: clamp(4.5rem,9vw,8rem) 0; }
+.area-inner { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem,5vw,5rem); align-items: center; }
+@media (min-width:800px) { .area-inner { grid-template-columns: 1fr 1fr; } }
+.area-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.25rem; }
+.chip { background: var(--paper); color: var(--ink); font-size: .8rem; font-weight: 700; padding: .35rem .9rem; border-radius: 999px; box-shadow: var(--shadow-soft); transition: background var(--t-fast) ease, transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease; cursor: default; border: 1px solid var(--line); }
+.chip:hover { background: var(--butter); transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.map-vis { display: flex; justify-content: center; }
+.map-wrap { position: relative; width: min(320px,100%); }
+.map-outer { width: 100%; padding-bottom: 100%; position: relative; border-radius: 50%; background: linear-gradient(135deg, #88c9b8 0%, #a8d8c8 100%); box-shadow: var(--shadow); }
+.map-inner { position: absolute; inset: 18%; border-radius: 50%; background: linear-gradient(135deg, var(--butter) 0%, var(--peach) 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px rgba(255,255,255,.3); }
+.map-pin-wrap { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+.map-pin-label { background: var(--paper); border-radius: 999px; padding: .25rem .7rem; font-size: .75rem; font-weight: 800; color: var(--rose-deep); box-shadow: var(--shadow-soft); }
+.map-radius { position: absolute; top: 50%; right: -0.5rem; transform: translateY(-50%); background: var(--paper); border-radius: var(--r-sm); padding: .4rem .65rem; font-size: .7rem; font-weight: 800; color: var(--rose-deep); box-shadow: var(--shadow-soft); text-align: center; line-height: 1.35; }
+.map-pulse { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); animation: pulse-ring 2.5s ease-out infinite; }
+@keyframes pulse-ring { 0% { transform: scale(.92); opacity: .8; } 80% { transform: scale(1.04); opacity: 0; } 100% { opacity: 0; } }
+
+.footer {
+  background: linear-gradient(90deg, var(--rose-deep), #3f7e8b 56%, #c6912b);
+  color: #fff;
+  padding: 1.1rem 0;
+  margin-top: 0;
+}
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
+}
+.footer-copy {
+  font-size: .8rem;
+  color: rgba(255,255,255,.7);
+  margin: 0;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .9rem;
+  align-items: center;
+}
+.footer-links a {
+  font-size: .8rem;
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.footer-links a:hover { color: #fff; }
+.footer-links .sep { color: rgba(255,255,255,.3); font-size: .7rem; }
+@media (max-width: 520px) {
+  .footer-bar { justify-content: center; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width:940px) {
+  body { font-size: 16px; }
+  .topbar__inner { display: block; text-align: center; }
+  .topbar__note { display: none; }
+  .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
+  .brand { max-width: 68vw; }
+  .brand__text span { display: none; }
+  .brand__logo { width: 50px; height: 50px; flex-basis: 50px; }
+  .nav__links { display: none !important; }
+  .header-actions { margin-left: auto; }
+  .menu-toggle { display: block; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hero { min-height: 100svh; }
+  .hero__trust { grid-template-columns: 1fr; }
+  .intro-grid, .consult-card, .contact-grid, .packages-head { grid-template-columns: 1fr; }
+  .portrait-card { position: relative; top: auto; max-width: 540px; margin: auto; }
+  .section { padding: 4.1rem 0; }
+  .consult-price, .consult-body, .story, .contact-card, .form-card { padding: 1.45rem; }
+  .check-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .packages { grid-template-columns: 1fr; }
+  .package { min-height: 0; }
+  .contact-line { grid-template-columns: 1fr; gap: .2rem; }
+  .mobile-nav { padding-top: 56px; }
+}
+@media (max-width:520px) {
+  .display { font-size: clamp(2.72rem,16vw,4.15rem); }
+  .section-title { font-size: clamp(2rem,11vw,3rem); }
+  .hero__trust { grid-template-columns: 1fr 1fr; }
+  .btn { width: 100%; }
+}
+
+/* ── Edit mode (press # to toggle) ────────────────────────────── */
+#ct-edit-banner {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+  display: none;
+  align-items: center; justify-content: center;
+  background: linear-gradient(90deg, var(--rose-deep), var(--rose));
+  color: #fff; text-align: center;
+  padding: 10px 16px;
+  font-size: 14px; font-weight: 700; line-height: 1.7;
+  letter-spacing: .01em;
+  box-shadow: 0 2px 12px rgba(47,100,112,.25);
+}
+body.ct-editing #ct-edit-banner { display: flex; }
+#ct-edit-save {
+  position: fixed; right: 20px; bottom: 20px; z-index: 99999;
+  display: none;
+  align-items: center; gap: .5rem;
+  border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+  color: #fff; font-weight: 800; font-size: .95rem;
+  padding: .95rem 1.5rem; border-radius: 999px;
+  box-shadow: 0 18px 38px rgba(47,100,112,.32);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#ct-edit-save:hover { transform: translateY(-2px); box-shadow: 0 22px 44px rgba(47,100,112,.4); }
+body.ct-editing #ct-edit-save { display: inline-flex; }
+body.ct-editing { padding-top: 44px; }
+body.ct-editing .site-header { top: 44px; }
+body.ct-editing .virtual-sticker { top: 124px; }
+body.ct-editing [contenteditable="true"] { cursor: text; }
+body.ct-editing [contenteditable="true"]:hover { outline: 1.5px dashed rgba(95,180,192,.75); outline-offset: 2px; border-radius: 4px; }
+body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--rose); outline-offset: 3px; border-radius: 4px; background: rgba(223,248,251,.3); box-shadow: none; }
+
+/* ── Virtual Sessions Sticker ─────────────────────────────────── */
+.virtual-sticker {
+  position: fixed;
+  top: 80px;
+  right: 5px;
+  z-index: 50;
+  width: clamp(180px, 25vw, 240px);
+  transform: rotate(8deg);
+  transform-origin: top right;
+  transition: transform 0.3s var(--ease), filter 0.3s ease;
+  filter: drop-shadow(0 6px 18px rgba(47,100,112,.28));
+  pointer-events: auto;
+}
+.virtual-sticker img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.virtual-sticker:hover {
+  transform: rotate(4deg) scale(1.06) translateY(80px);
+  filter: drop-shadow(0 10px 24px rgba(47,100,112,.38));
+}
+@media (max-width: 940px) {
+  .virtual-sticker {
+    width: clamp(130px, 38vw, 200px);
+    top: 72px;
+  }
+}
+@media (max-width: 520px) {
+  .virtual-sticker {
+    width: clamp(120px, 42vw, 170px);
+    top: 68px;
+  }
+}
+
+/* ── Certificate thumbnails inside trust strip ────────────────── */
+.certs-divider {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--rose-deep);
+  font-weight: 900;
+  letter-spacing: .1em;
+  font-size: .76rem;
+  text-transform: uppercase;
+}
+.certs-divider::before, .certs-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(95,180,192,.35), transparent);
+}
+.certs-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  justify-content: center;
+}
+.cert-thumb {
+  width: clamp(80px, 10vw, 110px);
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(219,239,241,.9);
+  border-radius: 10px;
+  padding: .4rem;
+  box-shadow: 0 4px 14px rgba(47,100,112,.08);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-thumb:hover {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 10px 22px rgba(47,100,112,.14);
+}
+.cert-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Virtual Sessions sticker -->
+<a href="#packages" class="virtual-sticker" aria-label="View virtual sessions" title="Virtual Sessions available!" id="virtual-sticker-link">
+  <img src="VirtualSessions.png" alt="Virtual Sessions available" loading="lazy">
+</a>
+<script>
+  (function () {
+    var sticker = document.getElementById('virtual-sticker-link');
+    if (!sticker) return;
+    sticker.addEventListener('click', function () {
+      // After the smooth scroll finishes, blur focus so the hover/active state resets
+      setTimeout(function () {
+        sticker.blur();
+      }, 900);
+    });
+  })();
+</script>
+
+
+
+<header aria-label="Site header" class="site-header">
+  <nav aria-label="Main navigation" class="nav">
+    <a aria-label="Click and Treat Training home" class="brand" href="index.html">
+      <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png" style="width: 120px; height: 120px;">
+      <span class="brand__text"><strong>Click and Treat Training</strong><span>Building trust, one click at a time</span></span>
+    </a>
+    <div class="nav__links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#why">Our Philosophy</a>
+      <a href="#consultation">Consultation</a>
+      <a href="#packages">Sessions</a>
+      <a href="#area">Where I Work</a>
+      <a class="nav__cta" href="#contact">Contact</a>
+    </div>
+    <div class="header-actions">
+      <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menu-toggle" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <ul>
+      <li><a href="#about">About Chloe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#why">Our Philosophy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#consultation">Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#packages">Training Sessions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#area">Where I Work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#contact">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+    </ul>
+    <a href="#contact" class="btn btn--primary" style="margin-top:1.5rem;width:100%;display:flex;justify-content:center;">Get in Touch</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero" aria-label="Welcome to Click and Treat Training" id="home">
+  <img id="hero-bg" class="hero-bg loaded" src="home-hero.jpg" alt="A happy dog during a training session" fetchpriority="high">
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-paw" aria-hidden="true">
+    <svg width="200" height="200" viewBox="0 0 100 100" fill="#2f6470">
+      <ellipse cx="50" cy="70" rx="22" ry="15"></ellipse>
+      <ellipse cx="26" cy="52" rx="11" ry="14"></ellipse>
+      <ellipse cx="74" cy="52" rx="11" ry="14"></ellipse>
+      <ellipse cx="20" cy="30" rx="9" ry="11"></ellipse>
+      <ellipse cx="80" cy="30" rx="9" ry="11"></ellipse>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-card-text">
+      
+      <h1 class="display">Building trust,<br>one click at a <em id="hero-em" class="underline-in">time.</em></h1>
+      <p class="hero__lead">Positive, practical and kind dog training for puppies, reactive dogs and everyday training goals, helping you and your dog build a calmer, happier relationship.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#contact">Contact me today</a>
+        <a class="btn btn--secondary" href="#packages">View my sessions</a>
+      </div>
+      <div class="hero__trust" aria-label="Training qualities">
+        <div class="trust-card"><strong>Force-free</strong><span>Reward-based methods built on trust.</span></div>
+        <div class="trust-card"><strong>Personal</strong><span>Adapted to your dog's personality.</span></div>
+        <div class="trust-card"><strong>Supportive</strong><span>Clear guidance for you and your dog.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip" aria-label="Credentials and trust signals">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item reveal is-visible">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"></path></svg>
+        </div>
+        <div class="trust-words"><strong>ABTC Registered</strong><span>Animal Behaviour &amp; Training Council</span></div>
+      </div>
+      <div class="trust-item reveal is-visible">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="trust-words"><strong>6+ Years Experience</strong><span>Hands-on dog training &amp; behaviour</span></div>
+      </div>
+      <div class="trust-item reveal is-visible">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M9 12l2 2 4-4"></path><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"></path></svg>
+        </div>
+        <div class="trust-words"><strong>Fully Insured</strong><span>Brooks Braithwaite insurance</span></div>
+      </div>
+      <div class="trust-item reveal is-visible">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </div>
+        <div class="trust-words"><strong>Reward-Based Only</strong><span>Positive, force-free methods always</span></div>
+      </div>
+    </div>
+    <div class="certs-divider">Certifications</div>
+    <div class="certs-thumbs">
+      <div class="cert-thumb"><img src="Cert1.png" alt="Certificate 1" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert2.jpg" alt="Certificate 2" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert3.png" alt="Certificate 3" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert4.jpg" alt="Certificate 4" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert5.png" alt="Certificate 5" loading="lazy"></div>
+      <div class="cert-thumb"><img src="Cert6.png" alt="Certificate 6" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="about">
+  <div class="container intro-grid">
+    <aside class="portrait-card reveal is-visible">
+      <div class="photo-slot">
+        <img alt="Chloe and Zuri" src="chloe-zuri.jpg">
+      </div>
+      <div class="quote-card">
+        <p>"Let's train with love and kindness."</p>
+        <span>Because good relationships start with trust.</span>
+      </div>
+    </aside>
+    <div class="story reveal is-visible">
+      <span class="eyebrow">Meet the trainer behind the treats</span>
+      <h2 class="section-title">Kind, qualified support for real dogs and real life.</h2>
+      <p>Hi, I'm Chloe, and I believe in positive reinforcement training. I am passionate about helping dogs and their owners build lasting, trust-based relationships.</p>
+      <p>My training methods are force-free, reward-based, and adapted to suit your dog's personality. Whether you're working on puppy foundations, lead skills, recall, reactivity, confidence building or muzzle training, I'll guide you through it at a pace that suits you both.</p>
+      <p>My dog, Zuri, is the reason behind everything I do. She is reactive through fear to certain things, and this inspired me to start training. Through our journey, we built a deeper connection, and I found my passion for helping other dogs and owners do the same.</p>
+      <p>I offer 1-2-1 dog training and hope to one day expand my business to include a secure dog field and an indoor training space, providing a safe and enriching experience for every dog.</p>
+      <p>I am a registered dog trainer with the <strong>Animal Behaviour &amp; Training Council (ABTC)</strong>, with over six years of hands-on experience working with and training dogs through two of the UK's largest animal welfare charities.</p>
+      <div class="paw-divider">Qualifications</div>
+      <ul class="credential-list" aria-label="Qualifications and memberships">
+        <li><span class="tick">✓</span><span><strong>Canine Behaviour Professional</strong> – Accredited Diploma</span></li>
+        <li><span class="tick">✓</span><span><strong>Canine Reactive Behaviour</strong> – Accredited Advanced Certificate</span></li>
+        <li><span class="tick">✓</span><span><strong>CPD Certified</strong> – Canine Fear Course</span></li>
+        <li><span class="tick">✓</span><span><strong>Animal First Aid Trained</strong></span></li>
+        <li><span class="tick">✓</span><span><strong>Currently studying:</strong> Level 4 Diploma in Canine Welfare, Training &amp; Behaviour</span></li>
+        <li><span class="tick">✓</span><span><strong>Professional Member</strong> of the National Institute for Canine Ethics</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="why-section" id="why" aria-labelledby="why-h">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-text">
+        <div class="reveal is-visible">
+          <span class="eyebrow">Our Philosophy</span>
+          <h2 class="section-title" id="why-h">Why positive reinforcement <em>works</em></h2>
+        </div>
+        <p class="why-lead reveal is-visible">Reward-based training is kinder, and it works better too. When dogs learn that good things come from training, they want to join in, try harder and repeat the behaviours you're after. There's no fear or force involved, just trust that builds session by session.</p>
+        <div class="why-points">
+          <div class="why-pt reveal is-visible">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>Builds confidence, not compliance</h3>
+              <p>Dogs learn to think and work things out for themselves, rather than simply reacting to avoid consequences.</p>
+            </div>
+          </div>
+          <div class="why-pt reveal is-visible">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>Strengthens your bond</h3>
+              <p>Training becomes something you both look forward to, rather than something to get through.</p>
+            </div>
+          </div>
+          <div class="why-pt reveal is-visible">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>Safe for every dog</h3>
+              <p>Gentle methods matter most for nervous, anxious or reactive dogs, so every session moves at your dog's pace.</p>
+            </div>
+          </div>
+          <div class="why-pt reveal is-visible">
+            <div class="why-pt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2f6470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <div class="why-pt-body">
+              <h3>I love what I do</h3>
+              <p>I've learnt so much over the years and would love to put it to good use, training together and enjoying the process while we work towards your goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-stats reveal is-visible">
+        <div class="stat-tile">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Years hands-on experience</div>
+        </div>
+        <div class="stat-tile warm">
+          <div class="stat-num">0</div>
+          <div class="stat-label">Punishment or force, ever</div>
+        </div>
+        <div class="stat-tile warm">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Training services offered</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-num">8mi</div>
+          <div class="stat-label">Radius around Chatham</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="consultation">
+  <div class="container">
+    <div class="reveal is-visible">
+      <span class="eyebrow">Start here</span>
+      
+      
+    </div>
+    <div class="consult-card reveal is-visible">
+      <div class="consult-price">
+        <div>
+          <h3>Initial Consultation</h3>
+          <div class="duration">1 hour · in-person or virtual</div>
+        </div>
+        <div>
+          <div class="price">£65</div>
+          <div class="duration">A clear plan from the very beginning</div>
+        </div>
+      </div>
+      <div class="consult-body">
+        <p>This allows me to gain as much information about your dog and current situation as possible. I'll take time to understand your dog's history, personality, routine and any behavioural concerns, then put together practical next steps that suit you and your dog.</p>
+        <ul class="check-grid">
+          <li><span class="mini-check">✓</span><span>Discuss your dog's history, personality and routine</span></li>
+          <li><span class="mini-check">✓</span><span>Identify your training goals and priorities</span></li>
+          <li><span class="mini-check">✓</span><span>Assess your dog's behaviour in the home environment</span></li>
+          <li><span class="mini-check">✓</span><span>Explain the reasons behind unwanted behaviours</span></li>
+          <li><span class="mini-check">✓</span><span>Provide practical exercises and management techniques</span></li>
+          <li><span class="mini-check">✓</span><span>Develop clear, step-by-step training plans</span></li>
+          <li><span class="mini-check">✓</span><span>Answer any questions you may have</span></li>
+          <li><span class="mini-check">✓</span><span>Leave feeling confident and supported</span></li>
+        </ul>
+        <div class="btn-row"><a class="btn btn--sage" href="#contact">Book your consultation</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="packages">
+  <div class="container">
+    <div class="packages-head reveal is-visible">
+      <div>
+        <span class="eyebrow">Training Sessions</span>
+        <h2 class="section-title">Choose the right session for your dog.</h2>
+      </div>
+      <p class="section-lede">Each session is personalised to help you see real progress, with guidance, practical support and clear training plans where appropriate.</p>
+    </div>
+    <div class="packages" aria-label="Training sessions">
+      <article class="package reveal is-visible">
+        <span class="tag">Flexible support</span>
+        <h3>1-2-1 In-Person / Virtual Training</h3>
+        <div class="package__price">£65 per session</div>
+        <p>For jumping up, lead pulling, settling, engagement around distractions and much more.</p>
+        <ul>
+          <li>✓ Weekly or fortnightly sessions</li>
+          <li>✓ Practical hands-on guidance</li>
+          <li>✓ Virtual coaching available</li>
+          <li>✓ Downloadable training plan</li>
+          <li>✓ Support in-between sessions</li>
+        </ul>
+        <a class="btn btn--secondary" href="#enquiry-form" onclick="bookSession('1-2-1')">Book</a>
+      </article>
+      <article class="package reveal is-visible">
+        <span class="tag">Puppy foundations</span>
+        <h3>Puppy Training</h3>
+        <div class="package__price">£45 per session</div>
+        <p>Start your puppy off on the right paw with confidence, good manners and relationship-building.</p>
+        <ul>
+          <li>✓ 8–16 week puppies</li>
+          <li>✓ 4–6 month puppies</li>
+          <li>✓ Puppy essentials covered</li>
+          <li>✓ Additional sessions available</li>
+        </ul>
+        <a class="btn btn--secondary" href="#enquiry-form" onclick="bookSession('puppy')">Book</a>
+      </article>
+      <article class="package reveal is-visible">
+        <span class="tag">Confidence building</span>
+        <h3>Reactive Dog Training</h3>
+        <div class="package__price">£90 per session</div>
+        <p>For dogs who bark, lunge or struggle to focus around triggers, with calm, supportive training.</p>
+        <ul>
+          <li>✓ Guided sessions</li>
+          <li>✓ Emotional support</li>
+          <li>✓ Downloadable training plan</li>
+          <li>✓ Practical support throughout</li>
+        </ul>
+        <a class="btn btn--secondary" href="#enquiry-form" onclick="bookSession('reactive')">Book</a>
+      </article>
+      <article class="package reveal is-visible">
+        <span class="tag">Extra guidance</span>
+        <h3>One-off Session</h3>
+        <div class="package__price">£75 per session</div>
+        <p>Perfect for quick advice, a progress check-in, a new challenge or reassurance on your training approach.</p>
+        <ul>
+          <li>✓ One hour session</li>
+          <li>✓ Home or suitable local area</li>
+          <li>✓ Book as a one-off</li>
+          <li>✓ Add on alongside other sessions</li>
+        </ul>
+        <a class="btn btn--secondary" href="#enquiry-form" onclick="bookSession('one-off')">Book</a>
+      </article>
+      <article class="package reveal">
+        <span class="tag">Kind muzzle support</span>
+        <h3>Muzzle Training</h3>
+        <div class="package__price">£50 per session</div>
+        <p>Positive muzzle training to help your dog feel comfortable and confident wearing a muzzle.</p>
+        <ul>
+          <li>✓ Reward-based training steps</li>
+          <li>✓ Printable/downloadable guide</li>
+          <li>✓ One-off or ongoing support</li>
+          <li>✓ Muzzle fitting advice included</li>
+        </ul>
+        <a class="btn btn--secondary" href="#enquiry-form" onclick="bookSession('muzzle-training')">Book</a>
+      </article>
+      <article class="package reveal">
+        <span class="tag">Perfect fit</span>
+        <h3>Muzzle Fitting</h3>
+        <div class="package__price">£25 per fitting</div>
+        <p>A hands-on appointment to find the right muzzle for your dog's breed, size, and individual needs.</p>
+        <ul>
+          <li>✓ Expert fitting guidance</li>
+          <li>✓ Breed &amp; size assessment</li>
+          <li>✓ Comfort and safety checked</li>
+          <li>✓ Ongoing advice provided</li>
+        </ul>
+        <a class="btn btn--secondary" href="muzzle-fitting.html">Learn more</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="area-section" id="area" aria-labelledby="area-h">
+  <div class="container">
+    <div class="area-inner">
+      <div class="area-text">
+        <div class="reveal">
+          <span class="eyebrow">Where I Work</span>
+          <h2 class="section-title" id="area-h">Local to Chatham <em>&amp; the Medway area</em></h2>
+        </div>
+        <p class="why-lead reveal">I cover an 8-mile radius around Chatham, reaching many towns and villages across the Medway area. If you're not sure whether I cover your location, just get in touch and I'll happily check.</p>
+        <div class="area-chips reveal" role="list" aria-label="Areas covered">
+          <span class="chip" role="listitem">Chatham</span>
+          <span class="chip" role="listitem">Rochester</span>
+          <span class="chip" role="listitem">Gillingham</span>
+          <span class="chip" role="listitem">Rainham</span>
+          <span class="chip" role="listitem">Strood</span>
+          <span class="chip" role="listitem">Sittingbourne</span>
+          <span class="chip" role="listitem">Maidstone</span>
+          <span class="chip" role="listitem">&amp; surrounding areas</span>
+        </div>
+        <div class="reveal">
+          <a href="#contact" class="btn btn--primary">Check your area</a>
+        </div>
+      </div>
+      <div class="map-vis reveal">
+        <div class="map-wrap" aria-hidden="true">
+          <div class="map-outer">
+            <div class="map-pulse"></div>
+            <div class="map-inner">
+              <div class="map-pin-wrap">
+                <svg viewBox="0 0 24 24" fill="#2f6470" width="32" height="32"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
+                <span class="map-pin-label">Chatham</span>
+              </div>
+            </div>
+            <div class="map-radius">8 mile<br>radius</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-card reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="section-title">Ready to begin?</h2>
+      <p class="section-lede">For general enquiries, questions about my training sessions, or to check whether you are within the service area, send me a message and I'll be happy to help.</p>
+      <div class="contact-line"><strong>Email</strong><a href="mailto:contact@clickandtreattraining.co.uk">contact@clickandtreattraining.co.uk</a></div>
+      <div class="contact-line"><strong>Telephone</strong><a href="tel:07702045810">07702 045810</a></div>
+      <div class="contact-line"><strong>Service area</strong><span>8-mile radius around Chatham. Not sure if you're covered? Just get in touch!</span></div>
+    </div>
+    <div class="form-card reveal">
+      <form id="enquiry-form" aria-label="Enquiry form">
+        <div class="field"><label for="email">Your email</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"></div>
+        <div class="field">
+          <label for="session">I'm interested in…</label>
+          <select id="session" name="session">
+            <option value="">— Select a session (optional) —</option>
+            <option value="1-2-1">1-2-1 In-Person / Virtual Training</option>
+            <option value="puppy">Puppy Training</option>
+            <option value="reactive">Reactive Dog Training</option>
+            <option value="one-off">One-off Session</option>
+            <option value="muzzle-training">Muzzle Training</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your dog and what you'd like help with." required=""></textarea></div>
+        <button class="btn btn--primary" type="submit">Send enquiry</button>
+        <p style="margin:.2rem 0 0;color:var(--muted);font-size:.92rem">This opens your email app with the message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bar">
+      <p class="footer-copy">© <span id="yr">2026</span> Click and Treat Training · ABTC Registered · Insured by Brooks Braithwaite</p>
+      <div class="footer-links">
+        <a href="mailto:contact@clickandtreattraining.co.uk">Email</a>
+        <span class="sep">·</span>
+        <a href="https://www.facebook.com/" rel="noopener">Facebook</a>
+        <span class="sep">·</span>
+        <a href="https://www.instagram.com/" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Edit mode UI: press # anywhere on the page to toggle -->
+<div id="ct-edit-banner">✏️&nbsp; Edit Mode — click any text on the page to change it. Press # or Esc when you're done.</div>
+<button id="ct-edit-save" type="button">💾 Save and Export</button>
+
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const heroBg = document.getElementById('hero-bg');
+if (heroBg) {
+  heroBg.addEventListener('load', () => heroBg.classList.add('loaded'));
+  if (heroBg.complete) heroBg.classList.add('loaded');
+}
+const heroEm = document.getElementById('hero-em');
+if (heroEm) setTimeout(() => heroEm.classList.add('underline-in'), 900);
+const menuToggle = document.getElementById('menu-toggle');
+const mobileNav  = document.getElementById('mobile-nav');
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener('click', () => {
+    const open = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!open));
+    menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+    mobileNav.classList.toggle('open', !open);
+    mobileNav.setAttribute('aria-hidden', String(open));
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }));
+  document.addEventListener('click', e => {
+    if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  });
+}
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: .13, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+const statNums = document.querySelectorAll('.stat-num');
+const countObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, raw = el.textContent.trim(), num = parseFloat(raw);
+    if (isNaN(num)) return;
+    const suffix = raw.replace(String(num), '');
+    let start = null;
+    const step = ts => {
+      if (!start) start = ts;
+      const prog = Math.min((ts - start) / 1200, 1);
+      const ease = 1 - Math.pow(1 - prog, 3);
+      el.textContent = (Number.isInteger(num) ? Math.round(ease * num) : Math.round(ease * num * 10) / 10) + suffix;
+      if (prog < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+    countObserver.unobserve(el);
+  });
+}, { threshold: .5 });
+statNums.forEach(el => countObserver.observe(el));
+const chips = document.querySelectorAll('.chip');
+const chipObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    chips.forEach((chip, i) => {
+      chip.style.opacity = '0'; chip.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        chip.style.transition = 'opacity .4s ease, transform .4s cubic-bezier(.34,1.3,.64,1)';
+        chip.style.opacity = '1'; chip.style.transform = '';
+      }, i * 60 + 200);
+    });
+    chipObserver.disconnect();
+  });
+}, { threshold: .3 });
+if (chips.length) chipObserver.observe(chips[0].closest('.area-chips'));
+document.querySelectorAll('.trust-item').forEach(item => {
+  item.addEventListener('mouseenter', () => { const ic = item.querySelector('.trust-icon'); if(ic){ ic.style.transform='scale(1.15)'; ic.style.transition='transform .2s cubic-bezier(.34,1.3,.64,1)'; } });
+  item.addEventListener('mouseleave', () => { const ic = item.querySelector('.trust-icon'); if(ic) ic.style.transform=''; });
+});
+document.querySelector('#enquiry-form')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const email   = document.querySelector('#email').value.trim();
+  const session = document.querySelector('#session').value;
+  const message = document.querySelector('#message').value.trim();
+  const sessionLabels = {
+    '1-2-1': '1-2-1 In-Person / Virtual Training',
+    'puppy': 'Puppy Training',
+    'reactive': 'Reactive Dog Training',
+    'one-off': 'One-off Session',
+    'muzzle-training': 'Muzzle Training',
+    'other': 'Other'
+  };
+  const sessionLine = session && sessionLabels[session] ? `Interested in: ${sessionLabels[session]}\n\n` : '';
+  const body    = encodeURIComponent(`Hello Chloe,\n\n${sessionLine}${message}\n\nMy email: ${email}`);
+  const subject = encodeURIComponent('Dog training enquiry');
+  window.location.href = `mailto:contact@clickandtreattraining.co.uk?subject=${subject}&body=${body}`;
+});
+
+function bookSession(sessionValue) {
+  // Small timeout to allow scroll to happen first
+  setTimeout(() => {
+    const select = document.getElementById('session');
+    if (select) {
+      select.value = sessionValue;
+      // Briefly highlight the dropdown so the user notices it
+      select.style.transition = 'box-shadow .3s ease, border-color .3s ease';
+      select.style.borderColor = 'var(--rose)';
+      select.style.boxShadow = '0 0 0 4px rgba(95,180,192,.28)';
+      setTimeout(() => { select.style.borderColor = ''; select.style.boxShadow = ''; }, 1800);
+    }
+  }, 600);
+}
+
+/* ── Edit mode: press # to toggle, click any text to edit, then Save and Export ── */
+(function () {
+  'use strict';
+  const saveBtn = document.getElementById('ct-edit-save');
+  let editing = false;
+
+  const TEXT_TAGS = 'h1,h2,h3,h4,h5,h6,p,li,a,span,strong,em,small,button,label,figcaption,blockquote,td,th,dt,dd';
+  function hasOwnText(el) {
+    return Array.prototype.some.call(el.childNodes, n => n.nodeType === 3 && n.textContent.trim() !== '');
+  }
+  function markEditable() {
+    document.querySelectorAll(TEXT_TAGS).forEach(el => {
+      if (el.closest('#ct-edit-banner, #ct-edit-save')) return;
+      if (hasOwnText(el)) el.setAttribute('contenteditable', 'true');
+    });
+    // Keep only the outermost editable element when they nest (e.g. <p> around a <strong>)
+    document.querySelectorAll('[contenteditable="true"] [contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+  }
+  function unmarkEditable() {
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+  }
+  function setEditing(on) {
+    if (on === editing) return;
+    editing = on;
+    document.body.classList.toggle('ct-editing', on);
+    if (on) markEditable(); else unmarkEditable();
+  }
+
+  // While editing, stop links and buttons doing their normal job so their text can be clicked into
+  document.addEventListener('click', e => {
+    if (!editing) return;
+    if (e.target.closest('#ct-edit-save')) return;
+    if (e.target.closest('a, button')) e.preventDefault();
+  }, true);
+  document.addEventListener('submit', e => { if (editing) e.preventDefault(); }, true);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '#' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const t = e.target;
+      if (t && t.closest && t.closest('input, textarea, select, [contenteditable="true"]')) return;
+      e.preventDefault();
+      setEditing(!editing);
+    }
+    if (e.key === 'Escape' && editing) setEditing(false);
+  });
+
+  saveBtn.addEventListener('click', () => {
+    // Work on a clone so the live page is untouched. The banner and save button stay in
+    // the markup (CSS hides them outside edit mode), so the exported file supports # too.
+    const root = document.documentElement.cloneNode(true);
+    const bodyClone = root.querySelector('body');
+    if (bodyClone) {
+      bodyClone.classList.remove('ct-editing');
+      if (!bodyClone.className) bodyClone.removeAttribute('class');
+      bodyClone.style.removeProperty('overflow');
+      if (!bodyClone.getAttribute('style')) bodyClone.removeAttribute('style');
+    }
+    const btnClone = root.querySelector('#ct-edit-save');
+    if (btnClone) btnClone.textContent = '💾 Save and Export';
+    root.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+    // Tidy inline styles left behind by the page's own animations
+    root.querySelectorAll('.chip, .trust-icon, #session').forEach(el => {
+      ['opacity', 'transform', 'transition', 'box-shadow', 'border-color'].forEach(prop => el.style.removeProperty(prop));
+      if (!el.getAttribute('style')) el.removeAttribute('style');
+    });
+    const nav = root.querySelector('#mobile-nav');
+    if (nav) { nav.classList.remove('open'); nav.setAttribute('aria-hidden', 'true'); }
+
+    const html = '<!DOCTYPE html>\n' + root.outerHTML;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'index.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+
+    const original = saveBtn.textContent;
+    saveBtn.textContent = '✓ Downloaded';
+    setTimeout(() => { saveBtn.textContent = original; }, 1800);
+  });
+})();
+
+</script>
+
+
+</body></html>
