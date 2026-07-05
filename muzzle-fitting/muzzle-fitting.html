@@ -249,17 +249,37 @@ button, input, textarea { font: inherit; }
 .mobile-nav a:hover { color: var(--sage-deep); padding-left: 0.5rem; }
 .mobile-nav .btn { margin-top: 1.5rem; width: 100%; }
 
-/* ── Hero (graphic, not photographic — this page stands apart) ── */
+/* ── Hero (photo background, like the homepage — with a golden veil) ── */
 .hero {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  padding: clamp(4rem,9vw,7rem) 0 clamp(3.5rem,7vw,5.5rem);
-  background:
-    radial-gradient(circle at 84% 18%, rgba(255,233,168,.9), transparent 26rem),
-    radial-gradient(circle at 6% 90%, rgba(223,248,251,.75), transparent 22rem),
-    linear-gradient(160deg, var(--cream-2), #fffaef 55%, var(--cream));
   border-bottom: 1px solid rgba(216,159,47,.22);
 }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transform: scale(1.04);
+  transition: transform 6s ease-out;
+}
+.hero-bg.loaded { transform: scale(1); }
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, rgba(255,250,239,.94) 0%, rgba(255,244,200,.84) 38%, rgba(255,233,168,.38) 65%, rgba(255,250,239,.10) 100%);
+}
+.hero-veil::after {
+  content: '';
+  position: absolute;
+  inset: 60% 0 0;
+  background: linear-gradient(to bottom, transparent, rgba(255,250,239,.55));
+}
+.hero .container { position: relative; z-index: 2; width: 100%; padding-top: clamp(3rem,8vh,5rem); padding-bottom: clamp(3rem,7vw,5rem); }
 .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem,5vw,4rem); align-items: center; }
 .hero-badge {
   display: inline-flex;
@@ -308,28 +328,6 @@ button, input, textarea { font: inherit; }
 }
 .price-pill strong { font-size: 1.5rem; font-weight: 900; color: var(--sage-deep); letter-spacing: -.03em; }
 .price-pill span { font-size: .85rem; font-weight: 700; color: var(--muted); }
-
-.hero-art { display: flex; justify-content: center; animation: hero-text-in 1s var(--ease-out) .55s both; }
-.hero-art-wrap { position: relative; width: min(380px,100%); }
-.hero-art-ring {
-  width: 100%;
-  padding-bottom: 100%;
-  position: relative;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--butter) 0%, var(--peach) 55%, var(--sage-soft) 100%);
-  box-shadow: var(--shadow);
-}
-.hero-art-inner {
-  position: absolute;
-  inset: 9%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, #fffdf5, var(--cream-2));
-  box-shadow: 0 0 0 8px rgba(255,255,255,.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-art-inner svg { width: 68%; height: auto; animation: art-float 5s ease-in-out infinite; }
 @keyframes art-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .hero-tag {
   position: absolute;
@@ -344,8 +342,7 @@ button, input, textarea { font: inherit; }
   white-space: nowrap;
 }
 .hero-tag--1 { top: 6%; left: -4%; transform: rotate(-6deg); color: var(--rose-deep); border-color: rgba(95,180,192,.3); }
-.hero-tag--2 { bottom: 14%; right: -6%; transform: rotate(5deg); }
-.hero-tag--3 { bottom: -2%; left: 12%; transform: rotate(-3deg); color: var(--rose-deep); border-color: rgba(95,180,192,.3); }
+.hero-tag--3 { bottom: -2%; left: 12%; transform: rotate(-3deg); }
 
 /* ── Muzzle-train-first notice ────────────────────────────────── */
 .notice {
@@ -367,6 +364,53 @@ button, input, textarea { font: inherit; }
 
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ── Certified fitter strip ───────────────────────────────────── */
+.certified-strip {
+  background: linear-gradient(135deg, var(--sage-soft) 0%, var(--blush-2) 100%);
+  border-block: 1px solid rgba(216,159,47,.24);
+  padding: clamp(1.75rem,4vw,2.75rem) 0;
+}
+.certified-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem,4vw,2.5rem);
+  flex-wrap: wrap;
+}
+.certified-frame {
+  background: #fff;
+  border: 1px solid rgba(216,159,47,.3);
+  border-radius: 16px;
+  padding: .6rem;
+  box-shadow: var(--shadow-soft);
+  width: clamp(180px, 24vw, 260px);
+  transform: rotate(-1.5deg);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease;
+}
+.certified-frame:hover { transform: rotate(0deg) translateY(-3px); box-shadow: var(--shadow); }
+.certified-frame img { width: 100%; height: auto; border-radius: 10px; object-fit: contain; }
+.certified-words { max-width: 480px; }
+.certified-words h2 { font-family: var(--f-display); font-size: clamp(1.5rem,3vw,2.1rem); letter-spacing: -.03em; margin: .5rem 0 .5rem; }
+.certified-words h2 em { font-style: italic; color: var(--sage-deep); }
+.certified-words p { color: var(--muted); font-size: .98rem; margin: 0; }
+
+/* ── Step photos ──────────────────────────────────────────────── */
+.step-photo {
+  margin: .9rem 0 1rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--sage-soft), var(--blush-2));
+}
+.step-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-med) var(--ease-out);
+}
+.step:hover .step-photo img { transform: scale(1.04); }
 
 /* ── Why a good fit matters ───────────────────────────────────── */
 .why-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.15rem; margin-top: 2.25rem; }
@@ -514,8 +558,6 @@ button, input, textarea { font: inherit; }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-art { order: -1; }
-  .hero-art-wrap { width: min(280px,86vw); }
   .why-grid { grid-template-columns: 1fr; }
   .journey { grid-template-columns: 1fr; gap: 2.6rem; }
   .journey::before { display: none; }
@@ -529,7 +571,6 @@ button, input, textarea { font: inherit; }
   .section-title { font-size: clamp(2rem,11vw,3rem); }
   .btn { width: 100%; }
   .hero-tag--1 { left: 0; }
-  .hero-tag--2 { right: 0; }
 }
 
 /* ── Edit mode (press # to toggle) ────────────────────────────── */
@@ -573,12 +614,12 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
 
 <header aria-label="Site header" class="site-header">
   <nav aria-label="Main navigation" class="nav">
-    <a aria-label="Click and Treat Training home" class="brand" href="index.html">
+    <a aria-label="Click and Treat Training home" class="brand" href="/">
       <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png" style="width: 120px; height: 120px;">
       <span class="brand__text"><strong>Click and Treat Training</strong><span>Muzzle Fittings × The Muzzle Movement</span></span>
     </a>
     <div class="nav__links" id="nav-links">
-      <a href="index.html">← Back to main site</a>
+      <a href="/">← Back to main site</a>
       <a href="#why-fit">Why fit matters</a>
       <a href="#how-it-works">How it works</a>
       <a href="#favour">Referral link</a>
@@ -608,6 +649,8 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
 <main id="main">
 
 <section class="hero" aria-label="Muzzle fittings with The Muzzle Movement" id="top">
+  <img id="hero-bg" class="hero-bg" src="hero.jpg" alt="A dog wearing a comfortable, well-fitted muzzle" fetchpriority="high">
+  <div class="hero-veil" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
@@ -627,23 +670,20 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
           <p><strong>Please note:</strong> all dogs need to be muzzle trained before having a muzzle put on — this helps make it a positive experience for your dog. Not there yet? Take a look at my <a href="index.html#packages">Muzzle Training sessions</a>.</p>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-art-wrap">
-          <div class="hero-art-ring">
-            <div class="hero-art-inner">
-              <svg viewBox="0 0 100 100" fill="#a8751a">
-                <ellipse cx="50" cy="70" rx="22" ry="15"></ellipse>
-                <ellipse cx="26" cy="52" rx="11" ry="14"></ellipse>
-                <ellipse cx="74" cy="52" rx="11" ry="14"></ellipse>
-                <ellipse cx="20" cy="30" rx="9" ry="11"></ellipse>
-                <ellipse cx="80" cy="30" rx="9" ry="11"></ellipse>
-              </svg>
-            </div>
-          </div>
-          <span class="hero-tag hero-tag--1">Comfort checked</span>
-          <span class="hero-tag hero-tag--2">All breeds &amp; sizes</span>
-          <span class="hero-tag hero-tag--3">Stress-free at home</span>
-        </div>
+    </div>
+  </div>
+</section>
+
+<section class="certified-strip" aria-labelledby="certified-h">
+  <div class="container">
+    <div class="certified-inner reveal">
+      <div class="certified-frame">
+        <img src="cert.png" alt="The Muzzle Movement certified fitter certificate" loading="lazy">
+      </div>
+      <div class="certified-words">
+        <span class="eyebrow">Officially certified</span>
+        <h2 id="certified-h">A certified <em>Muzzle Movement</em> fitter</h2>
+        <p>I'm certified by The Muzzle Movement to carry out their muzzle fittings — so you can be confident the sizing guidance you receive follows their own standards, styles and fitting approach.</p>
       </div>
     </div>
   </div>
@@ -693,6 +733,7 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
     <div class="journey">
       <article class="step reveal">
         <div class="step-num" aria-hidden="true">1</div>
+        <div class="step-photo"><img src="first.jpg" alt="Measuring a dog's nose at home with a soft tape measure" loading="lazy"></div>
         <span class="step-kicker">First · Measure</span>
         <h3>Measure at home</h3>
         <p>It's really helpful if you can take a rough measurement of your dog's nose before our session. You can use the guide from The Muzzle Movement team to see how it's done. Having a stranger measure your dog can sometimes feel overwhelming for them, and we want to minimise stress wherever possible to keep the experience positive. If measuring at home feels tricky, or you'd prefer some in-person support, just get in touch and we'll happily arrange a time to help you.</p>
@@ -700,6 +741,7 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
       </article>
       <article class="step reveal">
         <div class="step-num" aria-hidden="true">2</div>
+        <div class="step-photo"><img src="second.jpg" alt="Trying different muzzle sizes with a dog during a home fitting visit" loading="lazy"></div>
         <span class="step-kicker">Second · Fit</span>
         <h3>Book a home visit</h3>
         <p>Get in touch to book a visit. I'll come to your home, meet your dog, and try out a range of muzzle sizes and styles to find the best fit together — calmly, kindly, and at a pace that suits your dog.</p>
@@ -707,6 +749,7 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
       </article>
       <article class="step reveal">
         <div class="step-num" aria-hidden="true">3</div>
+        <div class="step-photo"><img src="third.jpg" alt="A dog happily wearing their new Muzzle Movement muzzle" loading="lazy"></div>
         <span class="step-kicker">Third · Order</span>
         <h3>Order with 10% off</h3>
         <p>Using our unique referral link, you can order your dog's new muzzle from The Muzzle Movement store today — and receive 10% off. The perfect size, straight to your door.</p>
@@ -788,6 +831,11 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+const heroBg = document.getElementById('hero-bg');
+if (heroBg) {
+  heroBg.addEventListener('load', () => heroBg.classList.add('loaded'));
+  if (heroBg.complete) heroBg.classList.add('loaded');
+}
 const heroEm = document.getElementById('hero-em');
 if (heroEm) setTimeout(() => heroEm.classList.add('underline-in'), 900);
 const menuToggle = document.getElementById('menu-toggle');
