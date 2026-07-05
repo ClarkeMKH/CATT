@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muzzle Fittings | Click and Treat Training × The Muzzle Movement</title>
+<meta name="description" content="1-2-1 in-home muzzle fitting sessions for The Muzzle Movement muzzles. Find the right style, size and fit for your dog — calmly, kindly and stress-free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&amp;family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --cream:       #fffdf5;
+  --cream-2:     #fff7dc;
+  --paper:       #ffffff;
+  --blush:       #dff8fb;
+  --blush-2:     #f0fdff;
+  --rose:        #5fb4c0;
+  --rose-deep:   #2f6470;
+  --sage:        #d89f2f;
+  --sage-deep:   #a8751a;
+  --sage-soft:   #fff4c8;
+  --butter:      #ffe9a8;
+  --peach:       #ffe1ce;
+  --ink:         #2f2d2b;
+  --muted:       #68625c;
+  --line:        #f0e3bd;
+  --line-cool:   #dbeff1;
+  --shadow:      0 24px 70px rgba(168,117,26,.16);
+  --shadow-soft: 0 14px 36px rgba(168,117,26,.11);
+
+  --r-sm:   0.75rem;
+  --r-md:   1.25rem;
+  --r-lg:   2rem;
+  --r-xl:   2.25rem;
+  --r-full: 999px;
+
+  --max: 1180px;
+  --ease: cubic-bezier(0.34,1.3,0.64,1);
+  --ease-out: cubic-bezier(0.22,1,0.36,1);
+  --t-fast: 0.18s;
+  --t-med:  0.32s;
+  --t-slow: 0.55s;
+
+  --f-display: 'Playfair Display', Georgia, serif;
+  --f-body:    'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255,233,168,.75), transparent 30rem),
+    radial-gradient(circle at 90% 6%, rgba(223,248,251,.6), transparent 26rem),
+    radial-gradient(circle at 74% 62%, rgba(255,244,200,.85), transparent 34rem),
+    linear-gradient(180deg, #fffaef, #fffdf5 44%, #fff7dc);
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .32;
+  background-image:
+    radial-gradient(circle at 18px 18px, rgba(216,159,47,.16) 1.2px, transparent 1.5px),
+    radial-gradient(circle at 58px 54px, rgba(95,180,192,.11) 1.35px, transparent 1.7px),
+    radial-gradient(circle at 92px 26px, rgba(255,225,206,.2) 1px, transparent 1.4px);
+  background-size: 116px 116px;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button, input, textarea { font: inherit; }
+::selection { background: var(--butter); color: var(--sage-deep); }
+:focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; border-radius: 6px; }
+
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; z-index: 9999; background: var(--sage-deep); color: #fff; padding: .7rem 1rem; border-radius: 999px; }
+
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.section { padding: 5.5rem 0; }
+.section--soft {
+  background: linear-gradient(180deg, rgba(255,250,235,.86), rgba(240,253,255,.66));
+  border-block: 1px solid rgba(244,233,201,.85);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  color: var(--sage-deep);
+  background: linear-gradient(180deg, #fff, var(--sage-soft));
+  border: 1px solid rgba(216,159,47,.3);
+  padding: .36rem .72rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: "🐾"; font-size: .72rem; }
+
+.section-title {
+  margin: .85rem 0 1rem;
+  font-family: var(--f-display);
+  font-size: clamp(2.1rem, 4.5vw, 4.3rem);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+  color: #322829;
+}
+.section-title em { font-style: italic; color: var(--sage-deep); }
+.section-lede { max-width: 760px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+.display {
+  font-family: var(--f-display);
+  font-size: clamp(2.8rem, 6.4vw, 5.6rem);
+  line-height: .96;
+  letter-spacing: -.06em;
+  color: #302525;
+  margin: .95rem 0 1.2rem;
+}
+.display em {
+  font-style: italic;
+  color: var(--sage-deep);
+  position: relative;
+}
+.display em::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sage), var(--rose));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out) 0.4s;
+}
+.display em.underline-in::after { transform: scaleX(1); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 48px;
+  padding: .86rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 800;
+  font-size: .92rem;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary   { background: linear-gradient(135deg, var(--sage-deep), var(--sage)); color: #fff; box-shadow: 0 18px 38px rgba(168,117,26,.26); }
+.btn--secondary { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: var(--shadow-soft); }
+.btn--teal      { background: linear-gradient(135deg, var(--rose-deep), var(--rose)); color: #fff; box-shadow: 0 16px 34px rgba(47,100,112,.24); }
+.btn-row { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.75rem; }
+
+/* ── Partnership ribbon ───────────────────────────────────────── */
+.ribbon {
+  background: linear-gradient(90deg, var(--sage-deep), var(--sage) 55%, #407f8b);
+  color: #fff;
+  font-size: .9rem;
+  text-align: center;
+  padding: .55rem clamp(1rem,5vw,2rem);
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.ribbon a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(255,250,239,.92);
+  border-bottom: 2px solid rgba(216,159,47,.32);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.nav {
+  max-width: 1280px;
+  margin: auto;
+  min-height: 64px;
+  padding: 0 clamp(1rem,5vw,2rem);
+  display: grid;
+  grid-template-columns: minmax(210px,auto) minmax(0,1fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+.brand { display: flex; align-items: center; gap: .82rem; min-width: 0; }
+.brand__logo {
+  width: 52px; height: 52px; flex: 0 0 52px;
+  object-fit: contain;
+  border-radius: 100px;
+  margin: 10px 20px;
+}
+.brand__text strong { display: block; font-size: 1.06rem; line-height: 1.15; letter-spacing: .01em; text-align:center; }
+.brand__text span { display: block; margin-top: .12rem; color: var(--sage-deep); font-size: .84rem; font-weight: 700; white-space: nowrap; }
+.nav__links { display: flex; align-items: center; justify-content: center; gap: .22rem; min-width: 0; white-space: nowrap; }
+.nav__links a {
+  padding: .66rem .74rem;
+  border-radius: 999px;
+  font-size: .92rem;
+  font-weight: 700;
+  color: #4a4141;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.nav__links a:hover { background: var(--sage-soft); color: var(--sage-deep); transform: translateY(-1px); }
+.nav__cta { background: var(--sage-deep) !important; color: #fff !important; padding: .72rem 1rem !important; box-shadow: 0 12px 26px rgba(168,117,26,.24); }
+.header-actions { display: flex; align-items: center; justify-content: flex-end; gap: .72rem; }
+.menu-toggle { display: none; border: 0; background: #fff; border-radius: 15px; padding: .68rem .78rem; box-shadow: var(--shadow-soft); cursor: pointer; color: var(--ink); }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; border-radius: 10px; transition: .24s ease; }
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0; right: 0;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(168,117,26,0.12);
+  z-index: 59;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.42s var(--ease-out), box-shadow 0.3s ease;
+  padding-top: 64px;
+}
+.mobile-nav.open {
+  max-height: 90dvh;
+  box-shadow: 0 16px 48px rgba(168,117,26,.14);
+}
+.mobile-nav-inner { padding: 0.5rem clamp(1rem,5vw,2rem) 2.5rem; overflow-y: auto; }
+.mobile-nav ul { list-style: none; }
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(168,117,26,0.09);
+  transition: color var(--t-fast) ease, padding-left var(--t-fast) ease;
+}
+.mobile-nav a:hover { color: var(--sage-deep); padding-left: 0.5rem; }
+.mobile-nav .btn { margin-top: 1.5rem; width: 100%; }
+
+/* ── Hero (graphic, not photographic — this page stands apart) ── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem,9vw,7rem) 0 clamp(3.5rem,7vw,5.5rem);
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255,233,168,.9), transparent 26rem),
+    radial-gradient(circle at 6% 90%, rgba(223,248,251,.75), transparent 22rem),
+    linear-gradient(160deg, var(--cream-2), #fffaef 55%, var(--cream));
+  border-bottom: 1px solid rgba(216,159,47,.22);
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem,5vw,4rem); align-items: center; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  background: rgba(255,255,255,.9);
+  border-radius: 999px;
+  padding: .4rem 1rem .4rem .5rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(216,159,47,.32);
+  animation: badge-in 0.7s var(--ease) 0.2s both;
+}
+@keyframes badge-in { from { opacity: 0; transform: translateY(12px) scale(0.95); } to { opacity: 1; transform: none; } }
+.hero-badge .dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sage), var(--rose));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: .8rem;
+}
+.hero-badge span { font-size: .78rem; font-weight: 800; color: var(--ink); }
+.hero-text .display { animation: hero-text-in .9s var(--ease-out) .35s both; }
+.hero-text .hero__lead {
+  max-width: 540px;
+  color: #55494a;
+  font-size: clamp(1.05rem,1.9vw,1.22rem);
+  animation: hero-text-in .9s var(--ease-out) .5s both;
+}
+@keyframes hero-text-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.hero-text .btn-row { animation: hero-text-in .9s var(--ease-out) .65s both; }
+.price-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .45rem;
+  margin-top: 1.6rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .5rem 1.15rem;
+  box-shadow: var(--shadow-soft);
+  animation: hero-text-in .9s var(--ease-out) .75s both;
+}
+.price-pill strong { font-size: 1.5rem; font-weight: 900; color: var(--sage-deep); letter-spacing: -.03em; }
+.price-pill span { font-size: .85rem; font-weight: 700; color: var(--muted); }
+
+.hero-art { display: flex; justify-content: center; animation: hero-text-in 1s var(--ease-out) .55s both; }
+.hero-art-wrap { position: relative; width: min(380px,100%); }
+.hero-art-ring {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--butter) 0%, var(--peach) 55%, var(--sage-soft) 100%);
+  box-shadow: var(--shadow);
+}
+.hero-art-inner {
+  position: absolute;
+  inset: 9%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #fffdf5, var(--cream-2));
+  box-shadow: 0 0 0 8px rgba(255,255,255,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-art-inner svg { width: 68%; height: auto; animation: art-float 5s ease-in-out infinite; }
+@keyframes art-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.hero-tag {
+  position: absolute;
+  background: var(--paper);
+  border-radius: 999px;
+  padding: .38rem .85rem;
+  font-size: .74rem;
+  font-weight: 800;
+  color: var(--sage-deep);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(216,159,47,.24);
+  white-space: nowrap;
+}
+.hero-tag--1 { top: 6%; left: -4%; transform: rotate(-6deg); color: var(--rose-deep); border-color: rgba(95,180,192,.3); }
+.hero-tag--2 { bottom: 14%; right: -6%; transform: rotate(5deg); }
+.hero-tag--3 { bottom: -2%; left: 12%; transform: rotate(-3deg); color: var(--rose-deep); border-color: rgba(95,180,192,.3); }
+
+/* ── Muzzle-train-first notice ────────────────────────────────── */
+.notice {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: .9rem;
+  align-items: flex-start;
+  background: linear-gradient(135deg, var(--blush-2), #fff);
+  border: 1px solid rgba(95,180,192,.35);
+  border-left: 5px solid var(--rose-deep);
+  border-radius: 18px;
+  padding: 1rem 1.15rem;
+  max-width: 620px;
+  animation: hero-text-in .9s var(--ease-out) .85s both;
+}
+.notice-icon { width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; background: var(--rose-deep); color: #fff; display: grid; place-items: center; font-weight: 900; }
+.notice p { margin: 0; font-size: .92rem; color: #44555b; }
+.notice a { color: var(--rose-deep); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ── Why a good fit matters ───────────────────────────────────── */
+.why-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.15rem; margin-top: 2.25rem; }
+.why-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.why-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(90deg, var(--butter), var(--sage-soft), var(--blush)); }
+.why-card-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--sage-soft); display: grid; place-items: center; margin-bottom: .9rem; }
+.why-card h3 { font-family: var(--f-display); font-size: 1.35rem; margin-bottom: .4rem; }
+.why-card p { color: var(--muted); font-size: .95rem; margin: 0; }
+
+.fit-note { margin-top: 2rem; max-width: 780px; color: var(--muted); font-size: 1.02rem; }
+
+/* ── The fitting journey (signature element) ──────────────────── */
+.journey { position: relative; margin-top: 3rem; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.4rem; }
+.journey::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 12%;
+  right: 12%;
+  border-top: 3px dashed rgba(216,159,47,.5);
+  z-index: 0;
+}
+.step {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 0 1.5rem 1.6rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.step-num {
+  width: 88px; height: 88px;
+  margin: -30px auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--f-display);
+  font-size: 2.3rem;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(168,117,26,.3), 0 0 0 8px var(--cream);
+}
+.step:nth-child(2) .step-num { background: linear-gradient(135deg, var(--rose-deep), var(--rose)); box-shadow: 0 14px 30px rgba(47,100,112,.28), 0 0 0 8px var(--cream); }
+.step-kicker { text-align: center; font-size: .74rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-deep); }
+.step:nth-child(2) .step-kicker { color: var(--rose-deep); }
+.step h3 { font-family: var(--f-display); font-size: 1.5rem; text-align: center; margin: .25rem 0 .7rem; }
+.step p { color: var(--muted); font-size: .95rem; margin-bottom: 1.1rem; }
+.step .btn { margin-top: auto; width: 100%; }
+
+/* ── Referral favour card ─────────────────────────────────────── */
+.favour-card {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 0;
+  align-items: stretch;
+  margin-top: 2.25rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.favour-side {
+  background: linear-gradient(155deg, var(--sage-deep), var(--sage) 52%, #407f8b);
+  color: #fff;
+  padding: 2.45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.favour-side h3 { font-family: var(--f-display); font-size: 2rem; line-height: 1.08; margin: 0; }
+.favour-side .big { font-size: 3.4rem; font-weight: 900; line-height: .95; letter-spacing: -.05em; }
+.favour-side .sub { color: rgba(255,255,255,.85); font-weight: 700; margin-top: .4rem; }
+.favour-body { padding: 2.35rem; }
+.favour-body p { color: var(--muted); margin: 0 0 1.1rem; }
+.favour-body p strong { color: var(--ink); }
+
+/* ── Booking / contact ────────────────────────────────────────── */
+.contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 2rem; align-items: start; }
+.contact-card, .form-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-soft); padding: 2.05rem; }
+.contact-line { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.contact-line:last-child { border-bottom: 0; }
+.contact-line strong { display: block; }
+.contact-line span, .contact-line a { color: var(--muted); }
+.contact-line a:hover { color: var(--sage-deep); }
+.form-card form { display: grid; gap: 1rem; }
+.field label { display: block; font-weight: 800; margin-bottom: .35rem; }
+.field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 17px; background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.field textarea { min-height: 145px; resize: vertical; }
+.field input:focus, .field textarea:focus { border-color: var(--sage); box-shadow: 0 0 0 4px rgba(216,159,47,.18); }
+
+.footer {
+  background: linear-gradient(90deg, #a8751a, var(--sage) 46%, #3f7e8b);
+  color: #fff;
+  padding: 1.1rem 0;
+  margin-top: 0;
+}
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
+}
+.footer-copy { font-size: .8rem; color: rgba(255,255,255,.75); margin: 0; }
+.footer-links { display: flex; flex-wrap: wrap; gap: .4rem .9rem; align-items: center; }
+.footer-links a { font-size: .8rem; color: rgba(255,255,255,.85); text-decoration: none; transition: color .2s ease; }
+.footer-links a:hover { color: #fff; }
+.footer-links .sep { color: rgba(255,255,255,.35); font-size: .7rem; }
+@media (max-width: 520px) { .footer-bar { justify-content: center; text-align: center; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width:940px) {
+  body { font-size: 16px; }
+  .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
+  .brand { max-width: 68vw; }
+  .brand__text span { display: none; }
+  .brand__logo { width: 50px; height: 50px; flex-basis: 50px; }
+  .nav__links { display: none !important; }
+  .header-actions { margin-left: auto; }
+  .menu-toggle { display: block; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-art { order: -1; }
+  .hero-art-wrap { width: min(280px,86vw); }
+  .why-grid { grid-template-columns: 1fr; }
+  .journey { grid-template-columns: 1fr; gap: 2.6rem; }
+  .journey::before { display: none; }
+  .favour-card, .contact-grid { grid-template-columns: 1fr; }
+  .section { padding: 4.1rem 0; }
+  .favour-side, .favour-body, .contact-card, .form-card { padding: 1.45rem; }
+  .mobile-nav { padding-top: 56px; }
+}
+@media (max-width:520px) {
+  .display { font-size: clamp(2.5rem,14vw,3.8rem); }
+  .section-title { font-size: clamp(2rem,11vw,3rem); }
+  .btn { width: 100%; }
+  .hero-tag--1 { left: 0; }
+  .hero-tag--2 { right: 0; }
+}
+
+/* ── Edit mode (press # to toggle) ────────────────────────────── */
+#ct-edit-banner {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+  display: none;
+  align-items: center; justify-content: center;
+  background: linear-gradient(90deg, var(--sage-deep), var(--sage));
+  color: #fff; text-align: center;
+  padding: 10px 16px;
+  font-size: 14px; font-weight: 700; line-height: 1.7;
+  letter-spacing: .01em;
+  box-shadow: 0 2px 12px rgba(168,117,26,.3);
+}
+body.ct-editing #ct-edit-banner { display: flex; }
+#ct-edit-save {
+  position: fixed; right: 20px; bottom: 20px; z-index: 99999;
+  display: none;
+  align-items: center; gap: .5rem;
+  border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+  color: #fff; font-weight: 800; font-size: .95rem;
+  padding: .95rem 1.5rem; border-radius: 999px;
+  box-shadow: 0 18px 38px rgba(168,117,26,.36);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#ct-edit-save:hover { transform: translateY(-2px); box-shadow: 0 22px 44px rgba(168,117,26,.44); }
+body.ct-editing #ct-edit-save { display: inline-flex; }
+body.ct-editing { padding-top: 44px; }
+body.ct-editing .site-header { top: 44px; }
+body.ct-editing [contenteditable="true"] { cursor: text; }
+body.ct-editing [contenteditable="true"]:hover { outline: 1.5px dashed rgba(216,159,47,.8); outline-offset: 2px; border-radius: 4px; }
+body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage); outline-offset: 3px; border-radius: 4px; background: rgba(255,244,200,.4); box-shadow: none; }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="ribbon">In partnership with The Muzzle Movement · Get <strong>10% off</strong> when you order through our <a href="https://www.themuzzlemovement.com/?ref=clickandtreattraining" rel="noopener" target="_blank">referral link</a></div>
+
+<header aria-label="Site header" class="site-header">
+  <nav aria-label="Main navigation" class="nav">
+    <a aria-label="Click and Treat Training home" class="brand" href="index.html">
+      <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png" style="width: 120px; height: 120px;">
+      <span class="brand__text"><strong>Click and Treat Training</strong><span>Muzzle Fittings × The Muzzle Movement</span></span>
+    </a>
+    <div class="nav__links" id="nav-links">
+      <a href="index.html">← Back to main site</a>
+      <a href="#why-fit">Why fit matters</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#favour">Referral link</a>
+      <a class="nav__cta" href="#book">Book a fitting</a>
+    </div>
+    <div class="header-actions">
+      <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menu-toggle" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <ul>
+      <li><a href="index.html">← Back to main site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#why-fit">Why fit matters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#how-it-works">How it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#favour">Referral link <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      <li><a href="#book">Book a fitting <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+    </ul>
+    <a href="#book" class="btn btn--primary" style="margin-top:1.5rem;width:100%;display:flex;justify-content:center;">Book a fitting</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero" aria-label="Muzzle fittings with The Muzzle Movement" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true">✦</span>
+          <span>1-2-1 fittings for The Muzzle Movement</span>
+        </div>
+        <h1 class="display">The right muzzle, fitted with <em id="hero-em">kindness.</em></h1>
+        <p class="hero__lead">I provide sizing guidance for The Muzzle Movement muzzles. If you're interested in these muzzles but unsure which size or style to get, I offer special fitting sessions in your home — so you can order the correct size with no stress, and know your dog is comfortable wearing it.</p>
+        <div class="price-pill"><strong>£25</strong><span>per fitting · in your home</span></div>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#book">Book a fitting</a>
+          <a class="btn btn--secondary" href="#how-it-works">See how it works</a>
+        </div>
+        <div class="notice">
+          <div class="notice-icon" aria-hidden="true">!</div>
+          <p><strong>Please note:</strong> all dogs need to be muzzle trained before having a muzzle put on — this helps make it a positive experience for your dog. Not there yet? Take a look at my <a href="index.html#packages">Muzzle Training sessions</a>.</p>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-wrap">
+          <div class="hero-art-ring">
+            <div class="hero-art-inner">
+              <svg viewBox="0 0 100 100" fill="#a8751a">
+                <ellipse cx="50" cy="70" rx="22" ry="15"></ellipse>
+                <ellipse cx="26" cy="52" rx="11" ry="14"></ellipse>
+                <ellipse cx="74" cy="52" rx="11" ry="14"></ellipse>
+                <ellipse cx="20" cy="30" rx="9" ry="11"></ellipse>
+                <ellipse cx="80" cy="30" rx="9" ry="11"></ellipse>
+              </svg>
+            </div>
+          </div>
+          <span class="hero-tag hero-tag--1">Comfort checked</span>
+          <span class="hero-tag hero-tag--2">All breeds &amp; sizes</span>
+          <span class="hero-tag hero-tag--3">Stress-free at home</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-fit" aria-labelledby="why-fit-h">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Why fit matters</span>
+      <h2 class="section-title" id="why-fit-h">A well-fitting muzzle changes <em>everything</em></h2>
+      <p class="section-lede">We understand that a well-fitting muzzle can be a great tool for safety, confidence and clear communication between you and your dog. That's why we provide muzzle fitting sessions for The Muzzle Movement — to help you find the ideal style, size and fit for your dog.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a8751a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 2L3 6v6c0 5 3.9 9.7 9 11 5.1-1.3 9-6 9-11V6l-9-4z"></path></svg>
+        </div>
+        <h3>Safety</h3>
+        <p>A correctly fitted muzzle keeps your dog, other dogs and people safe — while still allowing your dog to pant, drink and take treats comfortably.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a8751a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </div>
+        <h3>Confidence</h3>
+        <p>When the fit is right and the experience is positive, your dog can relax — and so can you. Muzzles open up the world, they don't shrink it.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a8751a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </div>
+        <h3>Clear communication</h3>
+        <p>A visible, well-fitted muzzle tells others your dog needs space — clear, kind communication that helps every walk go more smoothly.</p>
+      </div>
+    </div>
+    <p class="fit-note reveal">During your session, we'll try different styles and sizes, and you'll leave knowing your dog is comfortable, protected and ready to thrive.</p>
+  </div>
+</section>
+
+<section class="section section--soft" id="how-it-works" aria-labelledby="how-h">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">How it works</span>
+      <h2 class="section-title" id="how-h">Your fitting journey in <em>three steps</em></h2>
+      <p class="section-lede">From first measurement to a muzzle at your door — a simple, low-stress process built around your dog's pace.</p>
+    </div>
+    <div class="journey">
+      <article class="step reveal">
+        <div class="step-num" aria-hidden="true">1</div>
+        <span class="step-kicker">First · Measure</span>
+        <h3>Measure at home</h3>
+        <p>It's really helpful if you can take a rough measurement of your dog's nose before our session. You can use the guide from The Muzzle Movement team to see how it's done. Having a stranger measure your dog can sometimes feel overwhelming for them, and we want to minimise stress wherever possible to keep the experience positive. If measuring at home feels tricky, or you'd prefer some in-person support, just get in touch and we'll happily arrange a time to help you.</p>
+        <a class="btn btn--secondary" href="https://themuzzlemovement.com/pages/the-muzzle-movement-sizing-for-a-muzzle" rel="noopener" target="_blank">Measuring guidance</a>
+      </article>
+      <article class="step reveal">
+        <div class="step-num" aria-hidden="true">2</div>
+        <span class="step-kicker">Second · Fit</span>
+        <h3>Book a home visit</h3>
+        <p>Get in touch to book a visit. I'll come to your home, meet your dog, and try out a range of muzzle sizes and styles to find the best fit together — calmly, kindly, and at a pace that suits your dog.</p>
+        <a class="btn btn--teal" href="#book">Contact me</a>
+      </article>
+      <article class="step reveal">
+        <div class="step-num" aria-hidden="true">3</div>
+        <span class="step-kicker">Third · Order</span>
+        <h3>Order with 10% off</h3>
+        <p>Using our unique referral link, you can order your dog's new muzzle from The Muzzle Movement store today — and receive 10% off. The perfect size, straight to your door.</p>
+        <a class="btn btn--primary" href="https://www.themuzzlemovement.com/?ref=clickandtreattraining" rel="noopener" target="_blank">Buy your muzzle here</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="favour" aria-labelledby="favour-h">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">One small favour</span>
+      <h2 class="section-title" id="favour-h">Every muzzle bought helps <em>more dogs</em></h2>
+    </div>
+    <div class="favour-card reveal">
+      <div class="favour-side">
+        <div>
+          <h3>Our referral link</h3>
+          <div class="sub">The Muzzle Movement store</div>
+        </div>
+        <div>
+          <div class="big">10% off</div>
+          <div class="sub">your muzzle order</div>
+        </div>
+      </div>
+      <div class="favour-body">
+        <p>If you're thinking of buying a muzzle from The Muzzle Movement, please consider using our <strong>referral link</strong>. The commission I receive goes directly into expanding our range of muzzle sizes and styles, allowing us to continue offering personalised fittings and guidance to even more dogs and their owners.</p>
+        <p>Every muzzle bought helps us grow our collection and support dogs of all breeds, shapes and sizes. Thank you for helping us continue to advocate for positive training, and to educate more dog owners like you!</p>
+        <div class="btn-row"><a class="btn btn--primary" href="https://www.themuzzlemovement.com/?ref=clickandtreattraining" rel="noopener" target="_blank">Shop with our referral link</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="book" aria-labelledby="book-h">
+  <div class="container contact-grid">
+    <div class="contact-card reveal">
+      <span class="eyebrow">Book a fitting</span>
+      <h2 class="section-title" id="book-h">Ready to find the perfect fit?</h2>
+      <p class="section-lede">Send me a message to arrange your in-home muzzle fitting session, or to ask any questions about sizing, styles, or The Muzzle Movement range.</p>
+      <div class="contact-line"><strong>Email</strong><a href="mailto:contact@clickandtreattraining.co.uk">contact@clickandtreattraining.co.uk</a></div>
+      <div class="contact-line"><strong>Telephone</strong><a href="tel:07702045810">07702 045810</a></div>
+      <div class="contact-line"><strong>Price</strong><span>£25 per fitting, in your own home.</span></div>
+      <div class="contact-line"><strong>Service area</strong><span>Our service area covers an 8-mile radius around Chatham. Not sure if you're within our area? Contact us and we'll be happy to check for you!</span></div>
+    </div>
+    <div class="form-card reveal">
+      <form id="fitting-form" aria-label="Muzzle fitting enquiry form">
+        <div class="field"><label for="email">Your email</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"></div>
+        <div class="field"><label for="dog">Your dog's breed &amp; size</label><input id="dog" name="dog" placeholder="e.g. Staffie cross, medium" type="text"></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your dog and when you'd like a fitting. If you've taken any nose measurements already, pop them in here too." required=""></textarea></div>
+        <button class="btn btn--primary" type="submit">Send fitting enquiry</button>
+        <p style="margin:.2rem 0 0;color:var(--muted);font-size:.92rem">This opens your email app with the message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bar">
+      <p class="footer-copy">© <span id="yr">2026</span> Click and Treat Training · Muzzle fittings in partnership with The Muzzle Movement</p>
+      <div class="footer-links">
+        <a href="index.html">Main site</a>
+        <span class="sep">·</span>
+        <a href="mailto:contact@clickandtreattraining.co.uk">Email</a>
+        <span class="sep">·</span>
+        <a href="https://www.themuzzlemovement.com/?ref=clickandtreattraining" rel="noopener">The Muzzle Movement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Edit mode UI: press # anywhere on the page to toggle -->
+<div id="ct-edit-banner">✏️&nbsp; Edit Mode — click any text on the page to change it. Press # or Esc when you're done.</div>
+<button id="ct-edit-save" type="button">💾 Save and Export</button>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const heroEm = document.getElementById('hero-em');
+if (heroEm) setTimeout(() => heroEm.classList.add('underline-in'), 900);
+const menuToggle = document.getElementById('menu-toggle');
+const mobileNav  = document.getElementById('mobile-nav');
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener('click', () => {
+    const open = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!open));
+    menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+    mobileNav.classList.toggle('open', !open);
+    mobileNav.setAttribute('aria-hidden', String(open));
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }));
+  document.addEventListener('click', e => {
+    if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  });
+}
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: .13, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+document.querySelector('#fitting-form')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const email   = document.querySelector('#email').value.trim();
+  const dog     = document.querySelector('#dog').value.trim();
+  const message = document.querySelector('#message').value.trim();
+  const dogLine = dog ? `My dog: ${dog}\n\n` : '';
+  const body    = encodeURIComponent(`Hello Chloe,\n\nI'd like to book a muzzle fitting session.\n\n${dogLine}${message}\n\nMy email: ${email}`);
+  const subject = encodeURIComponent('Muzzle fitting enquiry');
+  window.location.href = `mailto:contact@clickandtreattraining.co.uk?subject=${subject}&body=${body}`;
+});
+
+/* ── Edit mode: press # to toggle, click any text to edit, then Save and Export ── */
+(function () {
+  'use strict';
+  const saveBtn = document.getElementById('ct-edit-save');
+  let editing = false;
+
+  const TEXT_TAGS = 'h1,h2,h3,h4,h5,h6,p,li,a,span,strong,em,small,button,label,figcaption,blockquote,td,th,dt,dd';
+  function hasOwnText(el) {
+    return Array.prototype.some.call(el.childNodes, n => n.nodeType === 3 && n.textContent.trim() !== '');
+  }
+  function markEditable() {
+    document.querySelectorAll(TEXT_TAGS).forEach(el => {
+      if (el.closest('#ct-edit-banner, #ct-edit-save')) return;
+      if (hasOwnText(el)) el.setAttribute('contenteditable', 'true');
+    });
+    // Keep only the outermost editable element when they nest (e.g. <p> around a <strong>)
+    document.querySelectorAll('[contenteditable="true"] [contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+  }
+  function unmarkEditable() {
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+  }
+  function setEditing(on) {
+    if (on === editing) return;
+    editing = on;
+    document.body.classList.toggle('ct-editing', on);
+    if (on) markEditable(); else unmarkEditable();
+  }
+
+  // While editing, stop links and buttons doing their normal job so their text can be clicked into
+  document.addEventListener('click', e => {
+    if (!editing) return;
+    if (e.target.closest('#ct-edit-save')) return;
+    if (e.target.closest('a, button')) e.preventDefault();
+  }, true);
+  document.addEventListener('submit', e => { if (editing) e.preventDefault(); }, true);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '#' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const t = e.target;
+      if (t && t.closest && t.closest('input, textarea, select, [contenteditable="true"]')) return;
+      e.preventDefault();
+      setEditing(!editing);
+    }
+    if (e.key === 'Escape' && editing) setEditing(false);
+  });
+
+  saveBtn.addEventListener('click', () => {
+    // Work on a clone so the live page is untouched. The banner and save button stay in
+    // the markup (CSS hides them outside edit mode), so the exported file supports # too.
+    const root = document.documentElement.cloneNode(true);
+    const bodyClone = root.querySelector('body');
+    if (bodyClone) {
+      bodyClone.classList.remove('ct-editing');
+      if (!bodyClone.className) bodyClone.removeAttribute('class');
+      bodyClone.style.removeProperty('overflow');
+      if (!bodyClone.getAttribute('style')) bodyClone.removeAttribute('style');
+    }
+    const btnClone = root.querySelector('#ct-edit-save');
+    if (btnClone) btnClone.textContent = '💾 Save and Export';
+    root.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+    const nav = root.querySelector('#mobile-nav');
+    if (nav) { nav.classList.remove('open'); nav.setAttribute('aria-hidden', 'true'); }
+
+    const html = '<!DOCTYPE html>\n' + root.outerHTML;
+    const original = saveBtn.textContent;
+
+    try {
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href = url; a.download = 'muzzle-fitting.html'; a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      // Give the browser time to actually start reading the blob before freeing it.
+      // Revoking immediately after click() can cut the download short in some browsers.
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+
+      saveBtn.textContent = '✓ Downloaded';
+    } catch (err) {
+      // Fallback for browsers that block the automatic download (e.g. some mobile
+      // browsers): open the file in a new tab so it can be saved manually.
+      console.error('Save and Export: automatic download failed, opening in new tab instead.', err);
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const url  = URL.createObjectURL(blob);
+      window.open(url, '_blank');
+      saveBtn.textContent = '⚠ Opened in new tab';
+    }
+
+    setTimeout(() => { saveBtn.textContent = original; }, 1800);
+  });
+})();
+</script>
+
+</body></html>
