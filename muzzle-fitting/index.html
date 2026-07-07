@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>
+<html lang="en-GB">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muzzle Fittings | Click and Treat Training × The Muzzle Movement</title>
@@ -7,43 +8,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&amp;family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<style> 
-
+<style>
 :root {
-  --cream:       #fffdf5;
-  --cream-2:     #fff7dc;
-  --paper:       #ffffff;
-  --blush:       #dff8fb;
-  --blush-2:     #f0fdff;
-  --rose:        #5fb4c0;
-  --rose-deep:   #2f6470;
-  --sage:        #d89f2f;
-  --sage-deep:   #a8751a;
-  --sage-soft:   #fff4c8;
-  --butter:      #ffe9a8;
-  --peach:       #ffe1ce;
-  --ink:         #2f2d2b;
-  --muted:       #68625c;
-  --line:        #f0e3bd;
-  --line-cool:   #dbeff1;
-  --shadow:      0 24px 70px rgba(168,117,26,.16);
+  --cream: #fffdf5;  --cream-2: #fff7dc;  --paper: #ffffff;
+  --blush: #dff8fb;  --blush-2: #f0fdff;
+  --rose: #5fb4c0;   --rose-deep: #2f6470;
+  --sage: #d89f2f;   --sage-deep: #a8751a; --sage-soft: #fff4c8;
+  --butter: #ffe9a8; --peach: #ffe1ce;
+  --ink: #2f2d2b;    --muted: #68625c;
+  --line: #f0e3bd;   --line-cool: #dbeff1;
+  --shadow: 0 24px 70px rgba(168,117,26,.16);
   --shadow-soft: 0 14px 36px rgba(168,117,26,.11);
-
-  --r-sm:   0.75rem;
-  --r-md:   1.25rem;
-  --r-lg:   2rem;
-  --r-xl:   2.25rem;
-  --r-full: 999px;
-
+  --r-xl: 2.25rem;
   --max: 1180px;
   --ease: cubic-bezier(0.34,1.3,0.64,1);
   --ease-out: cubic-bezier(0.22,1,0.36,1);
-  --t-fast: 0.18s;
-  --t-med:  0.32s;
-  --t-slow: 0.55s;
-
+  --t-fast: 0.18s;   --t-med: 0.32s;
   --f-display: 'Playfair Display', Georgia, serif;
-  --f-body:    'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --f-body: 'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,11 +44,8 @@ body {
 }
 body::before {
   content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: .32;
+  position: fixed; inset: 0; z-index: -1;
+  pointer-events: none; opacity: .32;
   background-image:
     radial-gradient(circle at 18px 18px, rgba(216,159,47,.16) 1.2px, transparent 1.5px),
     radial-gradient(circle at 58px 54px, rgba(95,180,192,.11) 1.35px, transparent 1.7px),
@@ -80,7 +59,7 @@ button, input, textarea { font: inherit; }
 ::selection { background: var(--butter); color: var(--sage-deep); }
 :focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; border-radius: 6px; }
 
-.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link { position: absolute; left: -999px; width: 1px; height: 1px; overflow: hidden; }
 .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; z-index: 9999; background: var(--sage-deep); color: #fff; padding: .7rem 1rem; border-radius: 999px; }
 
 .container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
@@ -91,18 +70,12 @@ button, input, textarea { font: inherit; }
 }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: .42rem;
+  display: inline-flex; align-items: center; gap: .42rem;
   color: var(--sage-deep);
   background: linear-gradient(180deg, #fff, var(--sage-soft));
   border: 1px solid rgba(216,159,47,.3);
-  padding: .36rem .72rem;
-  border-radius: 999px;
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  padding: .36rem .72rem; border-radius: 999px;
+  font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase;
 }
 .eyebrow::before { content: "🐾"; font-size: .72rem; }
 
@@ -110,50 +83,31 @@ button, input, textarea { font: inherit; }
   margin: .85rem 0 1rem;
   font-family: var(--f-display);
   font-size: clamp(2.1rem, 4.5vw, 4.3rem);
-  line-height: 1.04;
-  letter-spacing: -.04em;
-  color: #322829;
+  line-height: 1.04; letter-spacing: -.04em; color: #322829;
 }
 .section-title em { font-style: italic; color: var(--sage-deep); }
-.section-lede { max-width: 760px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+.section-lede { max-width: 760px; color: var(--muted); font-size: 1.08rem; }
 .display {
   font-family: var(--f-display);
   font-size: clamp(2.8rem, 6.4vw, 5.6rem);
-  line-height: .96;
-  letter-spacing: -.06em;
-  color: #302525;
+  line-height: .96; letter-spacing: -.06em; color: #302525;
   margin: .95rem 0 1.2rem;
 }
-.display em {
-  font-style: italic;
-  color: var(--sage-deep);
-  position: relative;
-}
+.display em { font-style: italic; color: var(--sage-deep); position: relative; }
 .display em::after {
   content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, var(--sage), var(--rose));
   border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.8s var(--ease-out) 0.4s;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .8s var(--ease-out) .4s;
 }
 .display em.underline-in::after { transform: scaleX(1); }
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .55rem;
-  min-height: 48px;
-  padding: .86rem 1.4rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 800;
-  font-size: .92rem;
-  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  min-height: 48px; padding: .86rem 1.4rem; border-radius: 999px;
+  border: 1px solid transparent; font-weight: 800; font-size: .92rem; cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .btn:hover { transform: translateY(-2px); }
@@ -162,41 +116,28 @@ button, input, textarea { font: inherit; }
 .btn--teal      { background: linear-gradient(135deg, var(--rose-deep), var(--rose)); color: #fff; box-shadow: 0 16px 34px rgba(47,100,112,.24); }
 .btn-row { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.75rem; }
 
+/* ── Header & navigation ─────────────────────────────────────── */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 60;
+  position: sticky; top: 0; z-index: 60;
   background: rgba(255,250,239,.92);
   border-bottom: 2px solid rgba(216,159,47,.32);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
 .nav {
-  max-width: 1280px;
-  margin: auto;
-  min-height: 64px;
+  max-width: 1280px; margin: auto; min-height: 64px;
   padding: 0 clamp(1rem,5vw,2rem);
-  display: grid;
-  grid-template-columns: minmax(210px,auto) minmax(0,1fr) auto;
-  align-items: center;
-  gap: 1rem;
+  display: grid; grid-template-columns: minmax(210px,auto) minmax(0,1fr) auto;
+  align-items: center; gap: 1rem;
 }
 .brand { display: flex; align-items: center; gap: .82rem; min-width: 0; }
-.brand__logo {
-  width: 52px; height: 52px; flex: 0 0 52px;
-  object-fit: contain;
-  border-radius: 100px;
-  margin: 10px 20px;
-}
-.brand__text strong { display: block; font-size: 1.06rem; line-height: 1.15; letter-spacing: .01em; text-align:center; }
+.brand__logo { width: 120px; height: 120px; object-fit: contain; border-radius: 100px; margin: 10px 20px; }
+.brand__text strong { display: block; font-size: 1.06rem; line-height: 1.15; letter-spacing: .01em; text-align: center; }
 .brand__text span { display: block; margin-top: .12rem; color: var(--sage-deep); font-size: .84rem; font-weight: 700; white-space: nowrap; }
 .nav__links { display: flex; align-items: center; justify-content: center; gap: .22rem; min-width: 0; white-space: nowrap; }
 .nav__links a {
-  padding: .66rem .74rem;
-  border-radius: 999px;
-  font-size: .92rem;
-  font-weight: 700;
-  color: #4a4141;
+  padding: .66rem .74rem; border-radius: 999px;
+  font-size: .92rem; font-weight: 700; color: #4a4141;
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 .nav__links a:hover { background: var(--sage-soft); color: var(--sage-deep); transform: translateY(-1px); }
@@ -205,153 +146,98 @@ button, input, textarea { font: inherit; }
 .menu-toggle { display: none; border: 0; background: #fff; border-radius: 15px; padding: .68rem .78rem; box-shadow: var(--shadow-soft); cursor: pointer; color: var(--ink); }
 .menu-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; border-radius: 10px; transition: .24s ease; }
 
+/* Dropdown lives inside the sticky header, anchored to its bottom edge,
+   so it always opens directly below the header — whatever the header's height. */
 .mobile-nav {
-  position: fixed;
-  top: 0;
-  left: 0; right: 0;
+  position: absolute; top: 100%; left: 0; right: 0;
   background: var(--cream);
-  border-bottom: 1px solid rgba(168,117,26,0.12);
-  z-index: 59;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.42s var(--ease-out), box-shadow 0.3s ease;
-  padding-top: 140px;
+  border-bottom: 1px solid rgba(168,117,26,.12);
+  overflow: hidden; max-height: 0;
+  transition: max-height .42s var(--ease-out), box-shadow .3s ease;
 }
-.mobile-nav.open {
-  max-height: 90dvh;
-  box-shadow: 0 16px 48px rgba(168,117,26,.14);
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.mobile-nav-inner { padding: 0.5rem clamp(1rem,5vw,2rem) 2.5rem; overflow-y: auto; }
-.mobile-nav ul { list-style: none; }
+.mobile-nav.open { max-height: 70dvh; overflow-y: auto; box-shadow: 0 16px 48px rgba(168,117,26,.14); }
+.mobile-nav-inner { padding: .5rem clamp(1rem,5vw,2rem) 2rem; }
 .mobile-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--ink);
-  border-bottom: 1px solid rgba(168,117,26,0.09);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 0; font-size: 1.05rem; font-weight: 700; color: var(--ink);
+  border-bottom: 1px solid rgba(168,117,26,.09);
   transition: color var(--t-fast) ease, padding-left var(--t-fast) ease;
 }
-.mobile-nav a:hover { color: var(--sage-deep); padding-left: 0.5rem; }
-.mobile-nav .btn { margin-top: 1.5rem; width: 100%; }
+.mobile-nav a:hover { color: var(--sage-deep); padding-left: .5rem; }
+.mobile-nav .btn { margin-top: 1.5rem; width: 100%; border-bottom: 0; }
 
-/* ── Hero (photo background, like the homepage — with a golden veil) ── */
+/* ── Hero ─────────────────────────────────────────────────────── */
 .hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; overflow: hidden;
   border-bottom: 1px solid rgba(216,159,47,.22);
 }
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  transform: scale(1.04);
-  transition: transform 6s ease-out;
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 25%;
+  transform: scale(1.04); transition: transform 6s ease-out;
 }
 .hero-bg.loaded { transform: scale(1); }
 .hero-veil {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background: linear-gradient(108deg, rgba(255,250,239,.94) 0%, rgba(255,244,200,.84) 38%, rgba(255,233,168,.38) 65%, rgba(255,250,239,.10) 100%);
 }
 .hero-veil::after {
   content: '';
-  position: absolute;
-  inset: 60% 0 0;
+  position: absolute; inset: 60% 0 0;
   background: linear-gradient(to bottom, transparent, rgba(255,250,239,.55));
 }
 .hero .container { position: relative; z-index: 2; width: 100%; padding-top: clamp(3rem,8vh,5rem); padding-bottom: clamp(3rem,7vw,5rem); }
 .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem,5vw,4rem); align-items: center; }
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
+  display: inline-flex; align-items: center; gap: .55rem;
   background: rgba(255,255,255,.9);
-  border-radius: 999px;
-  padding: .4rem 1rem .4rem .5rem;
+  border-radius: 999px; padding: .4rem 1rem .4rem .5rem;
   box-shadow: var(--shadow-soft);
   margin-bottom: 1.5rem;
   border: 1px solid rgba(216,159,47,.32);
-  animation: badge-in 0.7s var(--ease) 0.2s both;
+  animation: badge-in .7s var(--ease) .2s both;
 }
-@keyframes badge-in { from { opacity: 0; transform: translateY(12px) scale(0.95); } to { opacity: 1; transform: none; } }
+@keyframes badge-in { from { opacity: 0; transform: translateY(12px) scale(.95); } to { opacity: 1; transform: none; } }
 .hero-badge .dot {
-  width: 28px; height: 28px;
-  border-radius: 50%;
+  width: 28px; height: 28px; border-radius: 50%;
   background: linear-gradient(135deg, var(--sage), var(--rose));
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  color: #fff;
-  font-size: .8rem;
+  display: grid; place-items: center; flex-shrink: 0;
+  color: #fff; font-size: .8rem;
 }
 .hero-badge span { font-size: .78rem; font-weight: 800; color: var(--ink); }
 .hero-text .display { animation: hero-text-in .9s var(--ease-out) .35s both; }
 .hero-text .hero__lead {
-  max-width: 540px;
-  color: #55494a;
+  max-width: 540px; color: #55494a;
   font-size: clamp(1.05rem,1.9vw,1.22rem);
   animation: hero-text-in .9s var(--ease-out) .5s both;
 }
 @keyframes hero-text-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 .hero-text .btn-row { animation: hero-text-in .9s var(--ease-out) .65s both; }
 .price-pill {
-  display: inline-flex;
-  align-items: baseline;
-  gap: .45rem;
+  display: inline-flex; align-items: baseline; gap: .45rem;
   margin-top: 1.6rem;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: .5rem 1.15rem;
-  box-shadow: var(--shadow-soft);
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+  padding: .5rem 1.15rem; box-shadow: var(--shadow-soft);
   animation: hero-text-in .9s var(--ease-out) .75s both;
 }
 .price-pill strong { font-size: 1.5rem; font-weight: 900; color: var(--sage-deep); letter-spacing: -.03em; }
 .price-pill span { font-size: .85rem; font-weight: 700; color: var(--muted); }
-@keyframes art-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.hero-tag {
-  position: absolute;
-  background: var(--paper);
-  border-radius: 999px;
-  padding: .38rem .85rem;
-  font-size: .74rem;
-  font-weight: 800;
-  color: var(--sage-deep);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(216,159,47,.24);
-  white-space: nowrap;
-}
-.hero-tag--1 { top: 6%; left: -4%; transform: rotate(-6deg); color: var(--rose-deep); border-color: rgba(95,180,192,.3); }
-.hero-tag--3 { bottom: -2%; left: 12%; transform: rotate(-3deg); }
 
-/* ── Muzzle-train-first notice ────────────────────────────────── */
 .notice {
   margin-top: 2.4rem;
-  display: flex;
-  gap: .9rem;
-  align-items: flex-start;
+  display: flex; gap: .9rem; align-items: flex-start;
   background: linear-gradient(135deg, var(--blush-2), #fff);
   border: 1px solid rgba(95,180,192,.35);
   border-left: 5px solid var(--rose-deep);
-  border-radius: 18px;
-  padding: 1rem 1.15rem;
-  max-width: 620px;
+  border-radius: 18px; padding: 1rem 1.15rem; max-width: 620px;
   animation: hero-text-in .9s var(--ease-out) .85s both;
 }
 .notice-icon { width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; background: var(--rose-deep); color: #fff; display: grid; place-items: center; font-weight: 900; }
-.notice p { margin: 0; font-size: .92rem; color: #44555b; }
+.notice p { font-size: .92rem; color: #44555b; }
 .notice a { color: var(--rose-deep); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 
+/* ── Reveal-on-scroll ─────────────────────────────────────────── */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
@@ -361,102 +247,58 @@ button, input, textarea { font: inherit; }
   border-block: 1px solid rgba(216,159,47,.24);
   padding: clamp(1.75rem,4vw,2.75rem) 0;
 }
-.certified-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1.25rem,4vw,2.5rem);
-  flex-wrap: wrap;
-}
+.certified-inner { display: flex; align-items: center; justify-content: center; gap: clamp(1.25rem,4vw,2.5rem); flex-wrap: wrap; }
 .certified-frame {
-  background: #fff;
-  border: 1px solid rgba(216,159,47,.3);
-  border-radius: 16px;
-  padding: .6rem;
-  box-shadow: var(--shadow-soft);
+  background: #fff; border: 1px solid rgba(216,159,47,.3);
+  border-radius: 16px; padding: .6rem; box-shadow: var(--shadow-soft);
   width: clamp(180px, 24vw, 260px);
   transform: rotate(-1.5deg);
   transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) ease;
 }
 .certified-frame:hover { transform: rotate(0deg) translateY(-3px); box-shadow: var(--shadow); }
-.certified-frame img { width: 100%; height: auto; border-radius: 10px; object-fit: contain; }
+.certified-frame img { width: 100%; border-radius: 10px; object-fit: contain; }
 .certified-words { max-width: 480px; }
-.certified-words h2 { font-family: var(--f-display); font-size: clamp(1.5rem,3vw,2.1rem); letter-spacing: -.03em; margin: .5rem 0 .5rem; }
+.certified-words h2 { font-family: var(--f-display); font-size: clamp(1.5rem,3vw,2.1rem); letter-spacing: -.03em; margin: .5rem 0; }
 .certified-words h2 em { font-style: italic; color: var(--sage-deep); }
-.certified-words p { color: var(--muted); font-size: .98rem; margin: 0; }
-
-/* ── Step photos ──────────────────────────────────────────────── */
-.step-photo {
-  margin: .9rem 0 1rem;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, var(--sage-soft), var(--blush-2));
-}
-.step-photo img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--t-med) var(--ease-out);
-}
-.step:hover .step-photo img { transform: scale(1.04); }
+.certified-words p { color: var(--muted); font-size: .98rem; }
 
 /* ── Why a good fit matters ───────────────────────────────────── */
 .why-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.15rem; margin-top: 2.25rem; }
 .why-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  padding: 1.6rem 1.5rem;
-  box-shadow: var(--shadow-soft);
-  position: relative;
-  overflow: hidden;
+  background: #fff; border: 1px solid var(--line); border-radius: 26px;
+  padding: 1.6rem 1.5rem; box-shadow: var(--shadow-soft);
+  position: relative; overflow: hidden;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .why-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(90deg, var(--butter), var(--sage-soft), var(--blush)); }
 .why-card-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--sage-soft); display: grid; place-items: center; margin-bottom: .9rem; }
 .why-card h3 { font-family: var(--f-display); font-size: 1.35rem; margin-bottom: .4rem; }
-.why-card p { color: var(--muted); font-size: .95rem; margin: 0; }
-
+.why-card p { color: var(--muted); font-size: .95rem; }
 .fit-note { margin-top: 2rem; max-width: 780px; color: var(--muted); font-size: 1.02rem; }
 
-/* ── The fitting journey (signature element) ──────────────────── */
+/* ── The fitting journey ──────────────────────────────────────── */
 .journey { position: relative; margin-top: 3rem; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.4rem; }
 .journey::before {
   content: "";
-  position: absolute;
-  top: 44px;
-  left: 12%;
-  right: 12%;
+  position: absolute; top: 44px; left: 12%; right: 12%;
   border-top: 3px dashed rgba(216,159,47,.5);
   z-index: 0;
 }
 .step {
-  position: relative;
-  z-index: 1;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  padding: 0 1.5rem 1.6rem;
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
+  position: relative; z-index: 1;
+  background: #fff; border: 1px solid var(--line); border-radius: 26px;
+  padding: 0 1.5rem 1.6rem; box-shadow: var(--shadow-soft);
+  display: flex; flex-direction: column;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .step-num {
-  width: 88px; height: 88px;
-  margin: -30px auto 1rem;
+  width: 88px; height: 88px; margin: -30px auto 1rem;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--sage-deep), var(--sage));
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-family: var(--f-display);
-  font-size: 2.3rem;
-  font-weight: 700;
+  color: #fff; display: grid; place-items: center;
+  font-family: var(--f-display); font-size: 2.3rem; font-weight: 700;
   box-shadow: 0 14px 30px rgba(168,117,26,.3), 0 0 0 8px var(--cream);
 }
 .step:nth-child(2) .step-num { background: linear-gradient(135deg, var(--rose-deep), var(--rose)); box-shadow: 0 14px 30px rgba(47,100,112,.28), 0 0 0 8px var(--cream); }
@@ -465,34 +307,31 @@ button, input, textarea { font: inherit; }
 .step h3 { font-family: var(--f-display); font-size: 1.5rem; text-align: center; margin: .25rem 0 .7rem; }
 .step p { color: var(--muted); font-size: .95rem; margin-bottom: 1.1rem; }
 .step .btn { margin-top: auto; width: 100%; }
+.step-photo {
+  margin: .9rem 0 1rem; border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--sage-soft), var(--blush-2));
+}
+.step-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform var(--t-med) var(--ease-out); }
+.step:hover .step-photo img { transform: scale(1.04); }
 
 /* ── Referral favour card ─────────────────────────────────────── */
 .favour-card {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 0;
-  align-items: stretch;
+  display: grid; grid-template-columns: .8fr 1.2fr;
   margin-top: 2.25rem;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl);
+  box-shadow: var(--shadow); overflow: hidden;
 }
 .favour-side {
   background: linear-gradient(155deg, var(--sage-deep), var(--sage) 52%, #407f8b);
-  color: #fff;
-  padding: 2.45rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
+  color: #fff; padding: 2.45rem;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
 }
-.favour-side h3 { font-family: var(--f-display); font-size: 2rem; line-height: 1.08; margin: 0; }
+.favour-side h3 { font-family: var(--f-display); font-size: 2rem; line-height: 1.08; }
 .favour-side .big { font-size: 3.4rem; font-weight: 900; line-height: .95; letter-spacing: -.05em; }
 .favour-side .sub { color: rgba(255,255,255,.85); font-weight: 700; margin-top: .4rem; }
 .favour-body { padding: 2.35rem; }
-.favour-body p { color: var(--muted); margin: 0 0 1.1rem; }
+.favour-body p { color: var(--muted); margin-bottom: 1.1rem; }
 .favour-body p strong { color: var(--ink); }
 
 /* ── Booking / contact ────────────────────────────────────────── */
@@ -500,86 +339,70 @@ button, input, textarea { font: inherit; }
 .contact-card, .form-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-soft); padding: 2.05rem; }
 .contact-line { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .contact-line:last-child { border-bottom: 0; }
-.contact-line strong { display: block; }
 .contact-line span, .contact-line a { color: var(--muted); }
 .contact-line a:hover { color: var(--sage-deep); }
 .form-card form { display: grid; gap: 1rem; }
 .field label { display: block; font-weight: 800; margin-bottom: .35rem; }
-.field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 17px; background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.field input, .field textarea {
+  width: 100%; border: 1px solid var(--line); border-radius: 17px;
+  background: #fffdf7; padding: .95rem 1rem; color: var(--ink); outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
 .field textarea { min-height: 145px; resize: vertical; }
 .field input:focus, .field textarea:focus { border-color: var(--sage); box-shadow: 0 0 0 4px rgba(216,159,47,.18); }
+.form-note { margin-top: .2rem; color: var(--muted); font-size: .92rem; }
 
-.footer {
-  background: linear-gradient(90deg, #a8751a, var(--sage) 46%, #3f7e8b);
-  color: #fff;
-  padding: 1.1rem 0;
-  margin-top: 0;
-}
-.footer-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: .75rem 1.5rem;
-}
-.footer-copy { font-size: .8rem; color: rgba(255,255,255,.75); margin: 0; }
+/* ── Footer ───────────────────────────────────────────────────── */
+.footer { background: linear-gradient(90deg, #a8751a, var(--sage) 46%, #3f7e8b); color: #fff; padding: 1.1rem 0; }
+.footer-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; }
+.footer-copy { font-size: .8rem; color: rgba(255,255,255,.75); }
 .footer-links { display: flex; flex-wrap: wrap; gap: .4rem .9rem; align-items: center; }
-.footer-links a { font-size: .8rem; color: rgba(255,255,255,.85); text-decoration: none; transition: color .2s ease; }
+.footer-links a { font-size: .8rem; color: rgba(255,255,255,.85); transition: color .2s ease; }
 .footer-links a:hover { color: #fff; }
 .footer-links .sep { color: rgba(255,255,255,.35); font-size: .7rem; }
 @media (max-width: 520px) { .footer-bar { justify-content: center; text-align: center; } }
 
+/* ── Responsive ───────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .reveal { opacity: 1; transform: none; }
 }
-
 @media (max-width:940px) {
   body { font-size: 16px; }
-  .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
   .brand { max-width: 68vw; }
   .brand__text span { display: none; }
-  .brand__logo { width: 50px; height: 50px; flex-basis: 50px; }
   .nav__links { display: none !important; }
   .header-actions { margin-left: auto; }
   .menu-toggle { display: block; }
   .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .hero-grid { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
+  .hero-grid, .why-grid, .favour-card, .contact-grid { grid-template-columns: 1fr; }
   .journey { grid-template-columns: 1fr; gap: 2.6rem; }
   .journey::before { display: none; }
-  .favour-card, .contact-grid { grid-template-columns: 1fr; }
   .section { padding: 4.1rem 0; }
   .favour-side, .favour-body, .contact-card, .form-card { padding: 1.45rem; }
-  .mobile-nav { padding-top: 56px; }
 }
 @media (max-width:520px) {
   .display { font-size: clamp(2.5rem,14vw,3.8rem); }
   .section-title { font-size: clamp(2rem,11vw,3rem); }
   .btn { width: 100%; }
-  .hero-tag--1 { left: 0; }
 }
 
 /* ── Edit mode (press # to toggle) ────────────────────────────── */
 #ct-edit-banner {
   position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
-  display: none;
-  align-items: center; justify-content: center;
+  display: none; align-items: center; justify-content: center;
   background: linear-gradient(90deg, var(--sage-deep), var(--sage));
   color: #fff; text-align: center;
-  padding: 10px 16px;
-  font-size: 14px; font-weight: 700; line-height: 1.7;
-  letter-spacing: .01em;
+  padding: 10px 16px; font-size: 14px; font-weight: 700; line-height: 1.7; letter-spacing: .01em;
   box-shadow: 0 2px 12px rgba(168,117,26,.3);
 }
-body.ct-editing #ct-edit-banner { display: flex; }
 #ct-edit-save {
   position: fixed; right: 20px; bottom: 20px; z-index: 99999;
-  display: none;
-  align-items: center; gap: .5rem;
+  display: none; align-items: center; gap: .5rem;
   border: none; cursor: pointer;
   background: linear-gradient(135deg, var(--sage-deep), var(--sage));
   color: #fff; font-weight: 800; font-size: .95rem;
@@ -588,13 +411,13 @@ body.ct-editing #ct-edit-banner { display: flex; }
   transition: transform .2s ease, box-shadow .2s ease;
 }
 #ct-edit-save:hover { transform: translateY(-2px); box-shadow: 0 22px 44px rgba(168,117,26,.44); }
+body.ct-editing #ct-edit-banner { display: flex; }
 body.ct-editing #ct-edit-save { display: inline-flex; }
 body.ct-editing { padding-top: 44px; }
 body.ct-editing .site-header { top: 44px; }
 body.ct-editing [contenteditable="true"] { cursor: text; }
 body.ct-editing [contenteditable="true"]:hover { outline: 1.5px dashed rgba(216,159,47,.8); outline-offset: 2px; border-radius: 4px; }
 body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage); outline-offset: 3px; border-radius: 4px; background: rgba(255,244,200,.4); box-shadow: none; }
-
 </style>
 </head>
 <body>
@@ -603,10 +426,10 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
 <header aria-label="Site header" class="site-header">
   <nav aria-label="Main navigation" class="nav">
     <a aria-label="Click and Treat Training home" class="brand" href="/CATT/">
-      <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png" style="width: 120px; height: 120px;">
+      <img alt="Click and Treat Training logo" class="brand__logo" src="logo.png">
       <span class="brand__text"><strong>Click and Treat Training</strong><span>Muzzle Fittings × The Muzzle Movement</span></span>
     </a>
-    <div class="nav__links" id="nav-links">
+    <div class="nav__links">
       <a href="/CATT/">← Back to main site</a>
       <a href="#why-fit">Why fit matters</a>
       <a href="#how-it-works">How it works</a>
@@ -619,20 +442,19 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
       </button>
     </div>
   </nav>
-</header>
-
-<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <div class="mobile-nav-inner">
-    <ul>
-      <li><a href="index.html">← Back to main site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-      <li><a href="#why-fit">Why fit matters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-      <li><a href="#how-it-works">How it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-      <li><a href="#favour">Referral link <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-      <li><a href="#book">Book a fitting <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
-    </ul>
-    <a href="#book" class="btn btn--primary" style="margin-top:1.5rem;width:100%;display:flex;justify-content:center;">Book a fitting</a>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner">
+      <ul>
+        <li><a href="index.html">← Back to main site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        <li><a href="#why-fit">Why fit matters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        <li><a href="#how-it-works">How it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        <li><a href="#favour">Referral link <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        <li><a href="#book">Book a fitting <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+      </ul>
+      <a href="#book" class="btn btn--primary">Book a fitting</a>
+    </div>
   </div>
-</div>
+</header>
 
 <main id="main">
 
@@ -786,11 +608,11 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
     </div>
     <div class="form-card reveal">
       <form id="fitting-form" aria-label="Muzzle fitting enquiry form">
-        <div class="field"><label for="email">Your email</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"></div>
+        <div class="field"><label for="email">Your email</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required type="email"></div>
         <div class="field"><label for="dog">Your dog's breed &amp; size</label><input id="dog" name="dog" placeholder="e.g. Staffie cross, medium" type="text"></div>
-        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your dog and when you'd like a fitting. If you've taken any nose measurements already, pop them in here too." required=""></textarea></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me a little about your dog and when you'd like a fitting. If you've taken any nose measurements already, pop them in here too." required></textarea></div>
         <button class="btn btn--primary" type="submit">Send fitting enquiry</button>
-        <p style="margin:.2rem 0 0;color:var(--muted);font-size:.92rem">This opens your email app with the message ready to send.</p>
+        <p class="form-note">This opens your email app with the message ready to send.</p>
       </form>
     </div>
   </div>
@@ -818,149 +640,120 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
 <button id="ct-edit-save" type="button">💾 Save and Export</button>
 
 <script>
+/* ── Footer year ── */
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ── Hero image zoom-in + title underline ── */
 const heroBg = document.getElementById('hero-bg');
 if (heroBg) {
-  heroBg.addEventListener('load', () => heroBg.classList.add('loaded'));
-  if (heroBg.complete) heroBg.classList.add('loaded');
+  const loaded = () => heroBg.classList.add('loaded');
+  heroBg.complete ? loaded() : heroBg.addEventListener('load', loaded);
 }
-const heroEm = document.getElementById('hero-em');
-if (heroEm) setTimeout(() => heroEm.classList.add('underline-in'), 900);
+setTimeout(() => document.getElementById('hero-em')?.classList.add('underline-in'), 900);
+
+/* ── Mobile menu ── */
 const menuToggle = document.getElementById('menu-toggle');
 const mobileNav  = document.getElementById('mobile-nav');
-if (menuToggle && mobileNav) {
-  menuToggle.addEventListener('click', () => {
-    const open = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!open));
-    menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
-    mobileNav.classList.toggle('open', !open);
-    mobileNav.setAttribute('aria-hidden', String(open));
-    document.body.style.overflow = open ? '' : 'hidden';
-  });
-  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Open menu');
-    mobileNav.classList.remove('open');
-    mobileNav.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }));
-  document.addEventListener('click', e => {
-    if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      mobileNav.classList.remove('open');
-      mobileNav.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-  });
+function setMenu(open) {
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  mobileNav.classList.toggle('open', open);
+  mobileNav.setAttribute('aria-hidden', String(!open));
 }
+menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+mobileNav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('click', e => { if (!e.target.closest('.site-header')) setMenu(false); });
+
+/* ── Reveal on scroll ── */
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObserver.unobserve(e.target); } });
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-visible'); revealObserver.unobserve(en.target); } });
 }, { threshold: .13, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-document.querySelector('#fitting-form')?.addEventListener('submit', e => {
+/* ── Fitting form → mailto ── */
+document.getElementById('fitting-form').addEventListener('submit', e => {
   e.preventDefault();
-  const email   = document.querySelector('#email').value.trim();
-  const dog     = document.querySelector('#dog').value.trim();
-  const message = document.querySelector('#message').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const dog     = document.getElementById('dog').value.trim();
+  const message = document.getElementById('message').value.trim();
   const dogLine = dog ? `My dog: ${dog}\n\n` : '';
-  const body    = encodeURIComponent(`Hello Chloe,\n\nI'd like to book a muzzle fitting session.\n\n${dogLine}${message}\n\nMy email: ${email}`);
-  const subject = encodeURIComponent('Muzzle fitting enquiry');
-  window.location.href = `mailto:contact@clickandtreattraining.co.uk?subject=${subject}&body=${body}`;
+  const body = encodeURIComponent(`Hello Chloe,\n\nI'd like to book a muzzle fitting session.\n\n${dogLine}${message}\n\nMy email: ${email}`);
+  window.location.href = `mailto:contact@clickandtreattraining.co.uk?subject=${encodeURIComponent('Muzzle fitting enquiry')}&body=${body}`;
 });
 
 /* ── Edit mode: press # to toggle, click any text to edit, then Save and Export ── */
 (function () {
-  'use strict';
   const saveBtn = document.getElementById('ct-edit-save');
+  const SAVE_LABEL = '💾 Save and Export';
+  const TEXT_TAGS = 'h1,h2,h3,h4,h5,h6,p,li,a,span,strong,em,small,button,label,figcaption,blockquote,td,th,dt,dd';
   let editing = false;
 
-  const TEXT_TAGS = 'h1,h2,h3,h4,h5,h6,p,li,a,span,strong,em,small,button,label,figcaption,blockquote,td,th,dt,dd';
-  function hasOwnText(el) {
-    return Array.prototype.some.call(el.childNodes, n => n.nodeType === 3 && n.textContent.trim() !== '');
-  }
-  function markEditable() {
-    document.querySelectorAll(TEXT_TAGS).forEach(el => {
-      if (el.closest('#ct-edit-banner, #ct-edit-save')) return;
-      if (hasOwnText(el)) el.setAttribute('contenteditable', 'true');
-    });
-    // Keep only the outermost editable element when they nest (e.g. <p> around a <strong>)
-    document.querySelectorAll('[contenteditable="true"] [contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
-  }
-  function unmarkEditable() {
-    document.querySelectorAll('[contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
-  }
   function setEditing(on) {
-    if (on === editing) return;
     editing = on;
     document.body.classList.toggle('ct-editing', on);
-    if (on) markEditable(); else unmarkEditable();
+    if (on) {
+      document.querySelectorAll(TEXT_TAGS).forEach(el => {
+        if (el.closest('#ct-edit-banner, #ct-edit-save')) return;
+        const hasText = Array.prototype.some.call(el.childNodes, n => n.nodeType === 3 && n.textContent.trim());
+        if (hasText) el.setAttribute('contenteditable', 'true');
+      });
+      // Keep only the outermost editable element when they nest
+      document.querySelectorAll('[contenteditable="true"] [contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+    } else {
+      document.querySelectorAll('[contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+    }
   }
-
-  // While editing, stop links and buttons doing their normal job so their text can be clicked into
-  document.addEventListener('click', e => {
-    if (!editing) return;
-    if (e.target.closest('#ct-edit-save')) return;
-    if (e.target.closest('a, button')) e.preventDefault();
-  }, true);
-  document.addEventListener('submit', e => { if (editing) e.preventDefault(); }, true);
 
   document.addEventListener('keydown', e => {
     if (e.key === '#' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      const t = e.target;
-      if (t && t.closest && t.closest('input, textarea, select, [contenteditable="true"]')) return;
+      if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
       e.preventDefault();
       setEditing(!editing);
+    } else if (e.key === 'Escape' && editing) {
+      setEditing(false);
     }
-    if (e.key === 'Escape' && editing) setEditing(false);
   });
 
+  // While editing, stop links/buttons/forms doing their normal job so their text can be edited
+  document.addEventListener('click', e => {
+    if (editing && !e.target.closest('#ct-edit-save') && e.target.closest('a, button')) e.preventDefault();
+  }, true);
+  document.addEventListener('submit', e => { if (editing) e.preventDefault(); }, true);
+
   saveBtn.addEventListener('click', () => {
-    // Work on a clone so the live page is untouched. The banner and save button stay in
-    // the markup (CSS hides them outside edit mode), so the exported file supports # too.
+    // Clone the page, then strip everything the page's own scripts added at
+    // runtime, so the exported file is the original file + your text edits.
     const root = document.documentElement.cloneNode(true);
-    const bodyClone = root.querySelector('body');
-    if (bodyClone) {
-      bodyClone.classList.remove('ct-editing');
-      if (!bodyClone.className) bodyClone.removeAttribute('class');
-      bodyClone.style.removeProperty('overflow');
-      if (!bodyClone.getAttribute('style')) bodyClone.removeAttribute('style');
-    }
-    const btnClone = root.querySelector('#ct-edit-save');
-    if (btnClone) btnClone.textContent = '💾 Save and Export';
     root.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+    ['ct-editing', 'is-visible', 'loaded', 'underline-in', 'open'].forEach(c =>
+      root.querySelectorAll('.' + c).forEach(el => el.classList.remove(c)));
+    root.querySelectorAll('[style]').forEach(el => el.removeAttribute('style'));
+    root.querySelectorAll('[class=""]').forEach(el => el.removeAttribute('class'));
+    const toggle = root.querySelector('#menu-toggle');
+    if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); }
     const nav = root.querySelector('#mobile-nav');
-    if (nav) { nav.classList.remove('open'); nav.setAttribute('aria-hidden', 'true'); }
+    if (nav) nav.setAttribute('aria-hidden', 'true');
+    const btnClone = root.querySelector('#ct-edit-save');
+    if (btnClone) btnClone.textContent = SAVE_LABEL;
 
     const html = '<!DOCTYPE html>\n' + root.outerHTML;
-    const original = saveBtn.textContent;
-
     try {
       const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
       const url  = URL.createObjectURL(blob);
       const a    = document.createElement('a');
-      a.href = url; a.download = 'muzzle-fitting.html'; a.rel = 'noopener';
+      a.href = url;
+      a.download = 'muzzle-fitting.html';
       document.body.appendChild(a);
       a.click();
       a.remove();
-      // Give the browser time to actually start reading the blob before freeing it.
-      // Revoking immediately after click() can cut the download short in some browsers.
       setTimeout(() => URL.revokeObjectURL(url), 4000);
-
       saveBtn.textContent = '✓ Downloaded';
     } catch (err) {
-      // Fallback for browsers that block the automatic download (e.g. some mobile
-      // browsers): open the file in a new tab so it can be saved manually.
-      console.error('Save and Export: automatic download failed, opening in new tab instead.', err);
-      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-      const url  = URL.createObjectURL(blob);
-      window.open(url, '_blank');
-      saveBtn.textContent = '⚠ Opened in new tab';
+      saveBtn.textContent = '⚠ Download failed';
     }
-
-    setTimeout(() => { saveBtn.textContent = original; }, 1800);
+    setTimeout(() => { saveBtn.textContent = SAVE_LABEL; }, 1800);
   });
 })();
 </script>
-
-</body></html>
+</body>
+</html>
