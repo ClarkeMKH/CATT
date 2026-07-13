@@ -301,9 +301,7 @@ button, input, textarea { font: inherit; }
   font-family: var(--f-display); font-size: 2.3rem; font-weight: 700;
   box-shadow: 0 14px 30px rgba(168,117,26,.3), 0 0 0 8px var(--cream);
 }
-.step:nth-child(2) .step-num { background: linear-gradient(135deg, var(--rose-deep), var(--rose)); box-shadow: 0 14px 30px rgba(47,100,112,.28), 0 0 0 8px var(--cream); }
 .step-kicker { text-align: center; font-size: .74rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-deep); }
-.step:nth-child(2) .step-kicker { color: var(--rose-deep); }
 .step h3 { font-family: var(--f-display); font-size: 1.5rem; text-align: center; margin: .25rem 0 .7rem; }
 .step p { color: var(--muted); font-size: .95rem; margin-bottom: 1.1rem; }
 .step .btn { margin-top: auto; width: 100%; }
@@ -380,6 +378,7 @@ button, input, textarea { font: inherit; }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .hero-grid, .why-grid, .favour-card, .contact-grid { grid-template-columns: 1fr; }
+  .contact-line { grid-template-columns: 1fr; gap: .2rem; }
   .journey { grid-template-columns: 1fr; gap: 2.6rem; }
   .journey::before { display: none; }
   .section { padding: 4.1rem 0; }
@@ -547,7 +546,7 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
         <span class="step-kicker">First · Measure</span>
         <h3>Measure at home</h3>
         <p>It's really helpful if you can take a rough measurement of your dog's nose before our session. You can use the guide from The Muzzle Movement team to see how it's done. Having a stranger measure your dog can sometimes feel overwhelming for them, and we want to minimise stress wherever possible to keep the experience positive. If measuring at home feels tricky, or you'd prefer some in-person support, just get in touch and we'll happily arrange a time to help you.</p>
-        <a class="btn btn--secondary" href="https://themuzzlemovement.com/pages/the-muzzle-movement-sizing-for-a-muzzle" rel="noopener" target="_blank">Measuring guidance</a>
+        <a class="btn btn--primary" href="https://themuzzlemovement.com/pages/the-muzzle-movement-sizing-for-a-muzzle" rel="noopener" target="_blank">Measuring guidance</a>
       </article>
       <article class="step reveal">
         <div class="step-num" aria-hidden="true">2</div>
@@ -555,7 +554,7 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
         <span class="step-kicker">Second · Fit</span>
         <h3>Book a home visit</h3>
         <p>Get in touch to book a visit. I'll come to your home, meet your dog, and try out a range of muzzle sizes and styles to find the best fit together — calmly, kindly, and at a pace that suits your dog.</p>
-        <a class="btn btn--teal" href="#book">Contact me</a>
+        <a class="btn btn--primary" href="#book">Contact me</a>
       </article>
       <article class="step reveal">
         <div class="step-num" aria-hidden="true">3</div>
@@ -604,7 +603,7 @@ body.ct-editing [contenteditable="true"]:focus { outline: 2.5px solid var(--sage
       <div class="contact-line"><strong>Email</strong><a href="mailto:contact@clickandtreattraining.co.uk">contact@clickandtreattraining.co.uk</a></div>
       <div class="contact-line"><strong>Telephone</strong><a href="tel:07702045810">07702 045810</a></div>
       <div class="contact-line"><strong>Price</strong><span>£25 per fitting, in your own home.</span></div>
-      <div class="contact-line"><strong>Service area</strong><span>Our service area covers an 8-mile radius around Chatham. Not sure if you're within our area? Contact us and we'll be happy to check for you!</span></div>
+      <div class="contact-line"><strong>Service area</strong><span>Roughly a 30-minute drive from Chatham, covering Medway and the surrounding areas of Kent. Not sure if you're covered? Just get in touch and I'll happily check.</span></div>
     </div>
     <div class="form-card reveal">
       <form id="fitting-form" aria-label="Muzzle fitting enquiry form">
