@@ -1007,7 +1007,7 @@ function bookSession(value) {
 
   // While editing, stop links/buttons/forms doing their normal job so their text can be edited
   document.addEventListener('click', e => {
-    if (editing && !e.target.closest('#ct-edit-save') && e.target.closest('a, button')) e.preventDefault();
+    if (editing && !e.target.closest('#ct-edit-save') && !e.target.closest('[data-ct-export]') && e.target.closest('a, button')) e.preventDefault();
   }, true);
   document.addEventListener('submit', e => { if (editing) e.preventDefault(); }, true);
 
@@ -1034,6 +1034,7 @@ function bookSession(value) {
       const a    = document.createElement('a');
       a.href = url;
       a.download = 'index.html';
+      a.setAttribute('data-ct-export', '');
       document.body.appendChild(a);
       a.click();
       a.remove();
