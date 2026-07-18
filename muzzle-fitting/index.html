@@ -704,6 +704,7 @@ document.getElementById('fitting-form').addEventListener('submit', e => {
   }
 
   document.addEventListener('keydown', e => {
+    return;
     if (e.key === '#' && !e.ctrlKey && !e.metaKey && !e.altKey) {
       if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
       e.preventDefault();
