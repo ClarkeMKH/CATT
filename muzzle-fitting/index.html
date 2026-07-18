@@ -715,7 +715,7 @@ document.getElementById('fitting-form').addEventListener('submit', e => {
 
   // While editing, stop links/buttons/forms doing their normal job so their text can be edited
   document.addEventListener('click', e => {
-    if (editing && !e.target.closest('#ct-edit-save') && e.target.closest('a, button')) e.preventDefault();
+    if (editing && !e.target.closest('#ct-edit-save') && !e.target.closest('[data-ct-export]') && e.target.closest('a, button')) e.preventDefault();
   }, true);
   document.addEventListener('submit', e => { if (editing) e.preventDefault(); }, true);
 
@@ -742,6 +742,7 @@ document.getElementById('fitting-form').addEventListener('submit', e => {
       const a    = document.createElement('a');
       a.href = url;
       a.download = 'muzzle-fitting.html';
+      a.setAttribute('data-ct-export', '');
       document.body.appendChild(a);
       a.click();
       a.remove();
